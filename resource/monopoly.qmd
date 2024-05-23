@@ -1,0 +1,197 @@
+---
+title: Monopolies
+---
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(Deriv)
+
+source(here::here("R", "graphics.R"))
+```
+
+The most important lesson to remember with monopolies is that monopolist firms will **underproduce** and **overcharge**—Q will be lower and P will be higher than what should happen if the market is in equilibrium. 
+
+As with profit maximization and supply and demand, there are a ton of other resources online that you can references for additional help. [Khan Academy's monopoly unit is especially useful and easy to follow](https://www.khanacademy.org/economics-finance-domain/ap-microeconomics/imperfect-competition#ap-monopolies-tutorial).
+
+<div class="ratio ratio-16x9">
+<iframe src="https://www.youtube.com/embed/uSJzdXzYyvQ" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0"></iframe>
+</div>
+
+&nbsp;
+
+In this example, let's assume that the demand for some product is:
+
+$$
+D: P = -Q + 40
+$$
+
+A single firm that is a monopolist has the following total cost function:
+
+$$
+TC: P = Q^2 + 140
+$$
+
+Using calculus, we can find the marginal cost function by taking the first derivative:
+
+$$
+MC: P = 2Q
+$$
+
+If this firm *isn't* a monopolist, and the marginal cost here represented the supply of the whole market, we'd have this market equilibrium:
+
+```{r regular-equilibrium, echo=FALSE, warning=FALSE}
+demand <- function(Q) 40 - (1 * Q)
+supply <- function(Q) 0 + (2 * Q)
+
+q_ideal <- uniroot(function(x) demand(x) - supply(x), c(0, 100))
+
+demand_firm <- function(Q) demand(q_ideal$root)
+
+ggplot(data = tibble(x = 0:40), aes(x = x)) +
+  stat_function(fun = demand, aes(color = "Demand"), size = 1.5) +
+  stat_function(fun = supply, aes(color = "Marginal cost"), size = 1.5) +
+  geom_vline(xintercept = q_ideal$root, color = "grey50", linetype = "dashed") +
+  geom_hline(yintercept = demand(q_ideal$root), color = "grey50", linetype = "dashed") +
+  coord_cartesian(ylim = c(0, 45)) +
+  labs(x = "Quantity", y = "Price") +
+  scale_color_manual(values = c("Demand" = nord_red, "Marginal cost" = nord_dk_blue),
+                     name = NULL) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(labels = scales::dollar, expand = c(0, 0)) +
+  theme_econ(13, axis_line = TRUE) +
+  theme(legend.position = "bottom",
+        panel.grid = element_blank())
+```
+
+At this equilibrium, the best quantity is `r round(q_ideal$root, 2)`, and the best price is `r scales::dollar(demand_firm(q_ideal$root))`.
+
+However, because this firm is a monopolist, it doesn't have to take the prevailing price out in society. Instead, it can set the price to whatever maximizes its own profit. The formula for maximizing profit is $MR = MC$, which means we need to find the formula for both marginal revenue and marginal cost. We already know the formula for marginal cost—that's the blue line in the graph above:
+
+$$
+MC: P = 2Q
+$$
+
+We don't have the formula for marginal revenue, but we can figure it out with some tricky algebra moves. Remember that the general formula for total revenue is $TR = PQ$, or the price × the quantity of stuff sold. We already know the price of things demanded—that's the demand curve. If we substitute the demand curve formula into the TR formula in place of P, we can find the formula for total revenue:
+
+$$
+\begin{aligned}
+TR &= PQ \\
+&= (-Q + 40)Q \\
+&= -Q^2 + 40Q
+\end{aligned}
+$$
+
+Total revenue is thus $Q^2 + 40Q$. If we find the first derivative of that, we'll have the marginal revenue:
+
+$$
+MR = -2Q + 40
+$$
+
+Phew. Now we have equations for marginal cost and for marginal revenue, so we can set them equal to each other and find where they cross using algebra:
+
+$$
+\begin{aligned}
+MR &= MC \\
+-2Q + 40 &= 2Q \\
+40 &= 4Q \\
+10 &= Q
+\end{aligned}
+$$
+
+The ideal quantity to maximize profits is thus 10. We can see this in a graph, along with the ideal price (this is point B):
+
+```{r monopoly-equilibrium, echo=FALSE, warning=FALSE}
+demand_monopoly <- function(Q) 40 - Q
+revenue_monopoly <- function(Q) -Q^2 + 40 * Q
+mr <- Deriv(revenue_monopoly, "Q")
+
+cost_monopoly <- function(Q) Q^2 + 140
+atc <- function(Q) cost_monopoly(Q) / Q
+mc <- Deriv(cost_monopoly, "Q")
+
+q_ideal <- uniroot(function(x) mc(x) - mr(x), c(0, 100))
+q_ideal_competition <- uniroot(function(x) mc(x) - demand_monopoly(x), c(0, 100))
+
+points_to_add <- tribble(
+  ~x, ~y, ~label,
+  q_ideal$root, mr(q_ideal$root), "B" ,
+  q_ideal$root, demand_monopoly(q_ideal$root), "C",
+  q_ideal_competition$root, demand_monopoly(q_ideal_competition$root), "A"
+)
+
+monopoly1 <- ggplot(data = tibble(x = 0:40), aes(x = x)) +
+  stat_function(fun = demand_monopoly, aes(color = "Demand"), size = 1.5) +
+  stat_function(fun = mc, aes(color = "Marginal cost"), size = 1.5) +
+  stat_function(fun = mr, aes(color = "Marginal revenue"), size = 1.5) +
+  geom_segment(data = points_to_add, aes(x = 0, xend = x, y = y, yend = y),
+               color = "grey50", linetype = "dashed") +  
+  geom_segment(data = points_to_add, aes(x = x, xend = x, y = 0, yend = y),
+               color = "grey50", linetype = "dashed") +
+  geom_point(data = points_to_add, aes(x = x, y = y), size = 3.5) +
+  geom_label(data = points_to_add, aes(x = x, y = y, label = label)) +
+  coord_cartesian(xlim = c(0, 45), ylim = c(0, 45)) +
+  labs(x = "Quantity", y = "Price") +
+  scale_color_manual(values = c("Demand" = nord_red, "Marginal cost" = nord_dk_blue,
+                                "Marginal revenue" = nord_green, "Average total cost" = nord_yellow),
+                     name = NULL) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(labels = scales::dollar, expand = c(0, 0)) +
+  theme_econ(13, axis_line = TRUE) +
+  theme(legend.position = "bottom",
+        panel.grid = element_blank())
+monopoly1
+```
+
+We can see that there's a reduction in quantity. They should be producing 13.33 units, but now they're only making 10. The price for this new lower quantity is lower too, but there's now a problem! Based on the demand curve, society is willing to pay up to <span>$30</span> per product, since only 10 are being made. This means that even though the firm should only charge <span>$20</span>, given where MC and MR cross, it can raise the price and charge <span>$30</span> instead, leading to point C. Now there are fewer products being produced *and* they're more expensive!
+
+This sequence of events creates the monopoly triangle:
+
+- According to supply and demand, the firm should produce and sell at **point A**
+- Because they have market power and are a monopoly, the firm can produce where its marginal revenue = its marginal costs, meaning it should produce at **point B**
+- Point B leads to a lower Q, and society is willing to pay a higher price for that lower quantity, so the firm will raise the price to **point C**, thus **underproducing and overcharging**.
+
+This monopoly has a few different consequences beyond lower quantities and higher prices:
+
+- Deadweight loss is created
+- Producer surplus grows
+- Consumer surplus shrinks
+
+We can calculate these exact values by using geometry to find the areas of these different rectangles and triangles:
+
+```{r monopoly-equilibrium-shaded, echo=FALSE, warning=FALSE}
+x_q_monopoly <- seq(0, q_ideal$root, 0.01)
+x_q_competition <- seq(q_ideal$root, q_ideal_competition$root, 0.01)
+
+monopoly1 + 
+  geom_ribbon(data = tibble(x = x_q_monopoly),
+              aes(x = x,
+                  ymin = demand_monopoly(q_ideal$root),
+                  ymax = demand_monopoly(x_q_monopoly),
+                  fill = "Consumer surplus"),
+              alpha = 0.3) +
+  geom_ribbon(data = tibble(x = x_q_monopoly),
+              aes(x = x,
+                  ymin = mc(x_q_monopoly), 
+                  ymax = demand_monopoly(q_ideal$root),
+                  fill = "Producer surplus"),
+              alpha = 0.3) +
+  geom_ribbon(data = tibble(x = x_q_competition),
+              aes(x = x,
+                  ymin = mc(x_q_competition), 
+                  ymax = demand_monopoly(x_q_competition),
+                  fill = "Deadweight loss"),
+              alpha = 0.3) +
+  scale_fill_manual(values = c("Consumer surplus" = nord_green,
+                               "Producer surplus" = nord_lt_blue,
+                               "Deadweight loss" = nord_yellow),
+                    name = NULL) +
+  guides(fill = guide_legend(ncol = 2),
+         color = guide_legend(ncol = 2))
+```
+
+- Deadweight loss: $1/2 \times (13.333-10) \times (30 - 20) = \$16.67$
+- Consumer surplus: $1/2 \times 10 \times 10 = \$50$
+- Producer surplus:
+    - Triangle part: $1/2 \times 10 \times 20 = \$100$
+    - Rectangle part: $10 \times 10 = \$100$
+    - Total: $\$200$

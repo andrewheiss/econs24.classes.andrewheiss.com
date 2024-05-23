@@ -1,0 +1,122 @@
+---
+title: Inflation and change
+---
+
+When comparing dollar amounts over time, it is important to account for inflation, or the rate at which values naturally change. Here we'll use Excel to convert nominal values (i.e. numbers written down in a specific year) to real values (i.e. numbers scaled up or down to a specific year).
+
+Here's what we'll do:
+
+- Convert nominal values to real values
+- Rescale the CPI to a different year
+- Calculate inflation rate
+- Calculate average inflation over time
+- Deal with compounding inflation
+
+You can download this Excel file to follow along:
+
+- [[{{< fa file-excel >}} `fred_cpi.xlsx`](/files/files/fred_cpi.xlsx)
+
+You can also download this completed version:
+
+- [[{{< fa file-excel >}} `fred_cpi.xlsx`](/files/files/fred_cpi_cagr_example.xlsx)
+
+The data we'll use comes from the [Federal Reserve's FRED database](https://fred.stlouisfed.org/) (the St. Louis Fed office is responsible for maintaining Fed economic statistics).
+
+- [{{< fa chart-line >}} GDP (nominal)](https://fred.stlouisfed.org/series/GDP)
+- [{{< fa chart-line >}} GDP deflator](https://fred.stlouisfed.org/series/GDPDEF)
+- [{{< fa chart-line >}} CPI](https://fred.stlouisfed.org/series/CPIAUCSL)
+- [{{< fa chart-line >}} Personal income (nominal)](https://fred.stlouisfed.org/series/PINCOME)
+- [{{< fa chart-line >}} Population](https://fred.stlouisfed.org/series/POPTOTUSA647NWDB)
+- [{{< fa chart-line >}} Personal income per capita (nominal)](https://fred.stlouisfed.org/series/A792RC0A052NBEA)
+- [{{< fa chart-line >}} Health expenditures per capita (nominal)](https://fred.stlouisfed.org/series/HLTHSCPCHCSA)
+
+
+## Converting nominal values to real values
+
+<div class="ratio ratio-16x9">
+<iframe src="https://www.youtube.com/embed/_sMt02_qRDY" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0"></iframe>
+</div>
+
+&nbsp;
+
+To convert nominal values (the numbers written down at the time) to real values (the numbers in today's / another year's dollars), use this formula. When dealing with dollar amounts in the United States, the price index is typically the CPI. Other databases will have different kinds of price indexes, often called "deflators" (like [the World Bank's GDP deflator](https://data.worldbank.org/indicator/NY.GDP.DEFL.ZS)).
+
+$$
+\text{Real value} = \frac{\text{Nominal value}}{\text{Price index / 100}}
+$$
+
+### Shifting CPI
+
+Use this formula to shift the price index to a different year:
+
+$$
+\text{Price index}_{\text{new year}} = \frac{\text{Price index}_{\text{current year}}}{\text{Price index}_{\text{new year}}} \times 100
+$$
+
+### Inflation rate
+
+The inflation rate is the percent change in CPI between two periods. The formula for percent change is fairly simple—just remember NOO!
+
+$$
+\text{\% change} = \frac{\text{New} - \text{Old}}{\text{Old}}
+$$
+
+or
+
+$$
+\text{% change} = \frac{\text{Current} - \text{Previous}}{\text{Previous}}
+$$
+
+*Pay attention* to the time periods in data from FRED. Datasets like [GDP](https://fred.stlouisfed.org/series/GDP) are reported quarterly, while the [CPI](https://fred.stlouisfed.org/series/CPIAUCSL) is monthly. If you need to calculate the annual change (or annual inflation), make sure you either (1) use the same month or quarter as your current and previous times (i.e. January 2016 and January 2017), or (2) add all the percent changes within the year (i.e. add the rates from January 2016, April 2016, July 2017, and October 2017).
+
+## Compounding inflation (CAGR)
+
+<div class="ratio ratio-16x9">
+<iframe src="https://www.youtube.com/embed/K2KAAymJ4Uw" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0"></iframe>
+</div>
+
+&nbsp;
+
+The compound average growth rate (CAGR) is the percent that if the CPI had grown at that rate, compounded, from the start year to the end year, the same CPI would occur in the end year. To calculate this, use the formula for compounding interest, where $A$ is the CPI or price at the end of time period we're concerned about, $P$ the CPI or price at the beginning of the time period we're concerned about, $n$ is the number of times the rate is compounded each year, $t$ is the number of years, and $r$ is the rate that you want to solve for:
+
+$$ 
+A = P (1 + \frac{r}{n})^{nt} 
+$$ 
+
+If we assume interest is compounded once a year, $n$ is 1 and can disappear. This simplifies to:
+
+$$
+\text{CPI}_{\text{new}} = \text{CPI}_{\text{old}}(1 + r)^{t}
+$$
+
+We can rearrange the formula so that $r$ is on the righthand side by dividing, exponentiating, logging, and subtracting: 
+
+$$
+r = \exp\left(\frac{\ln(\frac{\text{CPI}_{\text{new}}}{\text{CPI}_{\text{old}}})}{t}\right) - 1
+$$
+
+Alternatively, instead of assuming annually compounding interest, we can also assume exponential growth (or continually compounding interest), which uses the following formula (again where $A$, $P$, $r$, and $t$ are the prices in the last year, prices in the first year, the rate, and the number of years:
+
+$$
+A = Pe^{rt}
+$$
+
+Or 
+
+$$
+\text{CPI}_{\text{new}} = \text{CPI}_{\text{old}}e^{rt}
+$$
+
+We can again rearrange the formula so that $r$ is on the righthand side:
+
+$$
+r = \frac{\ln(\frac{\text{CPI}_{\text{new}}}{\text{CPI}_{\text{old}}})}{t}
+$$
+
+In the video, we calculate the compound annual growth rate of inflation. We also answer the following questions:
+
+[According to the US Census](https://www.census.gov/construction/nrs/pdf/uspricemon.pdf), the median home price in 1990 was <span>$125,000</span>. In 2018, it was <span>$329,600</span>.
+
+- What was the nominal percent change in housing prices?
+- What was the real percent change in housing prices?
+- What was the average yearly rate of change in housing prices?

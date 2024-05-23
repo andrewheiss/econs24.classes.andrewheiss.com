@@ -1,0 +1,155 @@
+---
+title: Exam 1 study guide
+---
+
+## Capitalism + governments and institutions
+
+**You should understand…**
+
+- …the components of the capitalist economic system: private property, markets, and firms
+- …what happens when any of these components gets distorted
+- …what makes public goods different from regular goods (see public goods game)
+- …what institutions are and how they coordinate action
+- …what GDP is, what it measures, what it doesn't measure, what problems there are with it, what alternatives there are for it, and why it continues to be popular
+- …the difference between real and nominal values (and why we care)
+- …what a price index is
+- …what purchasing power parity (PPP) is (and also what the Big Mac Index is)
+- …the downsides of capitalism (inequality + environmental damage)
+- …why not everything should be a market
+- …why large groups suffer from free riding and how they work to behave like small groups
+- …how small factions threaten democracy, but also how they enable it
+- …how voting can suffer from failures (Condorcet's paradox)
+
+**Important formulas:**
+
+- Adjusting for inflation:
+
+    $$
+    \text{Real} = \frac{\text{Nominal}}{\text{Price Index / 100}}
+    $$
+
+- Percent change:
+
+    $$
+    \text{% change} = \frac{\text{New} - \text{Old}}{\text{Old}}
+    $$
+    
+    or
+    
+    $$
+    \text{% change} = \frac{\text{Current} - \text{Previous}}{\text{Previous}}
+    $$
+
+- Compound annual growth rate (CAGR); periodic method (this assumes interest is compounded once a year; this is the harder method and you don't really need to use it):
+
+    $$
+    r = \exp\left(\frac{\ln(\frac{\text{Price index}_{\text{new}}}{\text{Price index}_{\text{old}}})}{t}\right) - 1
+    $$
+
+- Compound annual growth rate (CAGR): continuous method (this assumes interest is compounded continuously; this is the easier method and you should generally use this):
+
+    $$
+    r = \frac{\ln(\frac{\text{Price index}_{\text{new}}}{\text{Price index}_{\text{old}}})}{t}
+    $$
+
+**Guides:**
+
+- [Inflation and change](/resource/inflation.qmd)
+
+**Other helpful resources:**
+
+- [{{< fa arrow-up-right-from-square >}} CPI calculator](https://www.bls.gov/data/inflation_calculator.htm)
+
+&nbsp;
+
+## Social interactions, economic outcomes, and incentives
+
+**You should understand…**
+
+- …that perfectly rational individual behavior can create irrational and inferior social outcomes
+- …how to use game theory to analyze social interactions. In particular, you should be able to define the following: game, zero-sum, Pareto efficiency, Nash equilibrium, pure strategy, mixed strategy, dominant strategy
+- …what social dilemmas, collective action problems, and tragedies of the commons are
+- …the difference between a stag hunt game and a prisoners dilemma game, why that difference is important, and why stag hunts are possibly a better metaphor for social dilemmas
+- …what factors prevent individuals from cooperating, such as uneven payoffs, lack of assurance, preference falsification, dishonesty, and selfishness
+- …how to fix collective action problems with altruism, repetition and iteration, infinitization, punishment, norms, and institutions
+- …how incentives can get crowded out and distorted when extrinsic rewards or punishments replace intrinsic motivation (i.e. don't marketize important social relationships; pay enough or don't pay at all)
+
+**Guides:**
+
+- [Game theory](/resource/game-theory.qmd)
+
+**Other helpful resources:**
+
+- [{{< fa arrow-up-right-from-square >}} Battle of the Sexes](http://policonomics.com/battle-of-the-sexes/) and [mixed strategies](http://policonomics.com/mixed-strategy/)
+- [{{< fa arrow-up-right-from-square >}} Prisoner's Dilemma and payoffs](http://policonomics.com/video-d3-prisoners-dilemma/)
+- [{{< fa brands youtube >}} Chicken](https://www.youtube.com/watch?v=sww-Zsl0IRY)
+- [{{< fa arrow-up-right-from-square >}} 2×2 game solver to check mixed strategy answers](http://mindyourdecisions.com/GameSolver.html)
+
+&nbsp;
+
+## Fairness and efficiency
+
+**You should understand…** 
+
+- …the difference between Pareto efficiency and fairness
+- …why Pareto efficiency is not necessarily the best standard for measuring the success of a policy
+- …how we can measure fairness with substantive standards, procedural standards, and Rawlsian standards
+- …how cultural perceptions of luck and fairness shape public policy
+- …how ideas of efficiency and fairness apply to international trade
+- …how public policy can be used to change the payoffs in games (e.g. making it more expensive to use water and deplete public goods)
+- …what elasticity measures (i.e. what it means for something to be inelastic vs. elastic)
+- …why good public policies should be a Nash equilibrium
+- …the difference between absolute and comparative advantage and how there can still be gains from trade if a part doesn't have absolute advantage in a product
+
+**Guides:**
+
+- [Absolute and comparative advantage](/resource/advantage.qmd)
+
+&nbsp;
+
+## Work, wellbeing, and scarcity
+
+**You should understand…**
+
+- …what opportunity costs are and how they influence decision making
+- …how to draw a budget line and what budget lines mean
+- …how utility is measured and what indifference curves are
+- …the difference between the marginal rate of substitution (slope of the indifference curve) and the marginal rate of transformation (slope of the feasible frontier)
+- …what it means when marginal product and marginal utility diminish
+- …how to find the utility-maximizing level of consumption given preferences and budget constraints
+- …the difference between normal and inferior goods
+- …what income effects and substitution effects are and how they're related to government policies
+
+**Important formulas:**
+
+- All the ways marginal utility (or marginal rate of substitution) can be written: 
+
+    $$
+    MRS = \frac{dy}{dx} = \frac{\Delta y}{\Delta x} = \frac{\text{Price}_x}{\text{Price}_y} = \frac{MU_x}{MU_y} = \frac{\partial u / \partial x}{\partial u / \partial y}
+    $$
+
+**Guides:**
+
+- [Utility maximization](/resource/indifference-budget.qmd)
+- [Income and substitution effects](/resource/income-substitution.qmd)
+
+**Other helpful resources:**
+
+- [{{< fa brands youtube >}} How to draw income and substitution effects](https://www.youtube.com/watch?v=6ObXpWgYbJ8)
+- [{{< fa brands youtube >}} Example Income and Subsitution Effects For Normal and Inferior Goods](https://www.youtube.com/watch?v=pLhh_D5b_Lg)
+- [{{< fa brands youtube >}} Income and Substitution Effects](https://www.youtube.com/watch?v=GgzS04HCVbw)
+
+&nbsp;
+
+## The firm
+
+**You should understand…**
+
+- …how the decision-making structures of firms and markets are different
+- …that perfectly complete contracts are difficult (if not impossible) to create
+- …what happens when there are incomplete contracts
+- …what a principal-agent problem is
+- …adverse selection
+- …moral hazard
+- …how firms can use the labor discipline model to induce higher worker effort
+- …why involuntary unemployment is necessary

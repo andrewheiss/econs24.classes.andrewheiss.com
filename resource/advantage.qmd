@@ -1,0 +1,159 @@
+---
+title: Absolute and comparative advantage
+---
+
+*Note: [Khan Academy has a helpful video](https://www.khanacademy.org/economics-finance-domain/ap-macroeconomics/basic-economics-concepts-macro/scarcity-and-growth/v/comparative-advantage-specialization-and-gains-from-trade) about absolute and comparative + gains from trade*
+
+<div class="ratio ratio-16x9">
+<iframe src="https://www.youtube.com/embed/JV5lueZynos" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0"></iframe>
+</div>
+
+&nbsp;
+
+Let's pretend that Mexico and Italy decide that they might be able to trade some of their products. Given their climate and natural resources, if Mexico put all its efforts to one type of product it could produce 5 tons of avocados or 2 tons of olive oil. If Italy put all its efforts into one product, it could produce 1 ton of avocados or 5 tons of olive oil.
+
+These constraints create the following two production possibility frontiers:
+
+```{r gains-from-trade, warning=FALSE, message=FALSE, echo=FALSE, fig.width=5.5, fig.height=5.5}
+library(tidyverse)
+
+source(here::here("R", "graphics.R"))
+
+df_trade <- tribble(
+  ~country, ~avocados_max, ~olive_max, 
+  "Mexico", 5,             2,
+  "Italy",  1,             5
+) %>%
+  mutate(avocados_min = 0, olive_min = 0,
+         country = fct_inorder(country, ordered = TRUE))
+
+ggplot(df_trade) +
+  geom_segment(aes(x = olive_max, y = avocados_min,
+                   xend = olive_min, yend = avocados_max, color = country),
+               size = 2) +
+  labs(x = "Tons of olive oil", y = "Tons of avocados") +
+  scale_color_manual(values = c(nord_lt_blue, nord_red), name = NULL) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 6), breaks = seq(0:6)) + 
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 6), breaks = seq(0:6)) +
+  theme_econ(13) +
+  theme(panel.grid = element_blank(),
+        axis.line = element_line(color = "black", size = 0.25),
+        legend.position = "bottom")
+```
+
+## Absolute advantage
+
+To determine which country has absolute advantage in a product, you look at which can produce the most. Mexico can produce more avocados than Italy (5 vs. 1), so it has absolute advantage in avocados. Italy can produce more olive oil than Mexico (5 vs. 2), so it has absolute advantage in olive oil.
+
+However, just because a country has absolute advantage in a product does not mean that it should specialize in that product. The decision to specialize is based on *comparative* advantage, not absolute advantage: which product is cheaper for a country to make, or which product has the lowest opportunity cost for a country?
+
+## Comparative advantage
+
+To figure out which country has comparative advantage, we have to calculate the opportunity cost of making a product. To do this, figure out how many of product Y a country would have to give up to make a product X—how many tons of avocados would Mexico have to give up to make one ton of olive oil for itself?
+
+$$
+\begin{aligned}
+\text{OC}_{\text{Mexico, olive oil}}&: 2 \ \text{olive oils} = 5 \ \text{avocados} \\ 
+&: 1 \ \text{olive oil} = 2.5 \ \text{avocados} \\
+\text{OC}_{\text{Italy, olive oil}}&: 5 \ \text{olive oils} = 1\ \text{avocado} \\ 
+&: 1 \ \text{olive oil} = 1/5 \ \text{avocado} \\
+\end{aligned}
+$$
+
+For Mexico to make one ton of olive oil, it would have to give up 2.5 tons of avocados, which is a lot. Italy, on the other hand, only has to give up 0.2 avocados to make a ton of olive oil, since they're better at it. The country with the lowest opportunity cost has comparative advantage and should make the product—in this case, Italy should specialize in olive oil.
+
+We can do the same thing for avocados:
+
+$$
+\begin{aligned}
+\text{OC}_{\text{Mexico, avocados}}&: 5 \ \text{avocados} = 2 \ \text{olive oils} \\ 
+&: 1 \ \text{avocado} =  2/5 \ \text{olive oil} \\
+\text{OC}_{\text{Italy, avocados}}&: 1 \ \text{avocado} = 5\ \text{olive oils}
+\end{aligned}
+$$
+
+If Italy wanted to make a single ton of avocados, it would have to give up 5 tons of olive oil, which is quite expensive compared to Mexico, which would have to forgo only 0.4 tons of olive oil. It's cheaper for Mexico to focus on avocados—they have the lower opportunity cost and should specialize in avocados.
+
+If the two countries trade, they'll be able consume at higher levels than before, expanding the production possibility frontier. Italy can make 5 tons of olive oil and trade some of it to Mexico for avocados. If they traded at a price of 1 ton of avocados = 1 tons of olive oil, they'd have the following new production possibility frontier:
+
+```{r expanded-gains, warning=FALSE, message=FALSE, echo=FALSE, fig.width=5.5, fig.height=5.5}
+df_trade_expanded <- tribble(
+  ~country, ~avocados_max, ~olive_max, 
+  "Mexico", 5,             2,
+  "Italy",  1,             5,
+  "1:1 trading", 5,        5
+) %>%
+  mutate(avocados_min = 0, olive_min = 0, 
+         country = fct_inorder(country, ordered = TRUE))
+
+ggplot(df_trade_expanded) +
+  geom_segment(aes(x = olive_max, y = avocados_min,
+                   xend = olive_min, yend = avocados_max, color = country),
+               size = 2) +
+  labs(x = "Tons of olive oil", y = "Tons of avocados") +
+  scale_color_manual(values = c(nord_lt_blue, nord_red, nord_orange), name = NULL) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 6), breaks = seq(0:6)) + 
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 6), breaks = seq(0:6)) +
+  theme_econ(13) +
+  theme(panel.grid = element_blank(),
+        axis.line = element_line(color = "black", size = 0.25),
+        legend.position = "bottom")
+```
+
+The price here can vary and depends on each party's opportunity cost. If Italy can get avocados from Mexico for 1 ton of olive oil, that's great for them! They'd ordinarily have to give up 5 tons of olive oil to get that same amount, so a 1:1 price is a really good deal. They'd be happy to trade with Mexico even if the price of avocados was 4 olive oils (or even 4.99). Once the price goes above their opportunity cost, though (like 6 tons of olive oil for 1 ton of avocados), it's cheaper for them to produce avocados on their own than buy super expensive Mexican avocados.
+
+Similarly, Mexico would be really happy with a 1:1 price ratio of avocados to olive oil, since they'd normally have to give up 2.5 avocados to get 1 ton of olive oil. If the price was 2 (or even 2.49) they'd still be happy. Once the price goes above 2.5, though, it's cheaper for them to make olive oil on their own instead of buying it from Italy.
+
+## Comparative advantage when one party has absolute advantage in both products
+
+In the Mexico and Italy example, each country has comparative advantage in the product that they also have absolute advantage in. Each country's absolute advantage did *not* determine which one should specialize—that decision came from their comparative advantage, or lower opportunity cost.
+
+Because the decision to trade is based on comparative and not absolute advantage, there can still be gains in trade even if one party has no absolute advantage in either product. For instance, suppose Mexico can trade with Costa Rica, which doesn't have as large of an agricultural sector and can only produce 3 tons of avocados and 1 ton of olive oil:
+
+```{r cr-mexico-gains, warning=FALSE, message=FALSE, echo=FALSE, fig.width=5.5, fig.height=5.5}
+df_trade_cr <- tribble(
+  ~country,     ~avocados_max, ~olive_max, 
+  "Mexico",     5,             2,
+  "Costa Rica", 3,             1
+) %>%
+  mutate(avocados_min = 0, olive_min = 0,
+         country = fct_inorder(country, ordered = TRUE))
+
+ggplot(df_trade_cr) +
+  geom_segment(aes(x = olive_max, y = avocados_min,
+                   xend = olive_min, yend = avocados_max, color = country),
+               size = 2) +
+  labs(x = "Tons of olive oil", y = "Tons of avocados") +
+  scale_color_manual(values = c(nord_lt_blue, nord_purple), name = NULL) +
+  scale_x_continuous(expand = c(0, 0), limits = c(0, 6), breaks = seq(0:6)) + 
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 6), breaks = seq(0:6)) +
+  theme_econ(13) +
+  theme(panel.grid = element_blank(),
+        axis.line = element_line(color = "black", size = 0.25),
+        legend.position = "bottom")
+```
+
+In this case, Mexico has absolute advantage in both avocados and olive oil. However, we should check each country's opportunity cost for making each product:
+
+$$
+\begin{aligned}
+\text{OC}_{\text{Mexico, olive oil}}&: 2 \ \text{olive oils} = 5 \ \text{avocados} \\ 
+&: 1 \ \text{olive oil} = 2.5 \ \text{avocados} \\
+\text{OC}_{\text{Costa Rica, olive oil}}&: 1 \ \text{olive oil} = 3\ \text{avocados}
+\end{aligned}
+$$
+
+In olive oil production, Mexico would have to give up 2.5 tons of avocados to make one ton of olive oil, but Costa Rica would have to give up 3 tons to do the same. Mexcio has comparative advantage in olive oil—it's cheaper for them to make olive oil than it is for Costa Rica. 
+
+What about avocado production?
+
+$$
+\begin{aligned}
+\text{OC}_{\text{Mexico, avocados}}&: 5 \ \text{avocados} = 2 \ \text{olive oils} \\ 
+&: 1 \ \text{avocado} =  2/5 \ \text{olive oil} \\
+\text{OC}_{\text{Costa Riva, avocados}}&: 3 \ \text{avocados} = 1\ \text{olive oil} \\
+&: 1 \ \text{avocado} =  1/3 \ \text{olive oil} \\
+\end{aligned}
+$$
+
+To make 1 ton of avocados, Mexico has to give up 0.4 tons of olive oil, which isn't a lot. However, Costa Rica only has to give up 0.33 tons of olive oil, which is cheaper compared to Mexico. Following the rule that the party with the lowest opportunity cost should specialize in the product, Costa Rica should take over avocado production for Latin America and Mexico should convert its avocado farms into olive groves.

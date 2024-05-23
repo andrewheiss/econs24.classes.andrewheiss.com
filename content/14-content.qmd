@@ -1,0 +1,94 @@
+---
+title: "Institutional alternatives"
+date: "2024-07-15"
+date_end: "2024-07-19"
+params:
+  pdf: slides/pmap8141_s24_14-slides.pdf
+  thumb: slides/pmap8141_s24_14-slides.png
+---
+
+## Readings
+
+- {{< fa arrow-up-right-from-square >}} Tim Harford, ["Do you believe in sharing?,"](https://www.ft.com/content/afc5377e-1026-11e3-a258-00144feabdc0) *Financial Times*, August 30, 2013
+- {{< fa file-pdf >}} Chapters 1 and 2 in Elinor Ostrom, *Governing the Commons: The Evolution of Institutions for Collective Action* [@Ostrom:1990]
+    - This one is super long and game theoretical. You can skim through lots of it (especially the mathy sections). But it's also pretty foundational to public administration, so it *is* important. Make sure you get the gist of what's happening, but *please* don't strain yourself with all the tiny details. Remember your grad school reading skills—read the introduction and conclusion, look around in the middle for things that look interesting, and make sure you understand the gist of what's going on.
+- {{< fa arrow-up-right-from-square >}} Aaron Vansintjan, ["What Nobel Laureate Elinor Ostrom's early work tells us about defunding the police"](https://www.shareable.net/what-one-nobel-prize-winning-economist-can-tell-us-about-defunding-and-abolishing-the-police/)
+- {{< fa brands twitter >}} [Abigail York's Twitter thread](https://twitter.com/profabigailyork/status/1271136502399954947?s=21) on Ostrom's work on policing and local government (Ostrom went by "Lin," so don't get confused when Dr. York calls her that in the thread)
+- {{< fa arrow-up-right-from-square >}} Melanee Thomas and Lisa Lambert, ["A COVID-19 smackdown: why rule breakers need to be punished,"](https://www.cbc.ca/news/canada/calgary/covid-19-rule-breakers-elinor-ostrom-1.5536099) *CBC News*, April 18, 2020
+
+## Optional viewing but highly recommended
+
+- {{< fa tv >}} WTIU Documentaries/PBS, ["Actual World, Possible Future"](https://www.pbs.org/video/actual-world-possible-future-09rkab/)
+
+
+## Slides
+
+```{r show-slide-link-thumb, echo=FALSE, results="asis"}
+source(here::here("R", "slide-things.R"))
+
+slide_links(params$pdf, params$thumb)
+```
+
+
+## Videos
+
+```{r show-youtube-list, echo=FALSE, results="asis"}
+source(here::here("R", "youtube-playlist.R"))
+
+playlist_id <- "PLS6tnpTr39sEebgyo1q8lTB2jMU7eTpDD"
+
+videos <- tibble::tribble(
+  ~youtube_id, ~title,
+  "5Si0BzBgodg", "Introduction",
+  "r_ueO5A7ijo", "Tragedies and CPRs",
+  "Q78ae8mq1bw", "Private solutions to CPR problems",
+  "e13ogZpYw0I", "Government solutions to CPR problems",
+  "uYbiXPmbKAA", "Informal solutions to CPR problems"
+)
+
+youtube_list(videos, playlist_id)
+```
+
+
+```{cat include=FALSE, eval=FALSE}
+Playlist: https://www.youtube.com/playlist?list=PLS6tnpTr39sEebgyo1q8lTB2jMU7eTpDD
+
+https://youtu.be/5Si0BzBgodg
+PMAP 8141 • (14) Institutional alternatives: (0) Introduction
+
+Introduction to the class session on tragedies, common pool resources, and fixes for common pool resource problems
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/14-content/
+
+
+https://youtu.be/r_ueO5A7ijo
+PMAP 8141 • (14) Institutional alternatives: (1) Tragedies and CPRs
+
+Discussion of how common pool resources can have a tragic, inevitable trajectory of overuse because of their non-excludability and rivalry
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/14-content/
+
+
+https://youtu.be/Q78ae8mq1bw
+PMAP 8141 • (14) Institutional alternatives: (2) Private solutions to CPR problems
+
+Discussion of how common pool resource problems can be addressed with the market and the private sector
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/14-content/
+
+  
+https://youtu.be/e13ogZpYw0I
+PMAP 8141 • (14) Institutional alternatives: (3) Government solutions to CPR problems
+
+Discussion of how common pool resource problems can be addressed with the government and the public sector
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/14-content/
+
+
+https://youtu.be/uYbiXPmbKAA
+PMAP 8141 • (14) Institutional alternatives: (4) Informal solutions to CPR problems
+
+Discussion of how common pool resource problems can be addressed informal institutional arrangements, following Elinor Ostrom's research on governing the commons
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/14-content/
+```

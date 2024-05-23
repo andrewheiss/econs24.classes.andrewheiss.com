@@ -1,0 +1,125 @@
+---
+title: "Markets and democracy"
+date: "2024-06-03"
+date_end: "2024-06-07"
+params:
+  pdf: slides/pmap8141_s24_02-slides.pdf
+  thumb: slides/pmap8141_s24_02-slides.png
+---
+
+## Readings
+
+- {{< fa book >}} 11.1-11.**6** in *Economy, Society, and Public Policy* [@core-espp]
+- {{< fa book >}} 12.1-12.**6** in *Economy, Society, and Public Policy* [@core-espp]
+- {{< fa arrow-up-right-from-square >}} James Madison, [The Federalist Papers, #10](http://avalon.law.yale.edu/18th_century/fed10.asp)
+- {{< fa book >}} Chapters 3, 4, and 8 in *Naked Economics* [@Wheelan:2019]
+- {{< fa podcast >}} The Uncertain Hour, ["The Peanut Butter Grandma goes to Washington,"](https://www.marketplace.org/2017/10/25/business/uncertain-hour/s02-1-peanut-butter-grandma-goes-washington) season 2, episode 1
+- {{< fa podcast >}} The Uncertain Hour, ["The Peanut Butter Wars,"](https://www.marketplace.org/2017/11/10/business/uncertain-hour/s02-2-peanut-butter-wars) season 2, episode 2
+- {{< fa podcast >}} The Uncertain Hour, ["The Peanut Butter Verdict,"](https://www.marketplace.org/2017/11/22/business/uncertain-hour/s02-3-peanut-butter-verdict) season 2, episode 3
+
+## Other useful resources
+
+- {{< fa brands youtube >}} [Khan Academy: Absolute and comparative advantage](https://www.khanacademy.org/economics-finance-domain/ap-macroeconomics/basic-economics-concepts-macro/scarcity-and-growth/v/comparative-advantage-specialization-and-gains-from-trade)
+- {{< fa podcast >}} Planet Money, ["A Former Lobbyist Tells All,"](https://www.npr.org/sections/money/2012/01/27/145923803/the-friday-podcast-a-former-lobbyist-tells-all) Episode 341, January 27, 2012
+- {{< fa brands youtube >}} [LSE Research: Washington's Revolving Door](https://www.youtube.com/watch?v=2XLuaebpdAA)
+- {{< fa arrow-up-right-from-square >}} John Sides, ["A new experiment shows how money buys access to Congress,"](https://www.washingtonpost.com/news/monkey-cage/wp/2014/03/11/a-new-experiment-shows-how-money-buys-access-to-congress/?utm_term=.52fe30402280) The Washington Post's Monkey Cage, March 11, 2014
+
+
+## Slides
+
+```{r show-slide-link-thumb, echo=FALSE, results="asis"}
+source(here::here("R", "slide-things.R"))
+
+slide_links(params$pdf, params$thumb)
+```
+
+
+## Videos
+
+```{r show-youtube-list, echo=FALSE, results="asis"}
+source(here::here("R", "youtube-playlist.R"))
+
+playlist_id <- "PLS6tnpTr39sHyJ4m5VJXbLVqvE9ea0o_b"
+
+videos <- tibble::tribble(
+  ~youtube_id, ~title,
+  "Lb0hTA34eus", "Introduction",
+  "xhNA53SXL9I", "Markets and institutions",
+  "Ed529kY5-Mg", "Markets, trading, and prices",
+  "8Jufbwo1D_w", "Governments in the economy",
+  "6yj02BbbRg8", "Democracy and factions",
+  "KQy492BkCLQ", "Small factions and public goods",
+  "ne1rcs7nwxU", "Government failure"
+)
+
+youtube_list(videos, playlist_id)
+```
+
+
+```{cat include=FALSE, eval=FALSE}
+Playlist: https://www.youtube.com/playlist?list=PLS6tnpTr39sHyJ4m5VJXbLVqvE9ea0o_b
+
+https://youtu.be/Lb0hTA34eus
+PMAP 8141 • (2) Markets and democracy: (0) Introduction
+
+Introduction to the class session on markets and democracy
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/02-content/
+
+
+https://youtu.be/xhNA53SXL9I
+PMAP 8141 • (2) Markets and democracy: (1) Markets and institutions
+
+Discussion of how capitalist institutions are used to govern aspects of society, the turn toward neoliberalism, and why market institutions shouldn't be applied all situations because of repugnant markets and merit goods
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/02-content/
+
+  
+https://youtu.be/Ed529kY5-Mg
+PMAP 8141 • (2) Markets and democracy: (2) Markets, trading, and prices
+
+Discussion of how prices communicate information about the scarcity of goods and how when those prices are distorted, markets fail
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/02-content/
+
+
+https://youtu.be/8Jufbwo1D_w
+PMAP 8141 • (2) Markets and democracy: (3) Governments in the economy
+
+Discussion of the special features governments have in a market economy
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/02-content/
+
+
+https://youtu.be/6yj02BbbRg8
+PMAP 8141 • (2) Markets and democracy: (4) Democracy and factions
+
+Discussion of how democracies protect against the power of small factions, following James Madison's Federalist no. 10
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/02-content/
+
+
+https://youtu.be/KQy492BkCLQ
+PMAP 8141 • (2) Markets and democracy: (5) Small factions and public goods
+
+Discussion of why small factions are able to mobilize and exercise more political power than large groups because of the economic dynamics of small groups
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/02-content/
+
+
+https://youtu.be/ne1rcs7nwxU
+PMAP 8141 • (2) Markets and democracy: (6) Government failure
+
+Discussion of different types of government failure
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/02-content/
+
+
+https://youtu.be/JV5lueZynos
+PMAP 8141 • Example: Absolute and comparative advantage
+
+Demonstration of how to determine the possible gains from trade based on comparative advantage
+
+Download the data and see more details at https://econf20.classes.andrewheiss.com/resource/advantage/
+
+```

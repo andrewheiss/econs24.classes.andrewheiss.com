@@ -1,0 +1,80 @@
+---
+title: "Markets, public policy, and public administration"
+date: "2024-07-22"
+date_end: "2024-07-23"
+params:
+  pdf: slides/pmap8141_s24_15-slides.pdf
+  thumb: slides/pmap8141_s24_15-slides.png
+---
+
+## Readings
+
+***Important***: PDFs of the readings are on iCollege.
+
+- {{< fa arrow-up-right-from-square >}} Keira Shae, ["Dear American Taxpayers, Thank You for Saving My Life"](https://bycommonconsent.com/2018/07/04/dear-american-taxpayers-thank-you-for-saving-my-life/)
+- {{< fa file-pdf >}} Charles E. Lindblom, "The Science of 'Muddling Through'" [@Lindblom:1959]
+- {{< fa file-pdf >}} Esther Duflo, "Policies, Politics: Can Evidence Play a Role in the Fight Against Poverty" [@Duflo:2011]
+
+
+## Slides
+
+```{r show-slide-link-thumb, echo=FALSE, results="asis"}
+source(here::here("R", "slide-things.R"))
+
+slide_links(params$pdf, params$thumb)
+```
+
+
+## Videos
+
+```{r show-youtube-list, echo=FALSE, results="asis"}
+source(here::here("R", "youtube-playlist.R"))
+
+playlist_id <- "PLS6tnpTr39sFgMq7J0DiyZWtFwzl8iakh"
+
+videos <- tibble::tribble(
+  ~youtube_id, ~title,
+  "pbGmmAyN3XQ", "Introduction",
+  "VUYNRevXA6E", "What the h*ck did we just learn?!",
+  "VUkIh30nwGI", "Why does this all matter?",
+  "mOEq6HWfJoY", "What do we do now?"
+)
+
+youtube_list(videos, playlist_id)
+```
+
+
+```{cat include=FALSE, eval=FALSE}
+Playlist: https://www.youtube.com/playlist?list=PLS6tnpTr39sFgMq7J0DiyZWtFwzl8iakh
+
+https://youtu.be/pbGmmAyN3XQ
+PMAP 8141 • (15) Markets, public policy, and public administration: (0) Introduction
+
+Introduction to the final class session!
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/15-content/
+
+
+https://youtu.be/VUYNRevXA6E
+PMAP 8141 • (15) Markets, public policy, and public administration: (1) What the heck did we just learn?!
+
+Overview of everything we just covered in the class
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/15-content/
+
+
+https://youtu.be/VUkIh30nwGI
+PMAP 8141 • (15) Markets, public policy, and public administration: (2) Why does this all matter?
+
+Discussion of how we need to combat institutional nihilism and try to make improvements in the public sector to change lives
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/15-content/
+
+
+https://youtu.be/mOEq6HWfJoY
+PMAP 8141 • (15) Markets, public policy, and public administration: (3) What do we do now?
+
+Discussion of how we can use the "muddling through" approach to public administration and policy to make positive marginal changes to institutions and improve the world
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/15-content/
+```

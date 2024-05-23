@@ -1,0 +1,98 @@
+---
+title: "Market failures"
+date: "2024-07-08"
+date_end: "2024-07-12"
+params:
+  pdf: slides/pmap8141_s24_12-slides.pdf
+  thumb: slides/pmap8141_s24_12-slides.png
+toc: true
+---
+
+## Readings
+
+- {{< fa book >}} 11.**7**–11.**14** in *Economy, Society, and Public Policy* [@core-espp]
+- {{< fa file-pdf >}} A. Danny Ellerman, ["US Experience with Emissions Trading"](http://www.cesifo-group.de/DocDL/dicereport407-forum3.pdf) [@Ellerman:2007]
+- {{< fa brands youtube >}} *The Lorax*, ["How Bad Can I Be?"](https://www.youtube.com/watch?v=W_HUdf89hI8)
+- {{< fa podcast >}} Freakonomics, ["Parking Is Hell,"](http://freakonomics.com/podcast/parking-is-hell-a-new-freakonomics-radio-podcast/) Episode 118, March 13, 2013
+- {{< fa podcast >}} All Things Considered, ["Nobel Laureate: 'I've Been Wrong So Often, I Don't Find It Extraordinary At All',"](https://www.npr.org/sections/money/2012/05/09/152197483/nobel-laureate-ive-been-wrong-so-often-i-dont-find-it-extraordinary-at-all) May 8, 2012
+- {{< fa podcast >}} All Things Considered, ["The Nobel Laureate Who Figured Out How To Deal With Annoying People,"](https://www.npr.org/sections/money/2013/09/10/218526472/the-nobel-prizewinner-who-figured-out-how-to-deal-with-annoying-people) September 3, 2013
+
+
+## Other useful resources
+
+I pause during the "Addressing external effects" and tell you to watch a video on cap and trade systems. Here's that video:
+
+- {{< fa brands youtube >}} [Marginal Revolution University, "Trading Pollution: How Pollution Permits Paradoxically Reduce Emissions"](https://www.youtube.com/watch?v=9tUb3MDrgEc)
+
+
+## Slides
+
+```{r show-slide-link-thumb, echo=FALSE, results="asis"}
+source(here::here("R", "slide-things.R"))
+
+slide_links(params$pdf, params$thumb)
+```
+
+
+## Videos
+
+```{r show-youtube-list, echo=FALSE, results="asis"}
+source(here::here("R", "youtube-playlist.R"))
+
+playlist_id <- "PLS6tnpTr39sFqAzkeA_4iahZlrXE38Hl8"
+
+videos <- tibble::tribble(
+  ~youtube_id, ~title,
+  "Pqe_e7-q9Z4", "Introduction",
+  "VUYNRevXA6E", "Institutions, markets, and prices",
+  "Q1w6FQV2PL0", "Public goods",
+  "bXcSt83JDvs", "External effects",
+  "az5ORj11NM8", "Addressing external effects"
+)
+
+youtube_list(videos, playlist_id)
+```
+
+
+```{cat include=FALSE, eval=FALSE}
+Playlist: https://www.youtube.com/playlist?list=PLS6tnpTr39sFqAzkeA_4iahZlrXE38Hl8
+
+https://youtu.be/Pqe_e7-q9Z4
+PMAP 8141 • (12) Market failures: (0) Introduction
+
+Introduction to the class session on institutions
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/12-content/
+
+
+https://youtu.be/VUYNRevXA6E
+PMAP 8141 • (12) Market failures: (1) Institutions, markets, and prices
+
+Discussion of how markets are an institution and how markets can fail if prices are distorted by individual actions
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/12-content/
+
+
+https://youtu.be/Q1w6FQV2PL0
+PMAP 8141 • (12) Market failures: (2) Public goods
+
+Discussion of what public goods are and why they're naturally underprovided by the market
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/12-content/
+
+
+https://youtu.be/bXcSt83JDvs
+PMAP 8141 • (12) Market failures: (3) External effects
+
+Discussion of what external effects (externalities) are and how we can think about they graphically
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/12-content/
+
+
+https://youtu.be/az5ORj11NM8
+PMAP 8141 • (12) Market failures: (4) Addressing external effects 
+
+Discussion of how to use the private sector, the public sector, and a mix of the two to fix externality issues
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/12-content/
+```

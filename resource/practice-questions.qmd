@@ -1,0 +1,394 @@
+---
+title: Practice problems
+---
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(here)
+library(patchwork)
+library(Ryacas0)
+
+source(here("R", "graphics.R"))
+source(here("R", "supply-demand-surplus.R"))
+
+x <- Sym("x")
+y <- Sym("y")
+U <- Sym("U")
+```
+
+## Indifference curves and budget lines
+
+Imagine that someone needs to decide how to spend their entire budget on some combination of waffles and calzones (to stick with the *Parks and Rec* theme). The three problems below show three different sets of budgets, prices, and utility functions. Help each person maximize their utility by finding the indifference curve that is tangent to the budget line.
+
+### Practice problem 1
+
+Given this background information…
+
+- Waffles ($x$): \$5
+- Calzones ($y$): \$6
+- Budget: \$80
+- Utility: $u = x^2 \ 3y$
+- Marginal utility (or MRS, or first derivative of utility): $\frac{2y}{x}$
+
+…calculate the following:
+
+- The optimal quantity of waffles
+- The optimal quantity of calzones
+- The utility generated from this level of consumption
+
+
+### Practice problem 2
+
+Given this background information…
+
+- Waffles ($x$): \$3.50
+- Calzones ($y$): \$8
+- Budget: \$120
+- Utility: $u = \sqrt{2x \ 8y}$
+- Marginal utility (or MRS, or first derivative of utility): $\frac{y}{x}$
+
+…calculate the following:
+
+- The optimal quantity of waffles
+- The optimal quantity of calzones
+- The utility generated from this level of consumption
+
+
+### Practice problem 3
+
+Given this background information…
+
+- Waffles ($x$): \$4
+- Calzones ($y$): \$10
+- Budget: \$200
+- Utility: $u = 0.4x \times y^2$
+- Marginal utility (or MRS, or first derivative of utility): $\frac{y}{2x}$
+
+…calculate the following:
+
+- The optimal quantity of waffles
+- The optimal quantity of calzones
+- The utility generated from this level of consumption
+
+
+## Supply, demand, taxes, and deadweight loss
+
+### Practice problem 1
+
+Imagine a market where the demand and supply curves are defined with the following formulas:
+
+$$
+\begin{aligned}
+\text{Demand:}&  & P = 15 - 2Q \\
+\text{Supply:}&  & P = 3 + 0.5Q
+\end{aligned}
+$$
+
+The government imposes a <span>$5</span> tax on suppliers. 
+
+Answer these questions:
+
+1. What is the pre-tax equilibrium price and quantity?
+2. What is the pre-tax consumer and producer surplus?
+3. What is the post-tax price and quantity?
+4. What is the post-tax consumer and producer surplus?
+5. How much deadweight loss is incurred?
+6. How much tax revenue is generated?
+7. What percentage of the tax burden is borne by consumers and producers?
+
+### Practice problem 2
+
+Imagine a market where the demand and supply curves are defined with the following formulas:
+
+$$
+\begin{aligned}
+\text{Demand:}&  & P = 133 - 1.067Q \\
+\text{Supply:}&  & P = 14 + 0.75Q
+\end{aligned}
+$$
+
+The government imposes a <span>$48</span> tax on suppliers. 
+
+Answer these questions:
+
+1. What is the pre-tax equilibrium price and quantity?
+2. What is the pre-tax consumer and producer surplus?
+3. What is the post-tax price and quantity?
+4. What is the post-tax consumer and producer surplus?
+5. How much deadweight loss is incurred?
+6. How much tax revenue is generated?
+7. What percentage of the tax burden is borne by consumers and producers?
+
+
+### Practice problem 3
+
+Imagine a market where the demand and supply curves are defined with the following formulas:
+
+$$
+\begin{aligned}
+\text{Demand:}&  & P = 592 - 2.852Q \\
+\text{Supply:}&  & P = 28 + 0.2Q
+\end{aligned}
+$$
+
+The government imposes a <span>$56</span> tax on suppliers. 
+
+Answer these questions:
+
+1. What is the pre-tax equilibrium price and quantity?
+2. What is the pre-tax consumer and producer surplus?
+3. What is the post-tax price and quantity?
+4. What is the post-tax consumer and producer surplus?
+5. How much deadweight loss is incurred?
+6. How much tax revenue is generated?
+7. What percentage of the tax burden is borne by consumers and producers?
+
+---
+
+## Answers
+
+### Utility maximization 1
+
+```{r echo=FALSE}
+total_budget <- 80
+price_x <- 5
+price_y <- 6
+
+# Build budget line
+n_waffle <- total_budget / price_x
+n_calzone <- total_budget / price_y
+slope <- -n_calzone / n_waffle
+
+budget <- function(x) (slope * x) + n_calzone
+
+utility_u <- function(x, y) x^2 * (3 * y)
+
+utility_y_manual <- function(x, U) U / (3 * x^2)
+
+# Rewrite as y = something
+utility_y <- function(my_x, my_U) {
+  solved <- Solve(utility_u(x, y) == U, y)
+  solution <- Eval(solved, list(x = my_x, U = my_U))
+  as.numeric(str_extract(solution, "-?[0-9]\\d*(\\.\\d+)?"))
+}
+
+# Marginal rate of substitution
+marginal_utility <- function(my_x) {
+  mux_muy <- Simplify(deriv(utility_u(x, y), x) / deriv(utility_u(x, y), y))
+  mux_muy_price <- Solve(paste(mux_muy, "==", price_x, "/", price_y), y)
+  solution <- Eval(mux_muy_price, list(x = my_x))
+  as.numeric(str_extract(solution, "-?[0-9]\\d*(\\.\\d+)?"))
+}
+
+# Find best x
+optimal_x <- uniroot(function(x) budget(x) - marginal_utility(x), c(0, 100))$root
+
+# Plug best x into the budget function to find best y
+optimal_y <- budget(optimal_x)
+
+# Plug optimal x and y into utility function to find maximum utils given the budget
+max_utility <- utility_u(optimal_x, optimal_y)
+```
+
+- Optimal number of waffles: `r round(optimal_x, 3)`
+- Optimal number of calzones: `r round(optimal_y, 3)`
+- Utility: `r round(max_utility, 2)`
+
+```{r echo=FALSE}
+ggplot(tibble(x = 0:20), aes(x = x)) +
+  stat_function(fun = budget, color = nord_yellow, linewidth = 2) +
+  stat_function(fun = utility_y_manual, color = nord_red, linewidth = 1, args = list(U = max_utility)) +
+  annotate(geom = "point", x = optimal_x, y = optimal_y, size = 3, color = nord_dk_blue) +
+  scale_x_continuous(expand = c(0, 0), breaks = seq(0, 25, 5)) + 
+  scale_y_continuous(expand = c(0, 0), breaks = seq(0, 35, 5)) +
+  coord_cartesian(xlim = c(0, 20), ylim = c(0, 15)) +
+  labs(x = "Waffles", y = "Calzones") +
+  theme_econ(14, axis_line = TRUE)
+```
+
+### Utility maximization 2
+
+```{r echo=FALSE}
+total_budget <- 120
+price_x <- 3.5
+price_y <- 8
+
+# Build budget line
+n_waffle <- total_budget / price_x
+n_calzone <- total_budget / price_y
+slope <- -n_calzone / n_waffle
+
+budget <- function(x) (slope * x) + n_calzone
+
+utility_u <- function(x, y) sqrt((2 * x) * (8 * y))
+
+utility_y_manual <- function(x, U) U^2 / (16 * x)
+
+# Rewrite as y = something
+utility_y <- function(my_x, my_U) {
+  solved <- Solve(utility_u(x, y) == U, y)
+  solution <- Eval(solved, list(x = my_x, U = my_U))
+  as.numeric(str_extract(solution, "-?[0-9]\\d*(\\.\\d+)?"))
+}
+
+# Marginal rate of substitution
+marginal_utility <- function(my_x) {
+  mux_muy <- Simplify(deriv(utility_u(x, y), x) / deriv(utility_u(x, y), y))
+  mux_muy_price <- Solve(paste(mux_muy, "==", price_x, "/", price_y), y)
+  solution <- Eval(mux_muy_price, list(x = my_x))
+  as.numeric(str_extract(solution, "-?[0-9]\\d*(\\.\\d+)?"))
+}
+
+# Find best x
+optimal_x <- uniroot(function(x) budget(x) - marginal_utility(x), c(0, 100))$root
+
+# Plug best x into the budget function to find best y
+optimal_y <- budget(optimal_x)
+
+# Plug optimal x and y into utility function to find maximum utils given the budget
+max_utility <- utility_u(optimal_x, optimal_y)
+```
+
+- Optimal number of waffles: `r round(optimal_x, 3)`
+- Optimal number of calzones: `r round(optimal_y, 3)`
+- Utility: `r round(max_utility, 2)`
+
+```{r echo=FALSE}
+ggplot(tibble(x = 0:50), aes(x = x)) +
+  stat_function(fun = budget, color = nord_yellow, linewidth = 2) +
+  stat_function(fun = utility_y_manual, color = nord_red, linewidth = 1, args = list(U = max_utility)) +
+  annotate(geom = "point", x = optimal_x, y = optimal_y, size = 3, color = nord_dk_blue) +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  coord_cartesian(xlim = c(0, 40), ylim = c(0, 20)) +
+  labs(x = "Waffles", y = "Calzones") +
+  theme_econ(14, axis_line = TRUE)
+```
+
+### Utility maximization 3
+
+```{r echo=FALSE}
+total_budget <- 200
+price_x <- 4
+price_y <- 10
+
+# Build budget line
+n_waffle <- total_budget / price_x
+n_calzone <- total_budget / price_y
+slope <- -n_calzone / n_waffle
+
+budget <- function(x) (slope * x) + n_calzone
+
+
+# U = x^2 0.25y
+utility_u <- function(x, y) (0.4 * x) * y^2
+
+utility_y_manual <- function(x, U) sqrt((U) / (0.4 * x))
+
+# Rewrite as y = something
+utility_y <- function(my_x, my_U) {
+  solved <- Solve(utility_u(x, y) == U, y)
+  solution <- Eval(solved, list(x = my_x, U = my_U))
+  as.numeric(str_extract(solution, "-?[0-9]\\d*(\\.\\d+)?"))
+}
+
+# Marginal rate of substitution
+marginal_utility <- function(my_x) {
+  mux_muy <- Simplify(deriv(utility_u(x, y), x) / deriv(utility_u(x, y), y))
+  mux_muy_price <- Solve(paste(mux_muy, "==", price_x, "/", price_y), y)
+  solution <- Eval(mux_muy_price, list(x = my_x))
+  as.numeric(str_extract(solution, "-?[0-9]\\d*(\\.\\d+)?"))
+}
+
+# Find best x
+optimal_x <- uniroot(function(x) budget(x) - marginal_utility(x), c(0, 100))$root
+
+# Plug best x into the budget function to find best y
+optimal_y <- budget(optimal_x)
+
+# Plug optimal x and y into utility function to find maximum utils given the budget
+max_utility <- utility_u(optimal_x, optimal_y)
+```
+
+- Optimal number of waffles: `r round(optimal_x, 3)`
+- Optimal number of calzones: `r round(optimal_y, 3)`
+- Utility: `r round(max_utility, 2)`
+
+```{r echo=FALSE}
+ggplot(tibble(x = 0:50), aes(x = x)) +
+  stat_function(fun = budget, color = nord_yellow, linewidth = 2) +
+  stat_function(fun = utility_y_manual, color = nord_red, linewidth = 1, args = list(U = max_utility)) +
+  annotate(geom = "point", x = optimal_x, y = optimal_y, size = 3, color = nord_dk_blue) +
+  scale_x_continuous(expand = c(0, 0)) + 
+  scale_y_continuous(expand = c(0, 0)) +
+  coord_cartesian(xlim = c(0, 50), ylim = c(0, 30)) +
+  labs(x = "Waffles", y = "Calzones") +
+  theme_econ(14, axis_line = TRUE)
+```
+
+### Supply and demand 1
+
+Post-tax supply:
+
+$$
+P = 8 + 0.5Q
+$$
+```{r supply-demand-1, echo=FALSE, fig.width=12, fig.height=5}
+d1 <- function(Q) 15 - (2 * Q)
+s1 <- function(Q) 3 + (0.5 * Q)
+s1_tax <- function(Q) s1(Q) + 5
+
+d1_graph <- tax_graph(d1, s1, s1_tax, NULL, xlim = c(0, 15), ylim = c(0, 15), max_x = 15)
+d1_graph_shaded <- tax_graph(d1, s1, s1_tax, NULL, shaded = TRUE, xlim = c(0, 15), ylim = c(0, 15), max_x = 15)
+d1_graph$plot + d1_graph_shaded$plot
+```
+
+```{r echo=FALSE, results="asis"}
+d1_graph$details
+```
+
+### Supply and demand 2
+
+Post-tax supply:
+
+$$
+P = 62 + 0.5Q
+$$
+
+
+```{r supply-demand-2, echo=FALSE, fig.width=12, fig.height=5}
+d2 <- function(Q) 133 - (1.067 * Q)
+s2 <- function(Q) 14 + (0.75 * Q)
+s2_tax <- function(Q) s2(Q) + 48
+
+d2_graph <- tax_graph(d2, s2, s2_tax, NULL, xlim = c(0, 150), ylim = c(0, 150), max_x = 130)
+d2_graph_shaded <- tax_graph(d2, s2, s2_tax, NULL, shaded = TRUE, xlim = c(0, 150), ylim = c(0, 150), max_x = 130)
+d2_graph$plot + d2_graph_shaded$plot
+```
+
+```{r echo=FALSE, results="asis"}
+d2_graph$details
+```
+
+
+### Supply and demand 3
+
+Post-tax supply:
+
+$$
+P = 84 + 0.2Q
+$$
+
+```{r supply-demand-3, echo=FALSE, fig.width=12, fig.height=5}
+d3 <- function(Q) 592 - (2.852 * Q)
+s3 <- function(Q) 28 + (0.2 * Q)
+s3_tax <- function(Q) s3(Q) + 56
+
+d3_graph <- tax_graph(d3, s3, s3_tax, NULL, xlim = c(0, 250), ylim = c(0, 600), max_x = 250)
+d3_graph_shaded <- tax_graph(d3, s3, s3_tax, NULL, shaded = TRUE, xlim = c(0, 250), ylim = c(0, 600), max_x = 250)
+d3_graph$plot + d3_graph_shaded$plot
+```
+
+```{r echo=FALSE, results="asis"}
+d3_graph$details
+```

@@ -1,0 +1,125 @@
+---
+title: "Problem set 5"
+date: "2024-07-08"
+---
+
+**Submit this as a PDF on iCollege.** You can use whatever you want to make your drawings, including [Gravit Designer](https://gravit.io/), Adobe Illustrator, Excel, PowerPoint, Microsoft Paint, or photographed/scanned pen and paper. **I highly recommend using [Desmos](https://www.desmos.com/) too!**
+
+**Cite your sources and show your work.**
+
+```{r load-packages, include=FALSE}
+library(tidyverse)
+library(pander)
+library(scales)
+
+source(here::here("R", "graphics.R"))
+```
+
+## 1
+
+A recent study found that the demand and supply schedules for frisbees are as follows:
+
+```{r frisbee-supply-demand, echo=FALSE, results="asis"}
+frisbees <- tribble(
+  ~`Price per frisbee`, ~`Quantity demanded`, ~`Quantity supplied`,
+  11,                   1000000,              15000000,
+  10,                   2000000,              12000000,
+  9,                    4000000,              9000000,
+  8,                    6000000,              6000000,
+  7,                    8000000,              3000000,
+  6,                    10000000,             1000000
+)
+
+frisbees %>% 
+  mutate(`Price per frisbee` = dollar(`Price per frisbee`)) %>% 
+  mutate_at(vars(contains("Quantity")), list(~comma(.))) %>%
+  pandoc.table(justify = "ccc", style = "rmarkdown")
+```
+
+1. What are the equilibrium price and quantity? Draw a graph and label the equilibrium points as P\* and Q\*.
+2. Frisbee manufacturers persuade the government that frisbee production improves scientists' understanding of aerodynamics and thus is important for national security. A concerned Congress votes to impose a price floor $2 above the equilibrium price. What is the new market price? How many frisbees are sold? Add this to your graph and mark the new Q and P.
+3. Angry college students march on Washington and demand a reduction in the price of frisbees. An even more concerned Congress votes to repeal the price floor and impose a new price ceiling of $1 below the former market price. What is the new market price? How many frisbees are sold? Add this to your graph and mark the new Q and P.
+
+
+## 2
+
+1. Draw a diagram to illustrate the competitive market for bread, showing the equilibrium where 5,000 loaves are sold at a price of \$2. The lines can be sloped at whatever angle you want—you don't need any actual equations here.
+2. Suppose that the bakeries get together to form a cartel. They agree to raise the price to \$2.70 and jointly cut production to supply the number of loaves that consumers demand at that price. Shade the areas on your diagram to show the consumer surplus, producer surplus, and deadweight loss caused by the cartel.
+3. For what kinds of goods would you expect the supply curve to be highly elastic?
+
+
+## 3
+
+1. From statistical studies, we know that the supply curve for wheat in 1981 was:
+
+    $$
+    P = \frac{Q}{240} - 7.5
+    $$
+
+    where price is measured in dollars per bushel and quantities are in millions of bushels per year. These studies also indicate than in 1981 the demand curve for wheat was: 
+
+    $$
+    P = \frac{-Q + 3550}{266}
+    $$
+
+    What was the market clearing price in 1981?
+
+2. The demand for wheat has two components–domestic demand (demand by US consumers) and export demand (demand by foreign consumers). By the mid-1980s, the domestic demand for wheat had risen only slightly (due to modest increases in population and income), but export demand had fallen sharply. Export demand had dropped for several reasons. First and foremost, was the success of the Green Revolution in agriculture—developing countries like India that had been large importers of wheat became increasingly self-sufficient. On top of this, the increase in the value of the dollar against other currencies made US wheat more expensive abroad. Finally, European countries adopted protectionist policies that subsidized their own production and imposed tariff barriers against imported wheat. In 1985, for example, the demand curve for wheat was:
+
+    $$
+    P = \frac{-Q + 2580}{194}
+    $$ 
+
+    The supply curve was more or less the same as 1981.
+
+    What was the market clearing price in 1985?
+
+3. Suppose that in 1985 the Soviet Union had bought an additional 200 million bushels of US wheat. What would be the free market price of wheat have been and what quantity would have been produced and sold by US farmers? Hint: this will add 200 to the formula for demand.
+
+
+## 4
+
+Choose any published textbook that you have been using in some other class (but not in this class, since ESPP is free!) Search online for the price of that book from a number of different suppliers (Amazon, Abebooks, eBay, GSU Bookstore, etc.). 
+
+1. Collect these prices in a table.
+2. How different are these prices? How much price dispersion is there? Why? What accounts for the differences (or similarities) in price? **Discuss in ≈50 words.**
+
+
+## 5
+
+You were just hired to be an economic analyst for a large nonprofit theater and opera house. Over the past year, the executive director of the theater has been interested in determining the market demand for theater tickets. Being of a quantitative mind, she ran a clever experiment. For one show every week, she assigned experimental prices to a pool of 250 tickets and measured how many people purchased those tickets at those prices. She collected the data in [this Excel file](/files/files/ticket-demand.xlsx). Your job is to use statistical and economic tools to analyze this data.
+
+1. Create a scatterplot of price and quantity, with quantity along the x-axis and price on the y-axis. 
+    - You can do this with Excel (select the quantity and price columns, go to the "Insert" panel in the ribbon, and choose the scatterplot chart type (without smoothed lines)). You can also do this with R or Stata or SPSS if you're familiar with those.
+
+2. Use regression analysis to derive an estimated demand curve for theater tickets. How well does the model fit the data and predict price? What could you do to get a better estimate? 
+    - If you're using Excel, right click on the scatterplot and choose "Add trendline". Then right click on the trendline and select "Format trendline." In the format trendline menu, check the box called "Display equation on chart" and you'll see a chart. If you're using R or Stata, run the corresponding model (`lm(Price ~ Quantity)` in R; `reg price quantity` in Stata)
+
+3. Based on the results of the regression in #2, create a formula for ticket demand that follows this structure: $P = aQ + b$, where $a$ is the coefficient, or change in quantity, and $b$ is the y-intercept. Round *a* and *b* to nearest hundredth (0.01).
+
+4. Assume that the equation in #3 is the actual market demand for tickets at theaters of this size and quality. What quantity of tickets would generate the greatest amount of revenue for your theater? (Remember that the theater will maximize its revenue when the marginal revenue is 0.) What is the revenue-maximizing price?
+    - *Super big hint*: your demand formula should be $P = -0.09Q + 57.89$.
+    - Also remember that the formula for total revenue is $TR = PQ$, or TR = $P = (-0.09Q + 57.89) Q$, or $P = -0.09Q^2 + 57.89Q$, and the marginal revenue is the first derivative of the total revenue, or MR = $P = -0.18Q + 57.89$.
+    
+5. How many tickets would be sold if they were priced at <span>$30</span> (use the assumed market demand from #3)? How elastic are tickets at <span>$30</span>? How elastic are tickets at <span>$50</span>? How elastic are tickets at <span>$15</span>? What do all these elasticities mean? Interpret them using increments of 10%.
+    - *Hint*: Recall that the formula for elasticity of demand is $\frac{\Delta Q}{\Delta P} \times \frac{P}{Q}$. $\frac{\Delta Q}{\Delta P}$ is the inverse of the slope of the demand curve (i.e. if the demand is $P = -0.09Q + 57.89$, $\frac{\Delta Q}{\Delta P}$ is $\frac{1}{-0.09}$). You can also calculate it with Excel if you divide the change in quantity by the change in price along all the different quantities and prices. [See this video and guide for more help](/resource/costs.qmd#elasticity-of-demand).
+
+The fixed costs of running a musical performance at this theater are substantial—assume it costs \$3,000 for regular upkeep of the theater, licensing and copyright arrangements, and other costs (lollllz no it doesn't. It's way more expensive than that. But this is a fake example, so.). There are also variable costs, like the number of playbills that need to be printed, the number of ads that need to be purchased, etc. Based on past history, your executive director has estimated that the theater's total costs of running a show can be estimated with the equation $TC = 0.07Q^2 + 3000$. The marginal cost—or first derivative—of this total cost formula is $MC = 0.14Q$.
+
+6. What quantity of tickets should the theater sell if it is interested in maximizing its profit? (*Hint*: Remember that profits are maximized when $MC = MR$.) What price should it charge? How much profit would it make? Are the prices you get from the demand formula and the marginal revenue formula different? Why or why not?
+
+7. The theater is not a monopoly and cannot set its prices willy nilly. (The director was able to manipulate prices for her experiment through online sales where consumers were unaware of variations in price.) The market price for tickets to similar musicals at similar theaters is \$25. Given this market price, and given the fact that the theater is a price-taker, what quantity of tickets should the theater sell to maximize its profit? (*Hint*: Remember that in perfect competition, price is the marginal revenue—the theater will get \$25 per person regardless of how many people show up (assuming the theater is infinitely big).) How much profit will the theater make?
+
+8. Given that it is a price-taker, what could the theater do to raise its prices and increase its profits? **Discuss in ≈100 words.**
+
+
+## 6
+
+The market demand for pizza in Atlanta is given by the equation $P = 10 - 0.1Q$, where Q is the number of pizzas sold per day and P is the price of a standard pizza. Assume initially that the market for pizzas in the city is competitive. All firms have the same total cost function for making pizzas: $TC = 6Q$ (and the corresponding marginal cost, or first derivative, is $MC = 6$).
+
+1. Draw the demand curve (label it D) and the competitive supply curve (label it S). Remember that the supply curve is the marginal cost.
+2. What is the equilibrium price and quantity of pizzas in competitive equilibrium? (Calculate your answers and give them here, not on the graph.)
+3. If there were a \$1 tax on pizzas, who would end up effectively paying the tax? (What would be the incidence of the tax?) On the graph, show the welfare cost of the tax (also known as the deadweight loss). How much tax revenue is there?
+4. Now suppose that the production of pizzas in the town is taken over by Rosa's Pizza Trust, which simply purchased every pizza firm. Costs of production do not change. On a new graph show the monopolistic quantity ($Q_m$) and the monopolistic price ($P_m$).
+5. What is the amount of economic profit that Rosa's Pizza Trust will make each day?
+6. On the graph, show deadweight loss from the monopoly. Indicate this area clearly. How much surplus is lost because of monopoly?

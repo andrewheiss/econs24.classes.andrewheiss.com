@@ -1,0 +1,116 @@
+---
+title: Assignment overview
+menu:
+  assignment:
+    parent: Overview
+    weight: 1
+type: docs
+weight: 1
+toc: true
+---
+
+
+The main goals of this class are to help you understand, speak, and do economics. Each type of assignment in this class is designed to help you achieve one or more of these goals.
+
+
+## Participation
+
+When I teach this course in face-to-face settings, I make it as interactive, personable, and fun as possible, using all sorts of simulations and in-class games and activities. In an asynchronous online setting, this is sadly not possible. These activities are fantastic not only for understanding core economic principles, but because they allow for increased social interaction, which helps with learning.
+
+Research about online courses consistently finds that [learning requires social interaction to be successful](https://www.tandfonline.com/doi/full/10.1080/15512169.2016.1155994). In fact, one of the greatest predictors of success is whether students build relationships with their classmates and their professor. This is true for **both** online classes and face-to-face classes! It's entirely possible to take a face-to-face class and have almost no social interaction. The worst, most useless class I ever took as an undergraduate was a required Intro to US History class that met twice a week for two hours in a massive auditorium with 900 (!!!) other students. It was awful and I learned nothing.
+
+Facilitating, measuring, and quantifying social interaction in an online course, however, is fraught with difficulty. I do not want to create an inorganic forum where you must do things like leave two comments of at least 15 words every week, or other things that begin to approach busywork. The temptation to just phone in participation is too great (I would *absolutely* phone it in if I were taking a class with similar requirements: "great post i agree entirely with the premise of your reflection and synthesis thank you"—15 words, boom.).
+
+There are two elements of this course that are designed to make social interaction more organic and real and also allow you to work through economic principles together: (1) Slack and (2) weekly check-ins
+
+### Slack
+
+To help facilitate online interaction, we will use Slack for communication. The iCollege forums are stodgy, overly formal, and clunky. Slack is not. 
+
+Access the class workspace [here](https://gsuecons24.slack.com), or click on the [{{< fa brands slack >}}](https://gsuecons24.slack.com) icon in the header of this page. If you're unfamiliar with Slack, [scroll through Slack's official demo here](https://slackdemo.com/).
+
+There are two public channels in our class workspace:
+
+- `#general`: Post and talk about general things related to the class and economics in general. Find a neat news story related to principal-agent problems? See an example of a stag hunt game in real life? Wonder why a problem set isn't posted yet? Share and ask those things here.
+- `#help`: Ask specific questions about problem sets and other assignments here.
+
+Feel free to create your own channels as well. For instance, if you want to use Slack to review problem set answer keys with classmates, create a channel. 
+
+You can also direct message me to contact me directly.
+
+In general, interact with me and your classmates through Slack! Don't lurk in silence in the shadows. (Don't overshare either and spam the `#general` channel in Slack, but in my experience there's little risk of that). *Do* reach out and talk to your classmates (and me!). 
+
+In other online classes I have taught, I have found that a key predictor of success is how often students communicate with me and between themselves. Ask questions on Slack. If you see someone's question there and you know how to help, answer! 
+
+**You're not going to be graded on Slack usage.** I will not watch to see who is active or count likes or responses or anything like that. If you want to opt out entirely and never use it, feel free to do so. You'll just miss out on a lot of public class-related conversation, possible avenues for help, and a pretty quick way to get in contact with me.
+
+
+### Weekly check-ins
+
+To (1) demonstrate to me what you're learning in the class, and (2) help me answer your questions, you will turn in a short weekly check-in by **11:59 PM every Monday**.
+
+You will complete this check-in individually. **This is not a group assignment.** (It has been in the past, but not this summer.)
+
+You will answer these two questions for each session:
+
+1. What were the **three (3)** most interesting or exciting things you learned from the session? Why?
+2. What were the **three (3)** muddiest or unclear things from the session this week? What are you still wondering about?    
+
+You can include more than three interesting or muddiest things, but you must include at least three. There should be six easily identifiable things in each check-in: three exciting things and three questions.
+
+***IMPORTANT***: I *highly recommend* writing your responses in a separate document and copying/pasting the text into iCollege. It will be far easier for you if you write the responses right after completing the readings and watching the videos instead of waiting until you get around to putting them in iCollege—**you will forget your questions and insights if you don't.**
+
+I will grade these check-ins using a check system:
+
+- ✔+: (*11.5 points (115%) in gradebook*) Response shows phenomenal thought and engagement with the course content. I will not assign these often.
+- ✔: (*10 points (100%) in gradebook*) Response is thoughtful, well-written, and shows engagement with the course content. This is the expected level of performance.
+- ✔−: (*5 points (50%) in gradebook*) Response is hastily composed, too short, and/or only cursorily engages with the course content. This grade signals that you need to improve next time. I will hopefully not assign these often.
+
+Notice that is essentially a pass/fail or completion-based system. I'm not grading your writing ability, I'm not counting the exact number of words you're writing, and I'm not looking for encyclopedic citations of every single reading to prove that you did indeed read everything. I'm looking for thoughtful engagement, three interesting things, and three questions. That's all. Do good work and you'll get a ✓.
+
+You will submit these check-ins via iCollege (they're listed in the "Quiz" section).
+
+
+## Problem sets
+
+To practice solving microeconomic problems you will complete a series of 7 problem sets. Many of the questions on these assignments will come from *Economy, Society, and Public Policy*, some will come from previous courses, and others will come from my head.
+
+You need to show that you made a good faith effort to work each question. I will not grade these in detail—if you get stuck on a particularly tricky question, don't panic or worry! I provide you with all the answer keys and you will go over the answers as part of your weekly report.
+
+The problem sets will be graded using a check system:
+
+- ✔+: (*23 points (115%) in gradebook*)  Problem set is 100% completed. Every question was attempted and answered, and all answers are correct. Work is exceptional. I will not assign these often.
+- ✔: (*20 points (100%) in gradebook*) Problem set is 70–99% complete and most answers are correct. **This is the expected level of performance.**
+- ✔−: (*10 points (50%) in gradebook*) Problem set is less than 70% complete and/or most answers are incorrect. This indicates that you need to improve next time. I will hopefully not asisgn these often.
+
+You may (and should!) work together on the problem sets, but *you must turn in your own answers.*
+
+You will turn these problem sets in via iCollege. 
+
+### Problem set answer key review
+
+After submitting each problem set, its corresponding answer key will become available in the "Content" section at iCollege. You should download this and compare your answers with what's in the answer key. Check your work, see what you got right and wrong, and redo your work  to make sure you understand the questions (though you don't need to resubmit any of your work!)
+
+You can do this on your own, or you can meet up with classmates to review the answers as a group (***I highly recommend this!!!***). 
+
+**You'll report about your problem set review as part of the weekly check-in.** Like the weekly check-in, I *highly recommend* writing your responses in a separate document and copying/pasting the text into iCollege when you submit the check-in. You will forget your questions if you don't. 
+
+You'll answer these questions:
+
+- Did you review the problem set answer key and compare the answers with your work? (*1 point*)
+    - Yes, by myself
+    - Yes, with others from the class
+    - No
+- Which problem set question was the most difficult? (*2 points*)
+- What questions do you still have? (*2 points*)
+
+The review is worth 5 points.
+
+
+## Exams
+
+There will be two exams covering (1) capitalism, markets, power, and institutions and core economic models, and (2) market failures and government intervention in the economy.
+
+You will take these exams online through iCollege. The exams will be timed, but you can use notes and readings and [the Google](https://www.youtube.com/watch?v=AQ45fO1uiOQ). You must take the exams on your own though, and not talk to anyone about them.
+
+Study guides for each exam will be posted in [the resources section](/resource/index.qmd).

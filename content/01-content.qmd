@@ -1,0 +1,137 @@
+---
+title: "Capitalism and measurement"
+date: "2024-06-03"
+date_end: "2024-06-07"
+params:
+  pdf: slides/pmap8141_s24_01-slides.pdf
+  thumb: slides/pmap8141_s24_01-slides.png
+---
+
+## Readings
+
+- {{< fa book >}} Chapters 1 and 9 in *Naked Economics* [@Wheelan:2019]
+- {{< fa book >}} [Introduction and 1.1–1.10](https://www.core-econ.org/espp/book/text/01.html) in *Economy, Society, and Public Policy* [@core-espp]
+- {{< fa arrow-up-right-from-square >}} ["Dismal ignorance of the “dismal science”—a response to Larry Elliot"](https://www.prospectmagazine.co.uk/economics-and-finance/dismal-ignorance-of-the-dismal-science-a-response-to-larry-elliot)
+- {{< fa podcast >}} Planet Money, ["The Invention Of 'The Economy',"](https://www.npr.org/sections/money/2017/03/15/520294083/episode-522-the-invention-of-the-economy) episode 522
+- {{< fa podcast >}} On the Media, ["Money, Then and Now,"](https://www.wnycstudios.org/story/money-then-and-now-1) July 5, 2019
+
+
+## Other useful resources
+
+- {{< fa brands youtube >}} Primer, ["Simulating Supply and Demand"](https://www.youtube.com/watch?v=PNtKXWNKGN8)
+
+
+## Slides
+
+```{r show-slide-link-thumb, echo=FALSE, results="asis"}
+source(here::here("R", "slide-things.R"))
+
+slide_links(params$pdf, params$thumb)
+```
+
+
+## Videos
+
+```{r show-youtube-list, echo=FALSE, results="asis"}
+source(here::here("R", "youtube-playlist.R"))
+
+playlist_id <- "PLS6tnpTr39sFZ5qGN923GJZVtpjfatPiB"
+
+videos <- tibble::tribble(
+  ~youtube_id, ~title,
+  "Dm09yTqnLTM", "Introduction",
+  "JUPynmPjabk", "Technology, growth, and capitalism",
+  "JSPMWwMVTUw", "Institutions and coordination",
+  "zrLYd49bJjc", "Why do we make you take this class?",
+  "dpwuUsJWxbQ", "Class details",
+  "P1to4m52fl0", "Importance of institutions",
+  "Oz1g0e6hMMM", "Downsides of capitalism",
+  "TcfWCA1GUMA", "Measuring stuff correctly"
+)
+
+youtube_list(videos, playlist_id)
+```
+
+
+```{cat include=FALSE, eval=FALSE}
+Playlist: https://www.youtube.com/playlist?list=PLS6tnpTr39sFZ5qGN923GJZVtpjfatPiB
+
+https://youtu.be/Dm09yTqnLTM
+PMAP 8141 • (1) Capitalism and measurement: (0) Introduction
+
+Introduction to the class session on capitalism and measurement
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/01-content/
+
+
+https://youtu.be/JUPynmPjabk
+PMAP 8141 • (1) Capitalism and measurement: (1) Technology, growth, and capitalism
+
+Discussion of the relationship between technological innovation, economic growth, and capitalist institutions
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/01-content/
+
+  
+https://youtu.be/JSPMWwMVTUw
+PMAP 8141 • (1) Capitalism and measurement: (2) Institutions and coordination
+
+Discussion of how capitalist institutions allow for coordination across an entire market with the principle of the invisible hand
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/01-content/
+
+
+https://youtu.be/zrLYd49bJjc
+PMAP 8141 • (1) Capitalism and measurement: (3) Why do we make you take this class?
+
+Discussion of why it's important to study economics in an MPA/MPP program
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/01-content/
+
+
+https://youtu.be/dpwuUsJWxbQ
+PMAP 8141 • (1) Capitalism and measurement: (4) Class details
+
+Overview of some of the details of the course
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/01-content/
+
+
+https://youtu.be/P1to4m52fl0
+PMAP 8141 • (1) Capitalism and measurement: (5) Importance of institutions
+
+Discussion of how different combinations of political and economic institutions can result in different economic outcomes
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/01-content/
+
+
+https://youtu.be/Oz1g0e6hMMM
+PMAP 8141 • (1) Capitalism and measurement: (6) Downsides of capitalism
+
+Discussion of how capitalism generates inequality and environmental damage
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/01-content/
+
+
+https://youtu.be/TcfWCA1GUMA
+PMAP 8141 • (1) Capitalism and measurement: (7) Measuring stuff correctly
+
+Discussion of how we measure "the economy" with GDP + the ipmortance of accounting for variation in prices over space and time
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/01-content/
+  
+
+https://youtu.be/_sMt02_qRDY
+PMAP 8141 • Example: Converting nominal values to real values
+
+Demonstration of how to use Excel and the CPI to convert nominal values to real values
+
+Download the data and see more details at https://econf20.classes.andrewheiss.com/resource/inflation/
+
+
+https://youtu.be/K2KAAymJ4Uw
+PMAP 8141 • Example: Calculating percent change and average growth rates
+
+Demonstration of how to use Excel and the CPI to calculate inflation rates, percent change, and compound average growth rates
+
+Download the data and see more details at https://econf20.classes.andrewheiss.com/resource/inflation/
+```

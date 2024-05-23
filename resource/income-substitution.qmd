@@ -1,0 +1,17 @@
+---
+title: Income and substitution effects
+---
+
+When there is a change in the price of something, we typically change how much of it we buy. If something is a normal good, we'll buy more of it as our income increases. If something is an inferior good, we buy less of it as our income increases.
+
+We can model these changes in prices and changes in behavior with indifference curves and budget lines, which are [covered in great detail in this guide here](/resource/indifference-budget.qmd).
+
+The video embedded below—in addition to all these others—explains the process of doing this:
+
+- {{< fa brands youtube >}} [Example Income and Substitution Effects for Normal and Inferior Goods](https://www.youtube.com/watch?v=pLhh_D5b_Lg)
+- {{< fa brands youtube >}} [Explanation of Income and Substitution Effects](https://www.youtube.com/watch?v=ysqGRwvlte0)
+- {{< fa brands youtube >}} [EC1002 Chapter 2 Lesson 2 - The Indifference Curve, Substitution, and Income Effect](https://www.youtube.com/watch?v=hDniSzSmpbU) (this one is long and detailed, but still helpful, especially around minute 21)
+
+<div class="ratio ratio-16x9">
+<iframe src="https://www.youtube.com/embed/tXMRnDAbKVg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0"></iframe>
+</div>

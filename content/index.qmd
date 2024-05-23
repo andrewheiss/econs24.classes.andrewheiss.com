@@ -1,0 +1,6 @@
+---
+title: Readings, lectures, and videos
+toc: false
+---
+
+Each class session has a set of required readings that you should complete ***before*** watching the lecture. Lecture videos are included in a YouTube playlist on each session page. PDFs of the slides are also included on each session page.

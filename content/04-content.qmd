@@ -1,0 +1,110 @@
+---
+title: "Public policy for fairness and efficiency"
+date: "2024-06-10"
+date_end: "2024-06-14"
+params:
+  pdf: slides/pmap8141_s24_04-slides.pdf
+  thumb: slides/pmap8141_s24_04-slides.png
+---
+
+## Readings
+
+- {{< fa book >}} Introduction and 3.1-3.11 in *Economy, Society, and Public Policy* [@core-espp]
+- {{< fa brands youtube >}} [The Veil of Ignorance](https://www.youtube.com/watch?v=A8GDEaJtbq4)
+- {{< fa arrow-up-right-from-square >}} [The Fairness Principle: How the Veil of Ignorance Helps Test Fairness](https://fs.blog/2017/10/veil-ignorance/)
+- {{< fa podcast >}} Planet Money, ["Retraining Day,"](https://www.npr.org/sections/money/2017/01/27/512060753/episode-750-retraining-day) episode 750, January 27, 2017
+- {{< fa podcast >}} Planet Money, ["The Bottom of the Well,"](https://www.npr.org/sections/money/2015/07/22/425392169/episode-640-the-bottom-of-the-well) episode 640, July 22, 2015
+- {{< fa file-pdf >}} Alberto Alesina and George-Marios Angeletos, "Fairness and Redistribution: US vs. Europe" [@AlesinaAngeletos:2005] 
+    - [Download the PDF here](https://scholar.harvard.edu/files/alesina/files/fairness_and_redistribution.pdf), or access it on iCollege.
+    - This one is *super mathy* in the middle. Use your grad school reading skills to dig deep into the introduction, conclusion, and theory sections and not worry so much about the math.
+
+
+## Other useful resources
+
+The equality/equity/justice meme that we talk about in the lecture is a helpful way of thinking about how to remove institutional barriers to fairness and justice, but it also isn't completely adequate because of some of the underlying assumptions built into the graphic. Here are a couple critiques:
+
+- https://fakequity.com/2017/04/28/can-we-stop-using-the-box-graphic-when-we-talk-about-racial-equity/
+- https://culturalorganizing.org/the-problem-with-that-equity-vs-equality-graphic/
+
+In any case, striving for justice (i.e. removing the institutional barriers preventing people from flourishing in the first place) is a noble and worthy goal for public policy.
+
+
+## Slides
+
+```{r show-slide-link-thumb, echo=FALSE, results="asis"}
+source(here::here("R", "slide-things.R"))
+
+slide_links(params$pdf, params$thumb)
+```
+
+
+## Videos
+
+```{r show-youtube-list, echo=FALSE, results="asis"}
+source(here::here("R", "youtube-playlist.R"))
+
+playlist_id <- "PLS6tnpTr39sHT2tMtBjvShjzU9KNPVWaE"
+
+videos <- tibble::tribble(
+  ~youtube_id, ~title,
+  "lXIluFd_MZ4", "Introduction",
+  "NoCZU3INvFY", "Economic models",
+  "SjVDU6jPPwE", "Pulling policy levers",
+  "doM6HitjGTQ", "Power and efficiency",
+  "OAeSbwp2O2I", "Rawlsian fairness",
+  "nKVLV3U6ga0", "Fairness"
+)
+
+youtube_list(videos, playlist_id)
+```
+
+
+```{cat include=FALSE, eval=FALSE}
+Playlist: https://www.youtube.com/playlist?list=PLS6tnpTr39sHT2tMtBjvShjzU9KNPVWaE
+
+https://youtu.be/lXIluFd_MZ4
+PMAP 8141 • (4) Fairness and efficiency: (0) Introduction
+
+Introduction to the class session on economic efficiency and fairness
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/04-content/
+
+
+https://youtu.be/NoCZU3INvFY
+PMAP 8141 • (4) Fairness and efficiency: (1) Economic models
+
+Discussion of why economic models are still useful even though they overly simply the world
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/04-content/
+
+  
+https://youtu.be/SjVDU6jPPwE
+PMAP 8141 • (4) Fairness and efficiency: (2) Pulling policy levers
+
+Example of how to change the payoffs in a game to ensure desired policy outcomes
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/04-content/
+
+
+https://youtu.be/doM6HitjGTQ
+PMAP 8141 • (4) Fairness and efficiency: (3) Power and efficiency
+
+Discussion of power and Pareto efficiency
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/04-content/
+
+
+https://youtu.be/OAeSbwp2O2I
+PMAP 8141 • (4) Fairness and efficiency: (4) Rawlsian fairness
+
+Demonstration of how policies change when considering Rawls's idea of the veil of ignorance
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/04-content/
+
+https://youtu.be/nKVLV3U6ga0
+PMAP 8141 • (4) Fairness and efficiency: (5) Fairness
+
+Discussion of different ideas of fairness, equity, justice, and the role social and cultural norms play in shaping what we think is fair
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/04-content/
+```

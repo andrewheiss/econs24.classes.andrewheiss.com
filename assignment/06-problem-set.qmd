@@ -1,0 +1,94 @@
+---
+title: "Problem set 6"
+date: "2024-07-15"
+---
+
+**Submit this as a PDF on iCollege.** You can use whatever you want to make your drawings, including [Gravit Designer](https://gravit.io/), Adobe Illustrator, Excel, PowerPoint, Microsoft Paint, or photographed/scanned pen and paper. **I highly recommend using [Desmos](https://www.desmos.com/) too!**
+
+**Cite your sources and show your work.**
+
+```{r load-packages, include=FALSE}
+library(tidyverse)
+library(pander)
+library(scales)
+
+source(here::here("R", "graphics.R"))
+```
+
+## 1
+
+To what degree is radio broadcasting a public good? To what degree is a highway a public good? Under what conditions might these two goods be purely private or purely public? **Answer in ≈30 words.**
+
+
+## 2
+
+In what sense is K–12 education a public good? How should your answer to this question affect the nature of government involvement in education? Make sure you use terms like "excludability" and "rivalry." **Answer in ≈30 words.**
+
+
+## 3
+
+When the state of Virginia imposed stricter regulations on air pollution in 2003, it also authorized an auction of pollution permits, allowing some plants to emit larger amounts of CO~2~ than would otherwise be allowed, and some to emit less. Economic theory predicts that this action led to a socially efficient allocation of pollution. Describe how this outcome could occur. **Answer in ≈50 words.**
+
+
+## 4
+
+If at least 14 students in the class complete this question, the entire class will get **10 extra credit points** (for real). If fewer than 14 students do this, nobody will get extra credit. The problem set must be turned in by the deadline to count.
+
+Get a pencil and a sheet of paper. Write the following sentence, 30 times, by hand:
+
+> I am willingly contributing to the production of this public good, even though I know that I will benefit even if I don't participate.
+
+Take a picture of this and upload it with the rest of your assignment. It must be your own handwriting. If you work on this problem set in a group, each person must upload a picture of their own sheet of paper. 
+
+
+## 5
+
+In "The Problem of Social Cost" Coase claims that clear assignment of property rights can solve externality problems.   
+
+1. Why does Coase argue that from a social perspective it should not matter whether the polluter pays for pollution or whether those affected by pollution pay the polluter not to pollute? **Answer in ≈30 words.**
+2. Under what conditions does the Coase Theorem hold? When might we expect it not provide useful guidance for policy design? Why? **Answer in ≈30 words.**
+
+
+## 6
+
+Construct a table like the one in [Figure 11.14 in ESPP](https://www.core-econ.org/espp/book/text/11.html#figure-11-14) to analyze the possible market failures associated with the decisions below. In each case, identify which markets or contracts are missing or incomplete.
+
+1. You inoculate your child with a costly vaccination against an infectious disease.
+2. You use money that you borrow from the bank to invest in a highly risky project.
+3. A fishing fleet moves from the overfished coastal waters of its own country to international waters.
+4. A city airport increases its number of passenger flights by allowing nighttime departures.
+5. You contribute to a Wikipedia page.
+6. A government invests in research in nuclear fusion.
+
+```{r market-failure-table, echo=FALSE, results="asis"}
+tibble(thing = c("Decision", "How it affects others", "Cost or benefit",
+                 "Market failure (misallocation of resources)",
+                 "Possible remedies",
+                 "Terms applied to this type of market failure"),
+       value = c("Vaccination", rep("—", 5))) %>%
+  mutate(thing = fct_inorder(thing)) %>% 
+  spread(thing, value) %>% 
+  pandoc.table(split.table = Inf, justify = "llllll", style = "rmarkdown")
+```
+
+
+## 7
+
+Using a nationwide survey, economists have found that the demand for refrigerators is
+
+$$
+P = 1500 - 0.75Q
+$$
+
+Based on the internal costs of appliance manufacturers, economists have found that the marginal private cost of producing refrigerators is
+
+$$
+P = 550 + 0.5Q
+$$
+
+A key component of the refrigerator production process is [chlorofluorocarbon (CFC)](https://en.wikipedia.org/wiki/Chlorofluorocarbon), which helps with refrigeration. CFCs cause environmental damage, though, and economists have estimated that each refrigerator produced causes social environmental damage of <span>$220</span> during the production, lifetime, and disposal of the refrigerator (Super big hint: this will need to be added to the marginal private cost, so you should end up with $P = 770 + 0.5Q$ for your marginal social cost.)
+
+1. What is the unregulated market output and market price given the supply and demand?
+2. How many refrigerators should be produced to achieve the socially optimal level? What should the market price be for this level of output?
+3. How much total damage to society does this overproduction of refrigerators cause? (Hint: think about deadweight loss.)
+4. One way to achieve the socially optimal level is for the government to impose a Pigouvian tax on the producers. How big of a tax should the government impose?

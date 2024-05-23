@@ -1,0 +1,147 @@
+---
+title: Supply, demand, surplus, DWL, and elasticity
+---
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(tidyverse)
+library(here)
+library(patchwork)
+
+source(here("R", "graphics.R"))
+source(here("R", "supply-demand-surplus.R"))
+```
+
+If you have a formula for a supply curve and a demand curve, you can calculate all sorts of things, including the market clearing price, or where the two lines intersect, and the consumer and producer surplus. If taxes are involved, you can also calculate new market prices and quantities, deadweight loss (or the loss of market efficiency that comes from the tax), the total tax revenues raised, and the tax burden on consumers and producers.
+
+Because this is a foundational concept in microeconomics, there are a billion YouTube videos with examples. Here are some of the best:
+
+- Khan Academy has [a whole unit on consumer and producer surplus + market interventions here](https://www.khanacademy.org/economics-finance-domain/microeconomics/consumer-producer-surplus), including these:
+    - ["Demand curve as marginal benefit curve"](https://www.khanacademy.org/economics-finance-domain/microeconomics/consumer-producer-surplus/consumer-producer-surplus-tut/v/demand-curve-as-marginal-benefit-curve)
+    - ["Consumer surplus introduction"](https://www.khanacademy.org/economics-finance-domain/microeconomics/consumer-producer-surplus/consumer-producer-surplus-tut/v/consumer-surplus-introduction)
+    - ["Total consumer surplus as area"](https://www.khanacademy.org/economics-finance-domain/microeconomics/consumer-producer-surplus/consumer-producer-surplus-tut/v/total-consumer-surplus-as-area)
+    - ["Producer surplus"](https://www.khanacademy.org/economics-finance-domain/microeconomics/consumer-producer-surplus/consumer-producer-surplus-tut/v/producer-surplus)
+    - ["Equilibrium, allocative efficiency, and total surplus"](https://www.khanacademy.org/economics-finance-domain/microeconomics/consumer-producer-surplus/consumer-producer-surplus-tut/v/equilibrium-allocative-efficiency-and-total-surplus)
+    - ["Taxation and dead weight loss"](https://www.khanacademy.org/economics-finance-domain/microeconomics/consumer-producer-surplus/deadweight-loss-tutorial/v/taxation-and-dead-weight-loss)
+    - [""Example breaking down tax incidence"](https://www.khanacademy.org/economics-finance-domain/microeconomics/consumer-producer-surplus/deadweight-loss-tutorial/v/example-breaking-down-tax-incidence)
+- Jodi Beggs has a ton of videos related to supply and demand ([start here](https://www.youtube.com/watch?v=bVzx8fts8Ng&list=PL22785443C5FB0F83&index=13))
+- Jacob Clifford [has an entire unit on supply and demand here](https://www.youtube.com/watch?v=gdXoDkCfcM8&list=PL6B2DBE4C2FC8F845)
+
+<div class="ratio ratio-16x9">
+<iframe src="https://www.youtube.com/embed/Mz0P_fXxik4" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0"></iframe>
+</div>
+
+## Supply, demand, surplus, DWL, and burdens
+
+Here's how to analyze a market with these equations:
+
+$$
+\begin{aligned}
+\text{S} &: P = 2 + 0.25Q \\
+\text{D} &: P = 20 - 0.5Q \\
+\text{S}_\text{tax} &: P = 2 + 0.25Q + 5
+\end{aligned}
+$$
+
+
+```{r echo=FALSE, fig.width=12, fig.height=5}
+normal_taxes <- tax_graph(demand, supply, supply_tax, NULL)
+normal_taxes_shaded <- tax_graph(demand, supply, supply_tax, NULL, shaded = TRUE)
+normal_taxes$plot + normal_taxes_shaded$plot
+```
+
+
+```{r echo=FALSE, results="asis"}
+normal_taxes$details
+```
+
+## Elasticity and tax burdens
+
+The burden of taxes (and the size of deadweight loss) depends on how elastic supply and demand are. Those who are most able to escape taxes (i.e. those who are most elastic) will avoid them, leaving the burden of taxes to the other more inelastic party. Here are a few different examples of taxes imposed on producers and consumers with varying elasticities:
+
+### Elastic demand
+
+Here, demand is highly elastic—as the price changes, people change their consumption of the good quickly (i.e. increasing the price makes people jump away from it). Because of this, the burden of the tax falls on the producers, who can't escape the tax. The tax also causes a lot of DWL because of the high elasticity.
+
+$$
+\begin{aligned}
+\text{S} &: P = 2 + 0.25Q \\
+\text{D} &: P = 10 - 0.05Q \\
+\text{S}_\text{tax} &: P = 2 + 0.25Q + 5
+\end{aligned}
+$$
+
+```{r echo=FALSE, fig.width=12, fig.height=5}
+elastic_demand <- tax_graph(demand_elastic, supply, supply_tax, "1: Elastic demand")
+elastic_demand_shaded <- tax_graph(demand_elastic, supply, supply_tax, NULL, shaded = TRUE)
+elastic_demand$plot + elastic_demand_shaded$plot
+```
+
+```{r echo=FALSE, results="asis"}
+elastic_demand$details
+```
+
+### Inelastic demand
+
+Here, demand is highly inelastic—as the price changes, the quantity doesn't change a lot (i.e. increasing the price makes only a few people jump away, and the people who keep buying it have to suck up the higher price). Because of this, the burden of the tax falls on the consumers, who can't escape the tax. The tax also causes smaller DWL because of the low elasticity.
+
+$$
+\begin{aligned}
+\text{S} &: P = 2 + 0.25Q \\
+\text{D} &: P = 20 - 2Q \\
+\text{S}_\text{tax} &: P = 2 + 0.25Q + 5
+\end{aligned}
+$$
+
+```{r echo=FALSE, fig.width=12, fig.height=5}
+inelastic_demand <- tax_graph(demand_inelastic, supply, supply_tax, "2: Inelastic demand")
+inelastic_demand_shaded <- tax_graph(demand_inelastic, supply, supply_tax, NULL, shaded = TRUE)
+inelastic_demand$plot + inelastic_demand_shaded$plot
+```
+
+```{r echo=FALSE, results="asis"}
+inelastic_demand$details
+```
+
+### Elastic supply
+
+Here, supply is highly elastic—as the price changes, the quantity produced changes a lot (i.e. increasing a tax on books would make Amazon redirect its efforts to music, video, or web servers and wouldn't hurt the company that much). Because of this, the burden of the tax falls on the consumers, since the company escapes the tax easily. The tax also causes a lot of DWL because of the high elasticity.
+
+$$
+\begin{aligned}
+\text{S} &: P = 2 + 0.05Q \\
+\text{D} &: P = 20 - 0.5Q \\
+\text{S}_\text{tax} &: P = 2 + 0.05Q + 5
+\end{aligned}
+$$
+
+```{r echo=FALSE, fig.width=12, fig.height=5}
+elastic_supply <- tax_graph(demand, supply_elastic, supply_elastic_tax, "3: Elastic supply")
+elastic_supply_tax <- tax_graph(demand, supply_elastic, supply_elastic_tax, NULL, shaded = TRUE)
+elastic_supply$plot + elastic_supply_tax$plot
+```
+
+```{r echo=FALSE, results="asis"}
+elastic_supply$details
+```
+
+### Inelastic supply
+
+Here, supply is highly inelastic—as the price changes, the quantity produced changes a little (i.e. increasing a tax on books would put strain on a small family-owned bookstore that only sold books, since they'd have no other alternative things to produce). Because of this, the burden of the tax falls on the producers, since the company can't escape the tax by doing other things.
+
+$$
+\begin{aligned}
+\text{S} &: P = 2 + 1.5Q \\
+\text{D} &: P = 20 - 0.5Q \\
+\text{S}_\text{tax} &: P = 2 + 1.5Q + 5
+\end{aligned}
+$$
+
+```{r echo=FALSE, fig.width=12, fig.height=5}
+inelastic_supply <- tax_graph(demand, supply_inelastic, supply_inelastic_tax, "4: Inelastic supply")
+inelastic_supply_tax <- tax_graph(demand, supply_inelastic, supply_inelastic_tax, NULL, shaded = TRUE)
+inelastic_supply$plot + inelastic_supply_tax$plot
+```
+
+```{r echo=FALSE, results="asis"}
+inelastic_supply$details
+```

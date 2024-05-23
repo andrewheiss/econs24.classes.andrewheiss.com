@@ -1,0 +1,138 @@
+---
+title: "Problem set 7"
+date: "2024-07-22"
+csl: "../files/bib/chicago-fullnote-bibliography.csl"
+link-citations: false
+---
+
+**Submit this as a PDF on iCollege.** You can use whatever you want to make your drawings, including [Gravit Designer](https://gravit.io/), Adobe Illustrator, Excel, PowerPoint, Microsoft Paint, or photographed/scanned pen and paper. **I highly recommend using [Desmos](https://www.desmos.com/) too!**
+
+**Cite your sources and show your work.**
+
+```{r load-packages, include=FALSE}
+library(tidyverse)
+library(pander)
+library(scales)
+
+source(here::here("R", "graphics.R"))
+```
+
+
+## 1
+
+Marcel Fafchamps and Bart Minten, two economists, studied grain markets in Madagascar in 1997, where the legal institutions for enforcing property rights and contracts were weak [@FafchampsMinten:1999]. Despite this, they found that theft and breach of contract were rare. The grain traders avoided theft by keeping their stocks very low, and if necessary, sleeping in the grain stores. They refrained from employing additional workers for fear of employee-related theft. When transporting their goods, they paid protection money and traveled in convoy. Most transactions were paid in cash. Trust was established through repeated interaction with the same traders.
+
+
+1. Recall Elinor Ostrom's work on the fishermen in Alanya, Turkey [@Ostrom:1990]. Do the findings from Fafchamps and Minten (and Ostrom) suggest that strong legal institutions are not necessary for markets to work? How so? (**≈50 words**)
+
+2. Consider some market transactions in which you have been involved. Could these markets work in the absence of a legal framework, and how would they be different if they did? (**≈40 words**)
+
+3. Can you think of any examples in which repeated interaction helps to facilitate market transactions? (**≈40 words**)
+
+4. Why might repeated interaction be important even when a legal framework is present? (**≈30 words**)
+
+5. What role can informal institutions play in these kind of interactions? (**≈30 words**)
+
+
+## 2
+
+Discuss whether the following statements are true or false and explain why in **≈35 words each**: 
+
+1. The Coase Theorem states that every type of externality can be solved by private negotiation.
+2. Free riding becomes more of a problem as more people benefit from a public good.
+3. When a good imposes a negative externality on society, the government should completely ban the production and exchange of that good.
+4. Because their life is on the line, car drivers will exert a socially efficient level of care while driving.
+
+
+## 3
+
+```{r make-checkerboard, echo=FALSE}
+board <- crossing(x = 1:8, y = 1:8) %>% 
+  group_by(x) %>% 
+  mutate(value = case_when(
+    x %% 2 == 0 ~ rep(1:2, 4),
+    x %% 2 != 0 ~ rep(2:1, 4)
+  ))
+
+blank_board <- ggplot(board, aes(x = x, y = y, fill = as.factor(value))) +
+  geom_tile() +
+  scale_fill_manual(values = c("white", "grey75"), guide = "none") +
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(expand = c(0, 0)) +
+  coord_equal() +
+  theme_void() +
+  theme(panel.border = element_rect(color = "grey75", linewidth = 1, fill = NA))
+```
+
+1. Get a checkerboard, 22 pennies, and 22 dimes (or 22 of something other than pennies). *Randomly* place the pennies and times on the squares on the board. Do not use the four corner squares. 
+
+   Draw the resulting pattern (use colors for the coin types, or symbols like • for pennies and # for dimes, or whatever):
+    
+   ```{r show-board-1, fig.width=2.5, fig.height=2.5, echo=FALSE, fig.align="center"}
+   blank_board
+   ```
+
+2. Now pretend that each penny wants to live in a "neighborhood" (the nine squares of which they are the center) that has *at least as many pennies as dimes*. Start at one corner of the board and look at the first penny. Determine the makeup of its neighbors. If there are too many dimes around the penny, move the penny to the closest acceptable square. Move on to the next penny and check its neighborhood, moving it to a new area if necessary. Do this for all the pennies and then all the dimes.
+
+   Draw the resulting pattern:
+    
+   ```{r show-board-2, fig.width=2.5, fig.height=2.5, echo=FALSE, fig.align="center"}
+   blank_board
+   ```
+    
+
+3. What does this example have to do with residential and school segregation? (**≈40 words**)
+
+
+## 4
+
+Suppose the demand for Coca Cola products in Atlanta is
+
+$$
+P = \frac{-Q + 10,000}{10,000}
+$$
+where Q is the number of cans of soft drink purchased per day and P is the price per can. The market supply curve (or private marginal cost) is horizontal at \$0.75 per can (the equation is thus $P = 0.75$). 
+
+Given existing habits and disposal and recycling technology, it has been estimated that the average soft drink can ends up costing **10 cents** in the form of unsightly litter and pick-up costs. The social marginal cost is thus $P = 0.85$.
+
+1. Explain how the concept of market failure applies to this example (**≈20 words**). Illustrate your explanation with a graph showing the extent of this failure. (*Hint*: think about social vs. private marginal costs)
+2. Can society's loss from this market failure be quantified (**≈10 words**)? If so, calculate it as precisely as possible and indicate it in your illustration. (*Hint*: think about deadweight loss)
+3. How could taxation be used to overcome this market failure? (**≈25 words**)
+4. What are the shortcomings of this solution? (**≈25 words**)
+5. What alternative policies might be worth considering? (**≈30 words**)
+
+
+## 5
+
+Mount Everest is crowded during climbing season. Every year more groups seek to summit the world’s highest mountain. The crowding increases the danger for all and diminishes the experience. The government of Nepal decides that it has issued too many climbing permits in the past, and is considering several schemes for reducing by half the number of permits (or climbers). Here are the three schemes it is considering:
+
+- A. Issue non-transferable permits to the firms that organize Everest expeditions equal (in each case) to half the number of climbers that were their customers last year
+- B. Same as A, but allow the firms to transfer (sell) the permits they are allocated by the government to other firms
+- C. Auction off the same total number of permits in A and B to the highest bidders
+
+Answer these questions:
+
+1. Without any regulation, why would we expect too many climbers on the mountain? What kind of market failure is this? (**≈20 words**)
+
+2. For each of the schemes, describe (1) what you expect the consequences would be on overcrowding, and (2) what the efficiency and distributional consequences might be (i.e. discuss Pareto efficiency and fairness, thinking about procedural, substantive, and Rawlsian fairness). (**≈60 words**)
+
+3. In what sense is B a better scheme than A? (**≈20 words**)
+
+4. Compare B and C. What difference would there be in the price of a permit? What difference would there be in the final distribution of permits among professional guides? (**≈30 words**)
+
+5. Propose two policy alternatives the Nepalese government could use instead of these permit schemes. Under what conditions would they work better or worse? (**≈60 words**)
+
+
+## 6
+
+In two-car automobile accidents, [passengers in the larger vehicle are significantly more likely to survive than passengers in the smaller vehicle](http://www.buffalo.edu/news/releases/2013/05/026.html). Some politicians and lobbyists have argued that this provides a rationale for encouraging the sale of larger vehicles and discouraging legislation that would induce automobile manufacturers to make smaller cars. Evaluate this argument using the concept of externalities. Are these politicians and lobbyists right? **Answer in ≈40 words.**
+
+
+## 7
+
+Suppose that the negative externalities associated with hog farming (including water pollution and airborne odors) are $5 per hog given current techniques.
+
+1. Explain why "too many" hogs will be produced (**≈20 words**). In your answer use terms like "private cost" and "social cost." **Draw a diagram** of the hog market that illustrates your answer. There are no actual equations here, so you can draw the lines however you want (it'll be easiest if you just have lines that go diagonally up (supply) and diagonally down (demand))
+2. One proposal for solving this problem is to impose a tax of \$5. Explain the effect of such a tax and illustrate it on your diagram (**≈20 words**).  
+3. What are the shortcomings of this solution? (**≈20 words**)
+4. What alternative policies might be worth considering? (**≈30 words**)

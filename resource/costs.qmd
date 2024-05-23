@@ -1,0 +1,386 @@
+---
+title: Firm costs + profit maximization
+---
+
+
+Imagine a firm that produces chocolate milk using milk, cocoa powder, sugar, a spoon, a pot, and a refrigerator. The costs for creating different amounts of milk are all included in the Excel file below (and a finished version with all the decompositions and calculations is also included below).
+
+- [[{{< fa file-excel >}} Chocolate milk production (empty file)](/files/files/chocolate-milk.xlsx)
+- [[{{< fa file-excel >}} Chocolate milk production (completed file)](/files/files/chocolate-milk-filled.xlsx)
+
+Let's use microeconomic principles to find out how much milk this firm should create if they want to maximize their profits and make the most money possible. Along the way we'll decompose their costs into fixed and variable costs, marginal costs, and average costs. Finally we'll find the elasticity of demand for chocolate milk to see how responsive consumers are to changes in chocolate milk prices.
+
+Because this is a foundational microeconomic principle, there are billions of YouTube videos out there with tutorial about how to calculate these things. You should check these out for additional reference and help:
+
+- {{< fa brands youtube >}} [Jacob Clifford, "Short-Run Costs (Part 1)"](https://www.youtube.com/watch?v=ucJBO9UTmwo)
+- {{< fa brands youtube >}} [Jacob Clifford, "Short-Run Costs (Part 2)"](https://www.youtube.com/watch?v=qYKJdooEnwU)
+- {{< fa brands youtube >}} [Jacob Clifford, "Maximizing profit"](https://www.youtube.com/watch?v=BQvtnjWZ0ig)
+- {{< fa brands youtube >}} [Jacob Clifford's entire production, cost, and perfect competition unit](https://www.youtube.com/playlist?list=PLE70CA726102FB294)
+- {{< fa brands youtube >}} [Khan Academy, "Fixed, Variable, and Marginal Cost"](https://www.youtube.com/watch?v=bBQVaRnHqLs)
+- {{< fa brands youtube >}} [Khan Academy "Visualizing average costs and marginal costs as slope"](https://www.youtube.com/watch?v=k1iHDu9GrJE)
+- {{< fa brands youtube >}} [Jodi Beggs, "Calculating and graphic the costs of production"](https://www.youtube.com/watch?v=Fdt98k8Gjnc)
+- {{< fa brands youtube >}} [Jodi Beggs, "Cost curves, economic profit, and supply"](https://www.youtube.com/watch?v=3Xi8zc9hzNo)
+- {{< fa brands youtube >}} [Jodi Beggs, "Profit maximization"](https://www.youtube.com/watch?v=devjsF8shrU)
+- {{< fa brands youtube >}} [Economicsfun, "How to Calculate Total Cost, Marginal Cost, Average Variable Cost, and ATC"](https://www.youtube.com/watch?v=98DcdXiNu4E)
+
+We'll do this with both Excel and with math formulas. These videos walk through how to do it both ways, and the text below provides more step-by-step instructions.
+
+<div class="ratio ratio-16x9">
+<iframe src="https://www.youtube.com/embed/TZyH7lsJJIg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0"></iframe>
+</div>
+
+&nbsp;
+
+<div class="ratio ratio-16x9">
+<iframe src="https://www.youtube.com/embed/4ypXJXU-0n4" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0"></iframe>
+</div>
+
+```{r load-data-libraries, include=FALSE}
+library(tidyverse)
+library(broom)
+library(readxl)
+library(scales)
+library(patchwork)
+library(pander)
+library(here)
+
+source(here("R", "graphics.R"))
+
+milk_workbook <- here("files", "files", "chocolate-milk.xlsx")
+milk_costs <- read_excel(milk_workbook, sheet = "Costs")
+milk_demand <- read_excel(milk_workbook, sheet = "Demand and prices")
+```
+
+## Finding the cheapest cost of production
+
+### Cost function
+
+Here are the firm's costs at different levels of production:
+
+```{r cost-function, echo=FALSE, results="asis"}
+milk_costs %>%
+  mutate_at(vars(-Quantity), dollar) %>% 
+  pandoc.table(split.tables = Inf, justify = "ccccccc", style = "rmarkdown")
+```
+
+### Total costs
+
+We can divide these costs into fixed costs (spoon, pot, and fridge) and variable costs (milk, sugar, chocolate):
+
+```{r costs-total, echo=FALSE, results="asis"}
+costs_total <- milk_costs %>%
+  mutate(TFC = Spoon + Pot + Fridge,
+         TVC = Milk + Sugar + `Chocolate powder`,
+         TC = TFC + TVC) %>%
+  select(Quantity, TFC, TVC, TC)
+
+costs_total %>%
+  mutate_at(vars(-Quantity), dollar) %>% 
+  pandoc.table(split.tables = Inf, justify = "cccc", style = "rmarkdown")
+```
+
+If we decompose total costs into fixed and variable costs, we see that the rise in costs is driven almost entirely by increasing variable costs.
+
+```{r costs-total-fig, echo=FALSE}
+costs_total_plot <- costs_total %>%
+  gather(cost_type, value, -Quantity) %>%
+  mutate(cost_type = fct_inorder(cost_type))
+
+ggplot(costs_total_plot, aes(x = Quantity, y = value, color = cost_type)) +
+  geom_line(linewidth = 1.5) +
+  scale_color_manual(values = c(nord_red, nord_dk_blue, nord_green),
+                     name = NULL) +
+  scale_x_continuous(breaks = seq(0, 10, 2), expand = c(0, 0)) +
+  scale_y_continuous(labels = dollar, expand = c(0, 0)) + 
+  labs(x = "Gallons of milk", y = "Amount") +
+  theme_econ(13, axis_line = TRUE) +
+  theme(legend.position = "bottom")
+```
+
+### Average and marginal costs
+
+We can find average costs by dividing the cost by the number of gallons of milk produced, and we can find the marginal cost by subracting the cost of the previous amount:
+
+```{r costs-average, echo=FALSE, results="asis"}
+tc_fun <- splinefun(costs_total$Quantity, costs_total$TC)
+
+costs_avg <- costs_total %>%
+  mutate(AFC = TFC / Quantity,
+         AVC = TVC / Quantity,
+         ATC = AFC + AVC,
+         MC_chunk = (TC - lag(TC)) / (Quantity - lag(Quantity)),
+         MC_instant = tc_fun(Quantity, deriv = 1)) %>%
+  select(Quantity, TC, AFC, AVC, ATC, MC_chunk, MC_instant) 
+
+costs_avg %>%
+  mutate_at(vars(-Quantity), list(~ifelse(is.nan(.) | is.infinite(.) | is.na(.), NA, dollar(.)))) %>%
+  pandoc.table(split.tables = Inf, missing = "—", style = "rmarkdown")
+
+atc_fun <- approxfun(costs_avg$Quantity, costs_avg$ATC, rule = 2)
+mc_atc <- uniroot(function(x) tc_fun(x, deriv = 1) - atc_fun(x), c(1, 10))
+
+tc_points <- costs_total %>%
+  mutate(points = paste0("{", Quantity, ", ", TC, "}")) %>% 
+  pull(points) %>% 
+  paste(collapse = ", ")
+```
+
+The optimal (minimum) point on the ATC curve occurs when Q = `r round(mc_atc$root, 2)`. This is also not coincidentally where the MC curve intersects the ATC curve. The optimal price at this quantity is <span>$</span>`r round(atc_fun(mc_atc$root), 2)` per gallon of milk, but the firm won't necessarily be able to set the price at that point on its own (unless it's a monopoly; and even then, they'll set it higher).
+
+**IMPORTANT NOTE**: Because we're dealing with curves and not lines, calculating marginal values with Excel by subtracting the previous value from the current value *will not be 100% accurate*. The only way to get perfectly accurate marginal values is to use calculus to find the instantaneous derivative at exactly that point. 
+
+```{r costs-average-fig, echo=FALSE}
+costs_avg_plot <- costs_avg %>%
+  select(-TC, -MC_chunk) %>%
+  filter(Quantity > 0) %>% 
+  gather(cost_type, value, -Quantity) %>%
+  mutate(cost_type = fct_inorder(cost_type))
+
+ggplot(costs_avg_plot, aes(x = Quantity, y = value, color = cost_type)) +
+  geom_line(linewidth = 1.5) +
+  geom_vline(xintercept = mc_atc$root, linetype = "dashed", color = "grey70", linewidth = 0.5) +
+  geom_hline(yintercept = atc_fun(mc_atc$root), linetype = "dashed", color = "grey70", linewidth = 0.5) +
+  scale_color_manual(values = c(nord_red, nord_dk_blue, nord_green, nord_orange),
+                     name = NULL) +
+  scale_x_continuous(breaks = seq(0, 10, 2), expand = c(0, 0)) +
+  scale_y_continuous(breaks = seq(0, 30, 5), labels = dollar, expand = c(0, 0)) +
+  coord_cartesian(ylim = c(0, 30)) +
+  labs(x = "Gallons of milk", y = "Amount") +
+  theme_econ(13, axis_line = TRUE) +
+  theme(legend.position = "bottom",
+        panel.grid.minor = element_blank())
+```
+
+
+## Finding the optimal price and quantity
+
+The firm's quantity decision depends on the market demand for chocolate milk. The demand curve for this market looks like this:
+
+```{r demand-fig, echo=FALSE}
+ggplot(milk_demand, aes(x = Quantity, y = Price)) + 
+  geom_line(linewidth = 1.5, color = nord_orange) +
+  scale_x_continuous(expand = c(0, 0), breaks = seq(0, 10, 2)) + 
+  scale_y_continuous(expand = c(0, 0)) +
+  coord_cartesian(ylim = c(0, 55)) +
+  theme_econ(13, axis_line = TRUE) +
+  theme(panel.grid.minor = element_blank())
+```
+
+With this demand curve, we can find the price and quantity that would produce the maximum revenue, assuming there were no costs to production.
+
+```{r optimum-revenue-tbl, echo=FALSE, results="asis"}
+milk_revenue <- milk_demand %>%
+  mutate(TR = Quantity * Price)
+
+milk_revenue %>%
+  mutate_at(vars(-Quantity), list(~ifelse(is.nan(.) | is.infinite(.) | is.na(.), NA, dollar(.)))) %>%
+  pandoc.table(split.tables = Inf, missing = "—", justify = "ccc", style = "rmarkdown")
+
+tr_fun <- splinefun(milk_revenue$Quantity, milk_revenue$TR)
+q_optimum_tr <- optimize(tr_fun, c(1, 10), maximum = TRUE)$maximum %>% round(2)
+```
+
+The firm can maximize its revenue by producing `r q_optimum_tr` gallons of milk, which would create <span>$</span>`r tr_fun(q_optimum_tr)` in revenue.
+
+```{r optimum-revenue, echo=FALSE}
+ggplot(filter(milk_revenue, Quantity > 0), aes(x = Quantity, y = TR)) +
+  geom_line(linewidth = 1.5, color = nord_yellow) +
+  geom_vline(xintercept = q_optimum_tr, linetype = "dashed", color = "grey70", linewidth = 0.5) +
+  geom_hline(yintercept = tr_fun(q_optimum_tr), linetype = "dashed", color = "grey70", linewidth = 0.5) +
+  scale_x_continuous(expand = c(0, 0), breaks = seq(0, 10, 2)) + 
+  scale_y_continuous(expand = c(0, 0), labels = dollar) +
+  coord_cartesian(ylim = c(0, 175), xlim = c(0, 11)) +
+  labs(x = "Gallons of milk", y = "Total revenue") +
+  theme_econ(13, axis_line = TRUE) +
+  theme(panel.grid.minor = element_blank())
+```
+
+However, this doesn't take into account the firm's costs. The firm's profit maximizing point is defined as $MC = MR$, so we need compare marginal costs and marginal revenues and calculate total profit (π) across all quantities of output.
+
+**Again**, note that using chunky marginal values by subtracting previous values *won't be as accurate* as calculus-based instant marginal values.
+
+To get correct marginal values we can find the formula for the total cost function by using Wolfram Alpha. If you make a list of all the points in the quantity and total cost columns (i.e. `{{0, 20}, {1, 22.6}, {2, 27.8}}`), you can fit a polynomial formula to those points with Wolfram Alpha.
+
+For example, search for ["quadratic fit `r tc_points`"](https://www.wolframalpha.com/input/?i=quadratic+fit&assumption=%7B%22C%22%2C+%22quadratic+fit%22%7D+-%3E+%7B%22Calculator%22%7D&assumption=%7B%22F%22%2C+%22QuadraticFitCalculator%22%2C+%22data2%22%7D+-%3E%22%7B%7B0%2C+20%7D%2C+%7B1%2C+22.6%7D%2C+%7B2%2C+27.8%7D%2C+%7B3%2C+35.6%7D%2C+%7B4%2C+46%7D%2C+%7B5%2C+59%7D%2C+%7B6%2C+74.6%7D%2C+%7B7%2C+92.8%7D%2C+%7B8%2C+113.6%7D%2C+%7B9%2C+137%7D%2C+%7B10%2C+163%7D%7D%22) and you'll see that the best formula for total cost is $y = 1.3x^2 + 1.3x + 20$.
+
+The marginal cost is the first derivative of the total cost, or $y = 2.6x + 1.3$.
+
+To find the equation for total revenue we need to multiply the demand function by Q (or x), since the formula for total revenue is $TR = PQ$. By looking at the demand curve above, we can see that the y-intercept is 55 and the slope is −5, giving us $y = -5x + 55$, or $P = -5Q + 55$. We can find the total revenue formula with some algebraic trickery, substituting the $P$ formula into $TR = PQ$:
+
+$$
+\begin{aligned}
+TR &= PQ \\
+&= (-5Q + 55)Q \\
+&= -5Q^2 + 55Q
+\end{aligned}
+$$
+
+The total revenue formula is thus $P = -5Q^2 + 55Q$.
+
+The marginal revenue is the first derivative of the total revenue, or $P = -10Q + 55$.
+
+We can set MR and MC equal to each other to find the optimal x (or Q) ($2.6Q + 1.3 = -10Q + 55$), solve for x, and then plug that x into one of the total equations to find the optimal price.
+
+```{r marginal-revenue, include=FALSE}
+milk_mr <- milk_revenue %>%
+  left_join(select(costs_total, Quantity, TC), by = "Quantity") %>% 
+  mutate(MR_chunk = (TR - lag(TR)) / (Quantity - lag(Quantity)),
+         MR_instant = tr_fun(Quantity, deriv = 1)) %>%
+  left_join(select(costs_avg, Quantity, MC_chunk, MC_instant), by = "Quantity") %>% 
+  mutate(`π` = TR - TC)
+
+profit_fun <- splinefun(milk_mr$Quantity, milk_mr$`π`)
+price_fun <- approxfun(milk_mr$Quantity, milk_mr$Price, rule = 2)
+
+mr_chunk_fun <- approxfun(milk_mr$Quantity, milk_mr$MR_chunk, rule = 2)
+mc_chunk_fun <- approxfun(milk_mr$Quantity, milk_mr$MC_chunk, rule = 2)
+
+mr_mc <- uniroot(function(x) tr_fun(x, deriv = 1) - tc_fun(x, deriv = 1), c(1, 10))
+```
+
+The point where $MC = MR$ can't be seen in the table, since it happens between 4 and 5 gallons. If the firm produces `r round(mr_mc$root, 2)` gallons of milk at a price of <span>$`r round(tr_fun(mr_mc$root, deriv = 1), 2)`</span> per gallon, it will achieve its maximum profit of <span>$`r round(profit_fun(mr_mc$root), 2)`.</span>
+
+```{r mr-profit-table, echo=FALSE, results="asis"}
+milk_mr_optimal <- tibble(Quantity = mr_mc$root,
+                          Price = price_fun(Quantity),
+                          TR = Quantity * Price,
+                          TC = tc_fun(Quantity),
+                          MR_chunk = mr_chunk_fun(Quantity),
+                          MC_chunk = mc_chunk_fun(Quantity),
+                          MR_instant = tr_fun(Quantity, deriv = 1),
+                          MC_instant = tc_fun(Quantity, deriv = 1),
+                          `π` = profit_fun(Quantity))
+
+milk_mr_all <- bind_rows(milk_mr, milk_mr_optimal) %>%
+  arrange(Quantity)
+
+milk_mr_all %>%
+  mutate_at(vars(-Quantity), list(~ifelse(is.nan(.) | is.infinite(.) | is.na(.), NA, dollar(.)))) %>% 
+  pandoc.table(split.tables = Inf, missing = "—", emphasize.strong.rows = 6, style = "rmarkdown")
+```
+
+&nbsp;
+
+```{r milk-mr-mc-plot, echo=FALSE}
+milk_mr_mc_plot <- milk_mr %>%
+  select(Quantity, MR = MR_instant, MC = MC_instant) %>%
+  filter(Quantity > 0) %>%
+  gather(type, value, -Quantity) %>% 
+  mutate(type = fct_inorder(type))
+
+ggplot(milk_mr_mc_plot, aes(x = Quantity, y = value, color = type)) +
+  geom_line(linewidth = 1.5) +
+  geom_vline(xintercept = mr_mc$root, linetype = "dashed", color = "grey70", linewidth = 0.5) +
+  geom_hline(yintercept = tr_fun(mr_mc$root, deriv = 1), 
+             linetype = "dashed", color = "grey70", linewidth = 0.5) +
+  scale_color_manual(values = c(nord_red, nord_dk_blue, nord_green, nord_orange),
+                     name = NULL) +
+  scale_x_continuous(breaks = seq(0, 10, 2), expand = c(0, 0)) +
+  scale_y_continuous(breaks = seq(0, 30, 5), labels = dollar, expand = c(0, 0)) +
+  coord_cartesian(ylim = c(0, 30)) +
+  labs(x = "Gallons of milk", y = "Amount") +
+  theme_econ(13, axis_line = TRUE) +
+  theme(legend.position = "bottom",
+        panel.grid.minor = element_blank())
+```
+
+
+## Elasticity of demand
+
+<div class="ratio ratio-16x9">
+<iframe src="https://www.youtube.com/embed/r6vDVZB90C4" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0"></iframe>
+</div>
+
+&nbsp;
+
+Recall the formula for elasticity:
+
+$$
+\begin{align}
+\varepsilon &= -\frac{\% \text{ change in demand}}{\% \text{ change in price}} \\
+ &= - \frac{\% \Delta Q}{\% \Delta P}
+\end{align}
+$$
+
+Remember that $\% \Delta Q = \frac{Q_{\text{new}} - Q}{Q}$ and that $\% \Delta P = \frac{P_{\text{new}} - P}{P}$ (or just $\frac{\text{new} - \text{old}}{\text{old}}$). We can also write $Q_{\text{new}} - Q$ as $\Delta Q$, or just the change in $Q$ (and also $\Delta P$). This means we can rewrite the equation like so:
+
+$$
+\begin{align}
+\varepsilon &= - \frac{\% \Delta Q}{\% \Delta P} \\
+ &= - \frac{\frac{Q_{\text{new}} - Q}{Q}}{\frac{P_{\text{new}} - P}{P}} \\
+ &= - \frac{\frac{\Delta Q}{Q}}{\frac{\Delta P}{P}}
+\end{align}
+$$
+
+We can then simplify this huge hairy fraction by multiplying both the numerator and denominator by the inverse of the denominator, $\frac{P}{\Delta P}$:
+
+$$
+\begin{align}
+\varepsilon &= - \frac{\frac{\Delta Q}{Q}}{\frac{\Delta P}{P}} \times \frac{\frac{P}{\Delta P}}{\frac{P}{\Delta P}} \\
+ &= - \frac{\Delta Q}{Q} \times \frac{P}{\Delta P} \\
+ &= - \frac{\Delta Q}{\Delta P} \times \frac{P}{Q}
+\end{align}
+$$
+
+That's the final version of the price elasticity of demand formula: $\varepsilon = - \frac{\Delta Q}{\Delta P} \times \frac{P}{Q}$. Conveniently, $\frac{\Delta Q}{\Delta P}$ is also the inverse slope of the demand curve.
+
+```{r milk-elasticies, echo=FALSE, warning=FALSE, results="asis"}
+dqdp <- milk_mr %>%
+  lm(Quantity ~ Price, data = .) %>%
+  tidy() %>%
+  filter(term == "Price") %>%
+  pull(estimate)
+
+milk_elasticities <- milk_mr %>%
+  select(Quantity, Price) %>%
+  filter(Quantity > 0) %>% 
+  mutate(`$\\frac{\\Delta Q}{\\Delta P}$` = dqdp,
+         `$\\frac{P}{Q}$` = Price / Quantity,
+         `ε` = -dqdp * (Price / Quantity))
+
+milk_elasticities %>% 
+  mutate(Price = dollar(Price)) %>% 
+  pandoc.table(missing = "—", style = "rmarkdown")
+```
+
+Demand is elastic in the first half of the demand curve, and inelastic in the second half, as seen here:
+
+```{r plot-elasticities, echo=FALSE, warning=FALSE}
+labels_horizontal <- tribble(
+  ~x, ~y, ~label,
+  4,  10, "Elastic",
+  7,  10, "Inelastic"
+)
+
+labels_vertical <- tribble(
+  ~x, ~y, ~label,
+  1,  7, "Elastic",
+  1,  1, "Inelastic"
+)
+
+plot_demand <- ggplot() +
+  stat_function(data = tibble(x = 0:10), fun = price_fun, aes(x = x), 
+                linewidth = 1.5, color = nord_orange) +
+  geom_label(data = labels_horizontal, aes(x = x, y = y, label = label)) +
+  geom_vline(xintercept = q_optimum_tr, linewidth = 0.5, color = "grey50") +
+  scale_x_continuous(expand = c(0, 0), breaks = seq(0, 10, 2)) +
+  scale_y_continuous(expand = c(0, 0), labels = dollar) +
+  coord_cartesian(ylim = c(0, 60)) +
+  labs(x = NULL, y = "Price", title = "Demand curve") +
+  theme_econ(13, axis_line = TRUE) +
+  theme(panel.grid.minor = element_blank())
+
+plot_elasticity <- ggplot(milk_elasticities, aes(x = Quantity, y = `ε`)) +
+  geom_line(linewidth = 1.5, color = nord_dk_blue) +
+  geom_hline(yintercept = 1, linewidth = 0.5, color = "grey50") +
+  geom_vline(xintercept = q_optimum_tr, linewidth = 0.5, color = "grey50") +
+  geom_label(data = labels_vertical, aes(x = x, y = y, label = label)) +
+  scale_x_continuous(expand = c(0, 0), breaks = seq(0, 10, 2)) + 
+  scale_y_continuous(expand = c(0, 0)) +
+  coord_cartesian(ylim = c(0, 11), xlim = c(0, 10)) +
+  labs(x = NULL, y = "Elasticity", title = "Elasticity") +
+  theme_econ(13, axis_line = TRUE) +
+  theme(panel.grid.minor = element_blank())
+
+plot_demand + plot_elasticity + plot_layout(ncol = 1)
+```

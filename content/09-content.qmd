@@ -1,0 +1,184 @@
+---
+title: "Firms and markets"
+date: "2024-07-01"
+date_end: "2024-07-05"
+params:
+  pdf: slides/pmap8141_s24_09_10-slides.pdf
+  thumb: slides/pmap8141_s24_09_10-slides.png
+---
+
+## Readings
+
+- {{< fa book >}} Chapters 7 and 12 in *Naked Economics* [@Wheelan:2019]
+- {{< fa book >}} Introduction and 7.1-7.12 in *Economy, Society, and Public Policy* [@core-espp]
+- {{< fa trophy >}} Play at least *15 minutes* of ["Universal Paperclips"](http://www.decisionproblem.com/paperclips/)[^paperclips]
+- {{< fa arrow-up-right-from-square >}} Michael Eisen, ["Amazon's $23,698,655.93 book about flies,"](http://www.michaeleisen.org/blog/?p=358) April 22, 2011
+- {{< fa podcast >}} Freakonomics Radio, ["Why Uber Is an Economist's Dream,"](http://freakonomics.com/podcast/uber-economists-dream/) September 7, 2016
+- {{< fa arrow-up-right-from-square >}} Steve Sexton, ["The Inefficiency of Local Food"](http://freakonomics.com/2011/11/14/the-inefficiency-of-local-food/), Freakonomics Blog, November 14, 2011
+
+[^paperclips]: **WARNING**: This game can take over your life for the next day or so, which can be really fun and rewarding, but also *it can seriously for real consume every waking moment* for a few hours. This is your official warning.
+
+
+## Other useful resources
+
+These two sessions have a bunch of helpful guides in the resources section:
+
+- [Firm costs + profit maximization](/resource/costs.qmd)
+- [Supply, demand, surplus, DWL, and elasticity](/resource/supply-demand.qmd)
+- [Monopolies](/resource/monopoly.qmd)
+
+You should definitely check those guides out and follow along with the examples there. 
+
+These topics are covered in pretty much every introductory economics class in the world, which means the internet is full of examples of how to do the math involved. I've included lists of helpful videos at the top of each of these guides.
+
+
+## Slides
+
+```{r show-slide-link-thumb, echo=FALSE, results="asis"}
+source(here::here("R", "slide-things.R"))
+
+slide_links(params$pdf, params$thumb)
+```
+
+
+## Videos
+
+```{r show-youtube-list, echo=FALSE, results="asis"}
+source(here::here("R", "youtube-playlist.R"))
+
+playlist_id <- "PLS6tnpTr39sGEdlKqFxcnGWFDSr77sF3Q"
+
+videos <- tibble::tribble(
+  ~youtube_id, ~title,
+  "sekXtpq_c4A", "Introduction",
+  "ITFlBSTtVlc", "Supply and demand",
+  "vs1ZbLIcJqc", "Demand and WTP",
+  "uRpcNoTpOZo", "Supply and WTA",
+  "PqnL3kHMzw0", "Elasticities of demand",
+  "Xnku65C-4kk", "Scale, location, networks, and time",
+  "di14-g7lYsA", "Surplus, taxes, incidence, and DWL",
+  "bp3Lyc9dSeY", "Changes in supply and demand",
+  "uo5GNpRjZk4", "Escaping the price taking world",
+)
+
+youtube_list(videos, playlist_id)
+```
+
+
+```{cat include=FALSE, eval=FALSE}
+Playlist: https://www.youtube.com/playlist?list=PLS6tnpTr39sGEdlKqFxcnGWFDSr77sF3Q
+
+https://youtu.be/sekXtpq_c4A
+PMAP 8141 • (9/10) Firms and markets: (0) Introduction
+
+Introduction to the class session on supply, demand, and taxes
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/09-content/
+
+
+https://youtu.be/ITFlBSTtVlc
+PMAP 8141 • (9/10) Firms and markets: (1) Supply and demand
+
+Discussion of how demand (or willingness to pay) and demand (or willingness to accept) intersect to create prevailing prices and quantities of goods
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/09-content/
+
+
+https://youtu.be/vs1ZbLIcJqc
+PMAP 8141 • (9/10) Firms and markets: (1a) Demand and willingness to pay
+
+Discussion of where demand curves come from
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/09-content/
+
+
+https://youtu.be/uRpcNoTpOZo
+PMAP 8141 • (9/10) Firms and markets: (1b) Supply, willingness to accept, and costs
+
+Discussion of how firm costs lead to aggregate market supply curves
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/09-content/
+
+  
+https://youtu.be/PqnL3kHMzw0
+PMAP 8141 • (9/10) Firms and markets: (2) Elasticities of demand
+
+Discussion of how demand curves and elasticities are related
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/09-content/
+
+
+https://youtu.be/Xnku65C-4kk
+PMAP 8141 • (9/10) Firms and markets: (3) Scale, location, networks, and time
+
+Discussion of how average costs change as you scale up production, leading to economies of scale, economies of agglomeration, and network effects
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/09-content/
+
+
+https://youtu.be/di14-g7lYsA
+PMAP 8141 • (9/10) Firms and markets: (4) Surplus, taxes, incidence, and DWL
+
+Discussion of consumer and producer surplus and how taxes lead to deadweight loss and impose different incidence on consumers and producers depending on their elasticities
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/09-content/
+
+
+https://youtu.be/bp3Lyc9dSeY
+PMAP 8141 • (9/10) Firms and markets: (5) Changes in supply and demand
+
+Discussion of how to recognize changes in supply and demand vs. changes in quantity supplied and demanded
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/09-content/
+
+
+https://youtu.be/uo5GNpRjZk4
+PMAP 8141 • (9/10) Firms and markets: (6) Escaping the price taking world
+
+Discussion of different strategies firms use to gain market power and set their own prices to maximize their profits
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/09-content/
+
+
+
+https://youtu.be/TZyH7lsJJIg
+PMAP 8141 • Example: Costs + profit maximization with Excel
+
+Demonstration of how to use Excel to calculate different types of costs (fixed, variable, total fixed, total variable, average fixed, average variable, marginal) and how to maximize profit
+
+Find the data and see a more detailed explanation at https://econf20.classes.andrewheiss.com/resource/costs/
+
+
+https://youtu.be/4ypXJXU-0n4
+PMAP 8141 • Example: Costs + profit maximization with formulas
+
+Demonstration of how to use math to calculate different types of costs (fixed, variable, total fixed, total variable, average fixed, average variable, marginal) and how to maximize profit
+
+Find the data and see a more detailed explanation at https://econf20.classes.andrewheiss.com/resource/costs/
+
+
+https://youtu.be/r6vDVZB90C4
+PMAP 8141 • Example: Elasticity of demand with Excel
+
+Demonstration of how to use Excel to calculate elasticities given a specific demand curve
+
+Find the data and see a more detailed explanation at https://econf20.classes.andrewheiss.com/resource/costs/#elasticity-of-demand
+
+
+https://youtu.be/Mz0P_fXxik4
+PMAP 8141 • Example: Supply, demand, surplus, and deadweight loss
+
+Demonstration of how to use math and Desmos to find market equilibria, calculate the size of consumer and producer surplus, and find the deadweight loss and incidence after the imposition of a tax
+
+Find the data and see a more detailed explanation at https://econf20.classes.andrewheiss.com/resource/supply-demand/
+
+
+https://youtu.be/uSJzdXzYyvQ
+PMAP 8141 • Example: Monopolies
+
+Demonstration of how to calculate the inefficiency/deadweight loss that comes from monopolies
+
+Find the data and see a more detailed explanation at https://econf20.classes.andrewheiss.com/resource/monopoly/
+
+
+```

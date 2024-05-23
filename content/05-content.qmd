@@ -1,0 +1,124 @@
+---
+title: "Work, wellbeing, and scarcity"
+date: "2024-06-17"
+date_end: "2024-06-21"
+params:
+  pdf: slides/pmap8141_s24_05_06-slides.pdf
+  thumb: slides/pmap8141_s24_05_06-slides.png
+---
+
+## Readings
+
+- {{< fa book >}} Introduction and 4.1-4.12 in *Economy, Society, and Public Policy* [@core-espp]
+- {{< fa book >}} Chapters 2 and 6 in *Naked Economics* [@Wheelan:2019]
+- {{< fa arrow-up-right-from-square >}} Anuschka de Rohan, ["Why dolphins are deep thinkers",](https://www.theguardian.com/science/2003/jul/03/research.science) The Guardian, July 2, 2003 (first 3 paragraphs only)
+- {{< fa arrow-up-right-from-square >}} Charles Duhigg, ["Warning: Habits May Be Good for You,"](http://www.nytimes.com/2008/07/13/business/13habit.html) New York Times, July 13, 2008 (a PDF version of this is on iCollege under "Content" if you can't access it with the URL)
+- {{< fa arrow-up-right-from-square >}} Randall Munroe, ["Cost of Pennies"](https://what-if.xkcd.com/22/)
+- {{< fa arrow-up-right-from-square >}} Randall Munroe, ["Working"](https://xkcd.com/951/)
+
+
+## Other useful resources
+
+I pause a couple times during the lecture sections on indifference curves and utility maximization and I mention that you should watch these videos. Here are those videos:
+
+- {{< fa brands youtube >}} [Marginal Revolution University, "Indifference curves"](https://www.youtube.com/watch?v=iOmDo5jLFw8) (watch during the "Utility and indifference" section)
+- {{< fa brands youtube >}} [Marginal Revolution University, "Constraint optimization"](https://www.youtube.com/watch?v=MXIgp-P-FeY) (watch during the "Maximizing utility" section)
+
+Also, a complete walkthrough of how to maximize utility with algebra and graphs is at the ["Utility maximization" guide](/resource/indifference-budget.qmd) in the resources section.
+
+
+## Slides
+
+```{r show-slide-link-thumb, echo=FALSE, results="asis"}
+source(here::here("R", "slide-things.R"))
+
+slide_links(params$pdf, params$thumb)
+```
+
+
+## Videos
+
+```{r show-youtube-list, echo=FALSE, results="asis"}
+source(here::here("R", "youtube-playlist.R"))
+
+playlist_id <- "PLS6tnpTr39sFoXHP6KAukqzlARc3Bqu_R"
+
+videos <- tibble::tribble(
+  ~youtube_id, ~title,
+  "M04UOTl9QrY", "Introduction",
+  "fFN4iktx9EQ", "Incentives",
+  "BjNcxNMXy0A", "Elasticity",
+  "ttKFVtbpHME", "Preferences, constraints, and tradeoffs",
+  "or5INrQZiNE", "Utility and indifference",
+  "VxnR9ae4kVc", "Calculus party!!!",
+  "8sULVKhrAIg", "Maximizing utility"
+)
+
+youtube_list(videos, playlist_id)
+```
+
+
+```{cat include=FALSE, eval=FALSE}
+Playlist: https://www.youtube.com/playlist?list=PLS6tnpTr39sFoXHP6KAukqzlARc3Bqu_R
+
+https://youtu.be/M04UOTl9QrY
+PMAP 8141 • (5/6) Work, wellbeing, and scarcity: (0) Introduction
+
+Introduction to the class session on preferences, scarcity, and utility
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/05-content/
+
+
+https://youtu.be/fFN4iktx9EQ
+PMAP 8141 • (5/6) Work, wellbeing, and scarcity: (1) Incentives
+
+Discussion of why people do what they do and the difference between extrinsic and intrinsic utility
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/05-content/
+
+  
+https://youtu.be/BjNcxNMXy0A
+PMAP 8141 • (5/6) Work, wellbeing, and scarcity: (2) Elasticity
+
+Discussion of how we can use elasticity to measure how responsive people are to changes in prices
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/05-content/
+
+
+https://youtu.be/ttKFVtbpHME
+PMAP 8141 • (5/6) Work, wellbeing, and scarcity: (3) Preferences, constraints, and tradeoffs
+
+Discussion of diminishing marginal product and opportunity cost
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/05-content/
+
+
+https://youtu.be/or5INrQZiNE
+PMAP 8141 • (5/6) Work, wellbeing, and scarcity: (4) Utility and indifference
+
+Introduction to utility bundles and indifference curves
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/05-content/
+
+https://youtu.be/VxnR9ae4kVc
+PMAP 8141 • (5/6) Work, wellbeing, and scarcity: (5) Calculus party!!!
+
+Brief review of how to find the slopes of lines and curves using algebra and calculus
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/05-content/
+
+https://youtu.be/8sULVKhrAIg
+PMAP 8141 • (5/6) Work, wellbeing, and scarcity: (6) Maximizing utility
+
+Explanation of how to maximize utility by finding where an indifference curve lines up with the budget line
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/05-content/
+
+
+https://youtu.be/e67XxMBUy48
+PMAP 8141 • Example: Maximizing utility
+
+Demonstration of how to maximize utility given a budget and preferences
+
+See a more detailed explanation at https://econf20.classes.andrewheiss.com/resource/indifference-budget/
+```

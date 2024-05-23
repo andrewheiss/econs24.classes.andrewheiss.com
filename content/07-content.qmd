@@ -1,0 +1,112 @@
+---
+title: "The firm"
+date: "2024-06-24"
+date_end: "2024-06-28"
+params:
+  pdf: slides/pmap8141_s24_07_08-slides.pdf
+  thumb: slides/pmap8141_s24_07_08-slides.png
+---
+
+## Readings
+
+- {{< fa book >}} Introduction and 6.1-6.14 in *Economy, Society, and Public Policy* [@core-espp]
+- {{< fa brands youtube >}} CORE team, ["Richard Freeman: You can't outsource responsibility"](https://www.youtube.com/watch?v=2Zm5ZLMKhgQ)
+- {{< fa brands youtube >}} Marginal Revolution University, [Asymmetric Information and Used Cars](https://www.youtube.com/watch?v=sXPXpJ5vMnU)
+- {{< fa brands youtube >}} Marginal Revolution University, [Asymmetric Information and Health Insurance](https://www.youtube.com/watch?v=pUkRo9COd38)
+- {{< fa brands youtube >}} Marginal Revolution University, [Moral Hazard](https://www.youtube.com/watch?v=5v7TWKlYoN0)
+- {{< fa brands youtube >}} Marginal Revolution University, [Solutions to Moral Hazard](https://www.youtube.com/watch?v=6faL76QZ2AA)
+- Look at these real-life examples of information asymmetries and principal-agent problems:
+    - {{< fa arrow-up-right-from-square >}} Sam Dolnick, ["Air-Conditioners That Run When Nobody's Home,"](http://www.nytimes.com/2010/08/16/nyregion/16chill.html) *New York Times*, August 15, 2010 (a PDF version of this is on iCollege under "Content" if you can't access it with the URL)
+    - {{< fa arrow-up-right-from-square >}} Ceci Connolly, ["U.S. worker's case reveals how drug cartels get help from this side of border,"](http://www.washingtonpost.com/wp-dyn/content/article/2010/09/11/AR2010091105087.html) *Washington Post*, September 12, 2010
+    - {{< fa arrow-up-right-from-square >}} Rob Ferguson, ["Ontario’s winter roads 'less safe' since privatization: auditor,"](https://www.thestar.com/news/canada/2015/04/29/ontarios-winter-roads-are-less-safe-since-privatization-auditor.html) *The Star*, April 29, 2015
+
+
+## Other useful resources
+
+A full example of finding income and substitution effects graphically is at the ["Income and substitution effects" guide](/resource/income-substitution/) in the resources section.
+
+Here are some other examples of finding income and substitution effects:
+
+- [Example Income and Substitution Effects for Normal and Inferior Goods](https://www.youtube.com/watch?v=pLhh_D5b_Lg)
+- [Explanation of Income and Substitution Effects](https://www.youtube.com/watch?v=ysqGRwvlte0)
+- [EC1002 Chapter 2 Lesson 2 - The Indifference Curve, Substitution, and Income Effect](https://www.youtube.com/watch?v=hDniSzSmpbU) (this one is long and detailed, but still helpful, especially around minute 21)
+
+
+## Slides
+
+```{r show-slide-link-thumb, echo=FALSE, results="asis"}
+source(here::here("R", "slide-things.R"))
+
+slide_links(params$pdf, params$thumb)
+```
+
+
+## Videos
+
+```{r show-youtube-list, echo=FALSE, results="asis"}
+source(here::here("R", "youtube-playlist.R"))
+
+playlist_id <- "PLS6tnpTr39sGmVo-pwuo1juWrsMWD6wcQ"
+
+videos <- tibble::tribble(
+  ~youtube_id, ~title,
+  "8rjRiDbOJdA", "Introduction",
+  "2dXD_qgFeqk", "Income and substitution effects",
+  "5sm24T1acs4", "Firms",
+  "9oRtzg626yg", "Asymmetric information",
+  "in8jXE_n31I", "Owners, managers, and employees"
+)
+
+youtube_list(videos, playlist_id)
+```
+
+
+```{cat include=FALSE, eval=FALSE}
+Playlist: https://www.youtube.com/playlist?list=PLS6tnpTr39sGmVo-pwuo1juWrsMWD6wcQ
+
+https://youtu.be/8rjRiDbOJdA
+PMAP 8141 • (7/8) The firm: (0) Introduction
+
+Introduction to the class session on firms, contracts, and information asymmetries
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/07-content/
+
+
+https://youtu.be/2dXD_qgFeqk
+PMAP 8141 • (7/8) The firm: (1) Income and substitution effects
+
+Discussion of how changes in prices lead to changes in consumption, which leads to income and substitution effects. 
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/07-content/
+
+  
+https://youtu.be/5sm24T1acs4
+PMAP 8141 • (7/8) The firm: (2) Firms
+
+Discussion of how firms and markets have different organizational and decision making structures
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/07-content/
+
+
+https://youtu.be/9oRtzg626yg
+PMAP 8141 • (7/8) The firm: (3) Asymmetric information
+
+Discussion of adverse selection (hidden knowledge) and moral hazard (hidden action)
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/07-content/
+
+
+https://youtu.be/in8jXE_n31I
+PMAP 8141 • (7/8) The firm: (4) Owners, managers, and employees
+
+Discussion of how contracting helps fix principal-agent problems + how the fear of losing employment rents keeps people employed
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/07-content/
+
+https://youtu.be/tXMRnDAbKVg
+PMAP 8141 • Example: Income and substitution effects
+
+Demonstration of how to decompose the total effect after a change in price to income and substitution effects
+
+See a more detailed explanation at https://econf20.classes.andrewheiss.com/resource/indifference-budget/
+```

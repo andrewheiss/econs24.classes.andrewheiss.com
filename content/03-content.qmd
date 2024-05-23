@@ -1,0 +1,93 @@
+---
+title: "Social interactions and economic outcomes"
+date: "2024-06-10"
+date_end: "2024-06-14"
+params:
+  pdf: slides/pmap8141_s24_03-slides.pdf
+  thumb: slides/pmap8141_s24_03-slides.png
+---
+
+## Readings
+
+***Important***: The PDFs of the individual chapters are posted on iCollege.
+
+- {{< fa book >}} Introduction and 2.1-2.12 in *Economy, Society, and Public Policy* [@core-espp]
+- {{< fa trophy >}} Play through ["The Evolution of Trust"](http://ncase.me/trust/) by Nicky Case
+- {{< fa podcast >}} Radiolab, ["One Good Deed Deserves Another,"](http://www.radiolab.org/story/104010-one-good-deed-deserves-another/) part 3 in ["The Good Show,"](http://www.radiolab.org/story/103951-the-good-show/) season 9, episode 1
+- {{< fa podcast >}} Radiolab, ["The Golden Rule,"](http://www.radiolab.org/story/golden-rule/) part 1 in ["What's Left When You're Right?,"](http://www.radiolab.org/story/whats-left-when-youre-right/) season 12, episode 6
+- {{< fa brands youtube >}} [Golden Balls Split or Steal video clip](https://www.youtube.com/watch?v=S0qjK3TWZE8) (*watch after listening to "The Golden Rule"*)
+- {{< fa file-pdf >}} Chapter 2 in Frederick W. Mayer, *Narrative Politics: Stories and Collective Action* [@Mayer:2014]
+
+
+
+## Slides
+
+```{r show-slide-link-thumb, echo=FALSE, results="asis"}
+source(here::here("R", "slide-things.R"))
+
+slide_links(params$pdf, params$thumb)
+```
+
+
+## Videos
+
+```{r show-youtube-list, echo=FALSE, results="asis"}
+source(here::here("R", "youtube-playlist.R"))
+
+playlist_id <- "PLS6tnpTr39sHsEVV9piOwUFxDNppto2En"
+
+videos <- tibble::tribble(
+  ~youtube_id, ~title,
+  "mc15_xdSErI", "Introduction",
+  "rkro_aqDVvI", "Individuals and society",
+  "9NhhQN0goGs", "Game theory",
+  "elzpP-FNyGM", "Stags, hares, and prisoners",
+  "zURMLvUhB_c", "Fixing collective action problems",
+)
+
+youtube_list(videos, playlist_id)
+```
+
+
+```{cat include=FALSE, eval=FALSE}
+Playlist: https://www.youtube.com/playlist?list=PLS6tnpTr39sHsEVV9piOwUFxDNppto2En
+
+https://youtu.be/mc15_xdSErI
+PMAP 8141 • (3) Social interactions and economic outcomes: (0) Introduction
+
+Introduction to the class session on game theory
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/03-content/
+
+
+https://youtu.be/rkro_aqDVvI
+PMAP 8141 • (3) Social interactions and economic outcomes: (1) Individuals and society
+
+Discussion of public goods and how individual and collective incentives are often misaligned in society
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/03-content/
+
+  
+https://youtu.be/9NhhQN0goGs
+PMAP 8141 • (3) Social interactions and economic outcomes: (2) Game theory
+
+Crash course introduction to game theory
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/03-content/
+
+
+https://youtu.be/elzpP-FNyGM
+PMAP 8141 • (3) Social interactions and economic outcomes: (3) Stags, hares, and prisoners
+
+Discussion of the stag hunt game and why it's often a better model of social dilemmas than the overused prisoner's dilemma
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/03-content/
+
+
+https://youtu.be/zURMLvUhB_c
+PMAP 8141 • (3) Social interactions and economic outcomes: (4) Fixing collective action problems
+
+Discussion of how we can use incentive and institutions to help change the payoffs in games to fix collective action problems
+
+Access the slides and other materials at the course website at https://econf20.classes.andrewheiss.com/content/03-content/
+```
