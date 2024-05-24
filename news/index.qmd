@@ -31,9 +31,6 @@ feed_name <- "news/index.xml"
 feed_url <- paste0(base_url, "/", feed_name)
 ```
 
-::: {#news-table}
-:::
-
 ::::: {.callout-tip}
 
 ## Subscribe!
@@ -53,3 +50,6 @@ You can use a feed reader like [Feedly](https://feedly.com/) or use an [RSS-to-e
 ::::
 
 :::::
+
+::: {#news-table}
+:::
