@@ -10,6 +10,7 @@ params:
 ## Readings
 
 - {{< fa book >}} Introduction and 3.1-3.11 in *Economy, Society, and Public Policy* [@core-espp]
+- {{< fa arrow-up-right-from-square >}} Antoine Mayerowitz, ["Mario meets Pareto: Step on the Front Line and Beat your Friends"](https://www.mayerowitz.io/blog/mario-meets-pareto)
 - {{< fa brands youtube >}} [The Veil of Ignorance](https://www.youtube.com/watch?v=A8GDEaJtbq4)
 - {{< fa arrow-up-right-from-square >}} [The Fairness Principle: How the Veil of Ignorance Helps Test Fairness](https://fs.blog/2017/10/veil-ignorance/)
 - {{< fa podcast >}} Planet Money, ["Retraining Day,"](https://www.npr.org/sections/money/2017/01/27/512060753/episode-750-retraining-day) episode 750, January 27, 2017
@@ -23,8 +24,8 @@ params:
 
 The equality/equity/justice meme that we talk about in the lecture is a helpful way of thinking about how to remove institutional barriers to fairness and justice, but it also isn't completely adequate because of some of the underlying assumptions built into the graphic. Here are a couple critiques:
 
-- https://fakequity.com/2017/04/28/can-we-stop-using-the-box-graphic-when-we-talk-about-racial-equity/
-- https://culturalorganizing.org/the-problem-with-that-equity-vs-equality-graphic/
+- <https://fakequity.com/2017/04/28/can-we-stop-using-the-box-graphic-when-we-talk-about-racial-equity/>
+- <https://culturalorganizing.org/the-problem-with-that-equity-vs-equality-graphic/>
 
 In any case, striving for justice (i.e. removing the institutional barriers preventing people from flourishing in the first place) is a noble and worthy goal for public policy.
 
