@@ -1,7 +1,8 @@
 ---
 title: "Welcome to class!"
-date: "2023-05-31T14:11"
+date: "2024-05-24T09:26"
 categories: [getting started]
+engine: knitr
 ---
 
 Hello everyone!
@@ -10,9 +11,9 @@ I’m Andrew Heiss, your professor for PMAP 8141 (Microeconomics for Public Poli
 
 I have a few important announcements before class:
 
-- Before class, I’d love to get to know each you a little first, so I’ve created a quick survey to fill out. I’ve sent you a link to it via e-mail. Please take it at your earliest convenience.
+- Before class, I'd love to get to know each you a little first, so I've created a quick survey here: [https://forms.gle/VPio4cdohWMDauvJ8](https://forms.gle/VPio4cdohWMDauvJ8). Please take it at your earliest convenience.
 
-- The entire course is available at a special class website at <https://econs24.classes.andrewheiss.com/>. Bookmark this site—it'll be your best friend for the next semester. I only use iCollege for collecting your assignments, posting answer keys, and offering the two exams (since it's password protected). This website is the official source of dates and all other class information. Because it's not part of iCollege, you'll be able to reference it even after you graduate and lose access to GSU resources. You can even share it with others—it's just a website!
+- The entire course is available at a special class website at [https://econs24.classes.andrewheiss.com/](https://econs24.classes.andrewheiss.com/). Bookmark this site—it'll be your best friend for the next semester. I only use iCollege for collecting your assignments, posting answer keys, and offering the two exams (since it's password protected). This website is the official source of dates and all other class information. Because it's not part of iCollege, you'll be able to reference it even after you graduate and lose access to GSU resources. You can even share it with others—it's just a website!
 
 - **Please read the main explanatory pages at your earliest convenience.** The instructions and expectations for the class are divided across different pages, all accessible from the menu bar at the top of the site. Please read the main pages for the [syllabus](/syllabus.qmd), [schedule](/schedule.qmd), [content](/content/index.qmd), and [assignments](/assignment/index.qmd).
 
@@ -22,4 +23,4 @@ Quick background about me: I'm an assistant professor here at the Andrew Young S
 
 When I’m not teaching or researching, I’m normally chilling at home with my 6 kids (see <https://www.heissatopia.com> for photos and hilarious stories).
 
-Again, I’m really excited to get started next week. This summer should be a blast!
+Again, I’m really excited to get started. This summer term should be a blast!
