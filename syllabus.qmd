@@ -214,7 +214,6 @@ grading %>%
 ```
 
 
-## Movies
+## Recipes
 
-Once you have read this entire syllabus and [the assignment overview page](/assignment/index.qmd), please [click here](mailto:aheiss@gsu.edu) and e-mail me the poster for one of your favorite movies.
-
+Once you have read this entire syllabus and [the assignments page](/assignment/index.qmd), please [click here](mailto:aheiss@gsu.edu) and e-mail me your favorite recipe. I love cooking ([see here for a feed of some of my cooking adventures](https://bsky.app/search?q=from%3Aandrew.heiss.phd+%23pacooks)) and I'm always on the lookout for new things!
