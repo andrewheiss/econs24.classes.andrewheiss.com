@@ -1,0 +1,15 @@
+---
+title: "Building community"
+date: "2024-06-04T11:02"
+categories: [advice]
+---
+
+Throughout these pandemic years I've been studying the research on online teaching to see how to make my online classes as successful as possible. One almost universal key to success I've found is that learning requires social interaction to be successful [@Glazier:2016]. In fact, **one of the greatest predictors of success is whether students build relationships with their classmates and their professor.**
+
+This is true for **both** online classes and face-to-face classes! It's entirely possible to take a face-to-face class and have almost no social interaction. The worst, most useless class I ever took as an undergraduate was a required Intro to US History class that met twice a week for 2 hours in a massive auditorium with 900 (!!!) other students. It was awful and I learned nothing.
+
+So, interact with me and your classmates! Don't lurk in silence in the shadows. *Do* reach out and talk to your classmates (and me!).
+
+To that end, one of the best ways to get to know each other is to help each other. Ask questions on Slack. If you see someone's question there and you know how to help, answer! 
+
+You can also work on problem sets in groups if you want. Use Webex or Zoom to share screens with each other during calls so you can see what you're doing. If we were meeting in class, we'd work on practice problems during class in groups of 2–3 with me walking around and helping. **Feel free to replicate that experience** and work with others. It's not cheating! (As long as you don't turn in identical work.)

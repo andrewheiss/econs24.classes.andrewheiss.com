@@ -1,0 +1,44 @@
+---
+title: "Asking for help"
+date: "2024-06-04T10:38"
+categories: [advice]
+---
+
+In your welcome survey, a bunch of you have brought up a consistent concern: that you'll get stuck on a problem set question and won't feel comfortable (or won't even consider) reaching out for help.
+
+You **absolutely** can (and should) reach out when stuck. I try to be super responsive on Slack and e-mail. If you ask a question on the `#help` channel in Slack, others can help too. No question is too tricky or embarrassing, I promise.
+
+I've designed these assignments to *not* take hours and hours and hours. If you find yourself stuck and can't get out of a pit, *ask for help*. Don't spend too much time wallowing in being lost! I'm here to help, both live with Slack/email/Webex and with all the example videos and pages. 
+
+Reach out for help early and often. Do not suffer in silence. Do not spend hours and hours stuck on an issue before reaching out for help.
+
+I’m a big believer in the 30-minute rule: 
+
+::: {.callout-tip}
+### The 30-minute rule
+
+If you're stuck on an issue for more than 30 minutes, **stop**, take a break, and ask for help somewhere.
+:::
+
+### Tips for getting help
+
+There are a couple easy guidelines to remember when asking for help:
+
+1. Be kind.
+
+2. Try asking questions with as complete information as possible. Rather than saying something like “the formula isn't working" and that's it, provide more background. Say specifically what you're trying to do and provide extra details when possible.
+
+	You can also take screenshots (use ⌘+shift+4 on macOS to save a screenshot to your Desktop, or ⌘+⌥+shift+4 to save a screenshot directly to the clipboard; use Windows+shift+S on Windows to save a screenshot directly to the clipboard). I've had people send photos from their phones too.
+
+3. Try asking questions in public. Lots of you have been sending me private messages there for assistance, and that's great and I'm happy to respond like that. However, one way to help build a stronger community for this class is to ask questions in public in the `#help` channel instead. There are a couple reasons for this:
+
+   1. **It reduces duplication**: Many of you have had almost identical questions and I've been able to copy/paste screenshots between different private conversations asking for help. Having those questions and answers in `#help` instead will let you get answers to common questions faster
+   2. **It allows *you* to help**: Some of you have econ experience already, and even if you don't, as the summer goes on, you'll get more comfortable with the material and will start being able to answer your classmates' questions. You might have just figured out a similar math problem, or you might be able to spot an issue with their formula, or you might otherwise know how to help. Step in and help! Slack is for building a community, not just for getting assistance from me.
+
+And that's it. **Ask questions in ways that will help answerers answer them and be nice about it. When answering questions, be nice about it. Ask lots of questions. Answer lots of questions. Try to do it in public.**
+
+Once again, *do not suffer in silence*. I've had past students tell me that's like the one thing they'll remember from my classes—do not suffer in silence. I mean it, and I'll keep saying it throughout the semester (because often in your past courses and degrees, you've been discouraged from reaching out or from building communities or whatever—that is *not* the case here).
+
+Remember that you can always sign up for a time to meet with me at [my Calendly page](https://calendly.com/andrewheiss/)! I’m also on Slack and accessible via e-mail!
+
+Good luck with your work this week!

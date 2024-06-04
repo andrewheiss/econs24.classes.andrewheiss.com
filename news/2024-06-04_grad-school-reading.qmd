@@ -1,0 +1,21 @@
+---
+title: "Readings in grad school"
+date: "2024-06-04T10:58"
+categories: [advice]
+csl: "../files/bib/chicago-manual-of-style-17th-edition-syllabus.csl"
+citations-hover: false
+link-citations: false
+suppress-bibliography: true
+---
+
+In your welcome surveys, a few of you asked about how in depth you should read the materials for this class. The textbook is good, but long—future class sessions will have good (but long!) articles too. 
+
+A critical skill to learn in graduate school is how to read effectively. Here’s the fun secret about readings in grad school: you **should not read every single word on the page**. There’s no expectation that you should remember or memorize exact phrases—there’s no test question like “On p. 15 of the Robert Putnam article, what did he say in the 2nd sentence of the 3rd paragraph?” (And even if there were, it’d be pointless—the tests are open book, open note, open internet already!)
+
+Instead you should read strategically. Look through the materials to figure out the main theses, arguments, and concepts. Don’t give equal attention to every sentence or paragraph. 
+
+Check out these two quick resources for tips and advice and examples of how to read strategically:
+
+- {{< fa file-pdf >}}&ensp;[@Nelson:2021]
+
+- {{< fa file-pdf >}}&ensp;The "How to Read" section in [@Green:2021]

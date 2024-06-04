@@ -1,0 +1,28 @@
+---
+title: "Welcome to the first week of class!"
+date: "2024-06-04T10:24"
+categories: [getting started]
+---
+
+Hi everyone!
+
+Summer 2024 has started! Thanks to everyone who has filled out the welcome survey and joined the Slack workspace. If you haven’t done this, use the links posted in the announcement on iCollege
+
+As you've hopefully seen by now, all the content for the class is [at the course website](/). A handful of readings throughout the semester are PDFs of book chapters and journal articles, and those are on iCollege in the content section because of copyright issues, but everything else should be accessible from the main class website.
+
+Each week you should complete the readings and watch the lecture videos. You'll then keep track of the things you found most interesting and most confusing and submit those as your weekly check-in on iCollege.
+
+There is no problem set due this week, but [there is one due next Monday](/assignment/01-problem-set.qmd), so I'd also recommend getting started with that soon.
+
+*Importantly* for the problem sets, please check out the resources section of the class website, where you'll find examples of how to do all sorts of calculations and analysis. For problem set 1, for instance, you'll need to adjust for inflation and determine comparative advantage, so these guides will be indispensable: 
+
+- [Inflation and change](/resource/inflation.qmd)
+- [Absolute and comparative advantage](/resource/advantage.qmd)
+
+We have no regularly scheduled meeting times. Instead, 100% of the class content is asynchronous. You can do the readings and watch the videos on your own schedule at whatever time works best for you. Many of you work full time and you have childcare and parental care responsibilities, leaving you with only evenings for coursework. I've designed this asynchronous system with *you specifically* in mind. I also can only really do teaching work at night when my kids are in bed—I recorded all these videos between like 10 PM and 2 AM. We're all in similar pandemic boats.
+
+Each session has a set of readings and an accompanying lecture. I would **strongly** recommend working through the readings before watching the lecture, but you can do it in whatever order you want.
+
+And as always, remember that you can always reach out to me through e-mail or Slack and you can sign up for student hours with me at [https://calendly.com/andrewheiss/](https://calendly.com/andrewheiss/). Please don't hesitate to ask for help!
+
+Good luck and have fun!
