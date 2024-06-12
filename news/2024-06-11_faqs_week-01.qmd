@@ -1,0 +1,108 @@
+---
+title: "Week 1 FAQs"
+date: "2024-06-11T21:53"
+categories: [FAQs]
+engine: knitr
+---
+
+Hi everyone!
+
+Many of you had similar questions and muddy issues this week, and I left lots of similar comments and tips on iCollege, so I’ve compiled the most common ones here:
+
+
+### Weekly check-in location
+
+The weekly check-ins are in a weird place on iCollege—find them under "Quizzes". That's also where the exams will be. 
+
+
+### Example pages
+
+Remember that there are pages with step-by-step instructions and formulas and video walkthroughs for most of the types of problems we’ll cover in this class [at the course website](/resource/index.qmd). There are study guides for both of the exams as well as some practice problems. Take advantage of these!
+
+
+### Excel graphs were tricky!
+
+Yeah, if you haven’t done a lot with Excel, some of those graphs were a little tricky to make. Don’t worry, though—the majority of the diagrams in the rest of the problem sets can (and should!) be done outside of Excel. Use Desmos, Paint, an iPad, a whiteboard, pen/paper, whatever for pretty much all the rest of the pictures in the class. (And in Fall 2024 or Spring 2025, you can take my [data visualization class (PMAP 8551)](https://datavizs24.classes.andrewheiss.com/) and learn all about *actual* graphs `r emoji::emoji("wink")`)
+
+
+### Deflation
+
+> The idea of deflation being bad obviously makes sense in the grand scheme of things, but it feels counterintuitive to someone who is focused on saving. For instance, deflation seems like a great thing for someone saving for retirement. That would solve a lot of problems for people who are worried that inflation will make their retirement savings less useful.
+
+Deflation is a great example of a social dilemma. In the realm of personal finances, saving is good and spending lots of money on stuff is bad. If you individually stop spending and instead save as much money as possible, that’s great—you’ll build up a big retirement account and have lots of assets.
+
+The issue with deflation is that it encourages society-wide savings—*everyone* stops spending and starts saving, which grinds the economy to a halt. People stop buying stuff, so firms close, so people lose their jobs, so people stop earning money that they can save. We saw a bit of this when the world shut down in March 2020—that wasn’t deflation, but the same dynamics happened, with people stopping their spending and firms shutting down and people losing their jobs.
+
+Hence the social dilemma. One person saving and not spending—great! Everyone doing that—not great!
+
+> Would we want deflation after a time of high inflation to get everything back to normal?
+
+Not really, no. When there are high levels of inflation, it's good for prices to stabilize, but not reverse. A good example of this is Turkey. During the 1990s and 2000s, the [Turkish lira](https://en.wikipedia.org/wiki/Turkish_lira) suffered from hyperinflation, and by 2005, 1 US dollar was the same value as 1,350,000 lira (1.3 million!). I visited Istanbul in 2005 and found it absolutely wild that I could buy a bottle of water for a million lira.
+
+To fix this, the Turkish government didn't force prices to be lower (since deflation = bad). Instead, they made a whole new national currency: the New Turkish lira. This basically just lopped off six zeros from all prices—water that cost 1,000,000 lira suddenly cost 1 new lira. The value of the new lira has continued to inflate since then, just like all currencies, but at a more normal rate.
+
+
+### Price indexes
+
+> What’s the difference between the CPI and the World Bank’s GDP deflator? How were they derived and when is it better to use one over the other?
+
+Each country's central bank is responsible for tracking its inflation, and every country does it differently. In the United States, the Federal Reserve uses the CPI, which is based on hypothetical baskets of goods that are specific to the US. Other countries use other kinds of inflation adjustment indexes with their own specific baskets of goods.
+
+When you want to compare inflation across countries, you can't compare the CPI with whatever France or Mongolia use to calculate their local inflation levels—those countries use wildly different baskets of goods. So to get around this, the World Bank has created their own kind of cross-country inflation index, which they call a GDP deflator (I don’t know the details of how they build it though). It lets you make valid comparisons of inflation in the US, France, Mongolia, and everywhere else.
+
+In reality, countries actually have a lot of different flavors of price indexes. In problem set 1, I had you use the the national average CPI, but there are different CPIs for [specific regions](https://www.bls.gov/cpi/regional-resources.htm), ones specific to [urban consumers and rural consumers](https://www.bls.gov/cpi/data.htm), ones specific to [producers](https://www.bls.gov/ppi/) (i.e. firms), and so on. For basic inflation conversion, just using the regular national CPI is fine—if you’re doing detailed financial analysis for specific regions or industries, you should find the price index most appropriate for that situation.
+
+
+### Comparative and absolute advantage
+
+In question 7 of problem set 1, even though Thailand has absolute advantage in both rice and boats, there are still advantages to trading because of comparative advantage. The question is almost identical to the [Mexico/Costa Rica example here](/resource/advantage.qmd#comparative-advantage-when-one-party-has-absolute-advantage-in-both-products). Even one country/state/person is the best at producing both products, they can still gain more by specializing in just one, depending on the opportunity cost.
+
+Similarly, lots of you asked something like this:
+
+> Thailand has absolute advantage in both products so why should it give up one of them? Does that happen in real life?
+
+To find ratios of what would be good/bad for trading, you should think about the price of the thing each country might give up. Thailand could make their own rice, but to do so they'd have to give up some amount of a truck. If they can get a truck from Cambodia for cheaper than what they'd have to give up internally on their own, then they should. The easiest way to find those ratios is to just pick one and then work up and down. Like "would it be a good deal for Thailand to trade 1 ton of rice for 1 truck? Would it be a good deal to trade 2 tons of rice for 1 truck?" and so on.
+
+Importantly, the question doesn't take politics into account. Welcome to economics in general! The decision is based solely on raw numbers, which here say that Thailand should stop making one of the products. But in reality that's not great, both because of a country's political ambitions and because of internal politics—you don't want to destroy a whole domestic industry for the sake of economics. Though this is what happened, in part, during the 90s as the US opened free trade agreements with Canada and Mexico through NAFTA, and with China in general. Whole industries (like furniture manufacturing in Appalachia and car part manufacturing in the Midwest) disappeared because it was cheaper for China and others to do that stuff, even if the US had absolute advantage in it.
+
+
+### CAGR
+
+In question 4.1 on problem set 1, a few of you calculated the compound annual growth rate to answer how much inflation there's been between 1980 and 2007. The CAGR will show you the average inflation rate each year (which is something like 2% maybe?), but here you're interested in the total amount of inflation, which is 187%. This means that prices have almost tripled since 1980—something that cost \$86 in 1980 would cost \$248 in 2007 (100% inflation means doubling in price; 200% inflation means tripling in price; etc.). This is important to see because gas prices (question 4.2) have not increased as much (so gas has gotten cheaper), and neither has the minimum wage (question 4.3), which is really low compared to what it was when it was last adjusted to \$7.25. You can check this with the [CPI calculator online](https://data.bls.gov/cgi-bin/cpicalc.pl). \$3.10 in 1980 is worth \$10.22 today, so if policymakers want the minimum wage to have the same buying power today that it did in 1980, the minimum wage should be raised substantially (hence the [Fight for $15 movement](https://en.wikipedia.org/wiki/Fight_for_$15))
+
+
+### Percent change
+
+A few of you noted that when you calculated percent changes in your problem set, the values didn't always match between time periods. In some cases, a country might have value of 80 in one year, 200 in another year, and go back to 80 in the following year, and the percent changes don't rebalance and cancel each other out.
+
+That's fine and normal and how percent changes work. Here's one way to think about it:
+
+If you have \$100 now, and then have \$150 in a month, you've increased your total by 50%: 
+
+$$
+\frac{150 - 100}{100} = 0.5
+$$
+
+You gained half of your initial \$100. 
+
+If you then lose \$50 in the following month, you'll go from \$150 to \$100, decreasing your total by 33%:
+
+$$
+\frac{100 - 150}{150} = -0.3333
+$$
+You lost a third of your \$150. 
+
+The 50% increase doesn't match the 33% decrease because the starting amounts are different each time. Percent changes are always relative to the starting amount.
+
+
+### Neoliberalism
+
+> Why is Wheelan so heartless? He seems a little glib about the benefits of globalization and the notion of economic winners and losers.
+
+Oh man, yeah he is. Like, he's almost pro-sweatshops because workers in Southeast Asia get paid *something*, at least.
+
+His reasoning for this is that he got his PhD in economics from the University of Chicago, and that department is extremely influential in the policy world for pushing neoliberalism (the idea from session 2 that everything should be governed with the metaphor of a market: privatizing the post office, privatizing schools, privatizing the military, etc.). Wheelan is a hardcore neoliberal.
+
+Neoliberalism isn’t related to the conservative vs. liberal political party divide. Tons of Republicans are neoliberals (see, for instance, Betsy DeVos and her push for private and charter schools and dismantling of public schools), but tons of Democrats are too (Wheelan himself is a Democrat and ran for Congress back in 2008 after Rahm Emmanuel left his seat to become Obama’s chief of staff; Obama’s department of education didn’t necessarily push for DeVos-style privatization, but they did have a whole [Race for the Top](https://obamawhitehouse.archives.gov/issues/education/k-12/race-to-the-top) contest where school districts competed for additional money based on improvements in test scores, thus promoting competition and winners and losers, which is a form of a market, hence neoliberalism)
+
+So keep that in mind throughout *Naked Economics*. Wheelan loves markets and wants them everywhere.

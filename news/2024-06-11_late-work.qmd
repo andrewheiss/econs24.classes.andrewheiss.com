@@ -1,0 +1,13 @@
+---
+title: "Late work and student hours"
+date: "2024-06-11T22:11"
+categories: [advice, course details]
+---
+
+Hi everyone!
+
+I’ve gotten a few questions about late work. As explained in the syllabus, there is a slight penalty for late work, but that’s really just to be a [commitment device](https://en.wikipedia.org/wiki/Commitment_device) (an econ principle!) to help you stay on schedule.
+
+You can turn problem sets in at iCollege any time. The weekly check-in quizzes close automatically a day after the deadline, but I can reopen those as needed—just let me know through e-mail or Slack or wherever.
+
+Also, remember from the syllabus that [I have really open student hours](/syllabus.qmd#student-hours). If you want to meet with me for help or for whatever reason, [sign up for a time at my Calendly page](https://calendly.com/andrewheiss/). You can also access that link at the [home page of the course website](/) and [at the top of the syllabus page](/syllabus.qmd). Feel free to do so!
