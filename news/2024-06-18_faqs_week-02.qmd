@@ -1,0 +1,81 @@
+---
+title: "Week 2 FAQs"
+date: "2024-06-18T11:37"
+categories: [FAQs]
+engine: knitr
+---
+
+Hi everyone!
+
+You all had some great questions/muddy issues for this week! Let’s dive in…
+
+### Game types and names
+
+> Why is part 2 in #7 a stag hunt? Why is any game any sort of name? It's hard to keep track of all the games and their names!
+
+Yep! This is the nature of game theory game classification—it's tricky and everyone has their own naming system. (Like Bach or Stravinsky—it's commonly known as Battle of the Sexes where player 1 is a man who wants to go to a boxing match and player 2 is his wife who wants to go to the opera; there's been a move to drop that as the situation because sexism, and Bach or Stravinksy works (and keeps the same acronym BoS)
+
+The categories of games generally refer to where the Nash equilibria end up and if they’re good or bad. The invisible hand game that you saw in the lecture with Anil and Bala always ended up in a situation where they grow the best option for themselves and for society. There’s one Nash equilibrium, and the outcomes are opposite (one will do rice, one will do cassava). The name has nothing to do with government involvement or rewards—it’s just a shorthand for “a game where both players will do the best for themselves and society naturally because the incentives and payoffs align and there’s only one Nash equilibrium”
+
+In the case of farmers overgrazing (part 1 of question 7), both farmers will naturally overgraze. There’s only one Nash equilibrium, but it’s not good for society—it's the defect-defect outcome. The world would be measurably better off if the farmers did (8, 8), (2, 10), or (10, 2), but they’ll naturally do the worse (4, 4). The fact that there's one Nash and it's bad makes it a prisoner’s dilemma. 
+
+Stag hunts have two Nashes—one in the defect-defect outcome and one in the cooperate-cooperate outcome. The structure of the payoffs in part 2 of question 7 is what changes the game from a PD to a stag hunt.
+
+Bach or Stravinksy has two Nashes too, but they're both in the cooperate/cooperate good outcome. Chicken has two Nashes as well, but the outcomes are way worse than BoS if the game misfires. 
+
+So in short, the names for the categories of the games basically come down to how many Nashes there are and whether those equilibria are good or bad.
+
+
+### Pareto efficiency
+
+> How can you tell if the allocation of resources/payoffs is complete and that surplus is consumed by everyone?
+
+You can’t. And that's one of the weaknesses of Pareto efficiency. With a prisoner's dilemma, for instance, it is Pareto efficient to defect, but all of society is worse off. In order to move away from defect/defect, someone will lose out on something, so the Pareto rule says don't do it. There will be surplus (i.e. payoffs that could be achieved) that you can't access because the equilibrium is stable. Fun fun.
+
+> I'm having a hard time understanding why we use Pareto efficiency. I understand the concept itself, that you can't improve a situation by making it worse for someone, but I just don't see how these fits into the big picture of real-life situations very frequently. When the government makes tax cuts, that's obviously good for some people, but those benefiting from social programs that have been cut are worse off. Alternatively, when we raise taxes, that's probably better for those on social programs, but worse the working population. I just don't see when we would actually use this concept.
+
+Pareto efficiency is often called a *weak* standard for making decisions. All it deals with is easy, non-controversial fixes to inefficient situations. If you can change a policy in a way that hurts absolutely nobody—no taxes raised, no additional fees imposed, just something that improves life for literally everyone—then you can do it without any political fights and you should do it because it’ll make life better. This kind of easy, noncontroversial, costless improvement is called a *Pareto improvement*. 
+
+([This short page here explains it really well](https://wilcoxen.maxwell.insightworks.com/pages/225.html); basically, inefficient situations “leave money on the ground” and need to be fixed)
+
+It’s not the best standard for public policy. Think of it as a bare minimum standard. It doesn’t take into account inequality, existing allocations of wealth or assets, opportunities, fairness, justice, or anything else. It’s just a baseline goal of sorts—can you make life better for everyone without hurting anyone?
+
+In reality, policy changes often need to be non-Pareto improving. If you’re interested in reallocating wealth from the ultra-rich to social welfare programs, that’s not Pareto efficient—it hurts the rich. If you only follow the Pareto rule, you shouldn’t ever raise taxes on the rich. But if you care about justice, reducing poverty, or other issues, you *should* raise taxes and fund those programs and ignore Pareto.
+
+
+### The veil of ignorance
+
+> How realistic is the veil of ignorance? It seems nice, but impractical.
+
+Yep. It’s impractical. It’s not meant to be a perfect standard for public policy—nobody is really driven 100% by empathy for others. It’s only a thought experiment.
+
+Think of it like the other extreme of Pareto efficiency. Pareto efficiency is the bare minimum requirement for policy changes; the veil of ignorance is what policy change might look like in a perfect idealized world where all policies are made with perfect justice and equanimity. Both are impractical, but both provide policy guidance.   
+
+
+### Payoffs
+
+> How do you know what numbers to put in the payoff matrix? We can't tell if people value negative or positive campaigning.
+
+> Do payoffs always have to be dollars?
+
+> How do we assign values to payoffs? When creating my own matrix, I struggled with the appropriate values to add to payoffs to prove the appropriate value of the decisions. 
+
+You assign values to payoffs by just… making them up. Often the payoffs are measured in utils, which are imaginary, but based on background knowledge. Sometimes you can create dollar-scale payoffs, like the Astrid/Bettina question in the problem set, and those numbers come from background knowledge and research. In election-related games, payoffs might be votes.
+
+Even though utility is fake and payoffs are often made up, they do attempt to reflect reality. They might not measure actual utility, but they do kind of measure general payoffs. In the chicken example, we said that crashing would cause −100 utils to each player, which, sure. That's a big negative number. It could be bigger, it could be smaller. It ultimately doesn't matter that much—what matters is that it's large and negative, while the payoffs for the embarrassment from swerving are small and negative. The big negative number helps shape the math behind the choice to swerve or not.
+
+In real life, there are statistical ways to calculate and predict actual measurable payoffs. You can get a job as a game theoretician for a think tank or for the Department of Defense or for political campaigns where your job is to build statistical models that predict what the other player/candidate/country values and what their payoffs look like and what their probabilities look like. We don't do any of that here in this class, but it is a real thing.
+
+
+### Equilibriums and efficiency
+
+> Is Nash equilibrium the same as Pareto efficiency?
+
+Nash equilibria aren't the same as Pareto efficiency. An equilibrium can be Pareto efficient if it's not possible to move away without hurting any player. But in a stag hunt situation, both parties could be stuck hunting hare but *could* move to hunting stag and both be better off. Hunting hare isn't Pareto efficient.
+
+
+### Multiplayer games
+
+> Can a game involve multiple players? Is there a limit on how many parties can be involved in the interaction?
+
+All the games we've covered in class are two-player games because they're easier to conceptualize and you can find their equilibria with just a 2×2 matrix. In more advanced game theory, though, there are multiplayer games (called *n*-player games, since they could be 3- or 7- or 18- or 10,000,000-player games). The math gets a *lot* more difficult and finding equilibria is a lot trickier. They do better reflect reality though! We just don't cover them here.
