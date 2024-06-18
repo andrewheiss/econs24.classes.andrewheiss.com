@@ -13,7 +13,7 @@ You all had some great questions/muddy issues for this week! Let’s dive in…
 
 > Why is part 2 in #7 a stag hunt? Why is any game any sort of name? It's hard to keep track of all the games and their names!
 
-Yep! This is the nature of game theory game classification—it's tricky and everyone has their own naming system. (Like Bach or Stravinsky—it's commonly known as Battle of the Sexes where player 1 is a man who wants to go to a boxing match and player 2 is his wife who wants to go to the opera; there's been a move to drop that as the situation because sexism, and Bach or Stravinksy works (and keeps the same acronym BoS)
+Yep! This is the nature of game theory game classification—it's tricky and everyone has their own naming system. Like Bach or Stravinsky—it's commonly known as Battle of the Sexes where player 1 is a man who wants to go to a boxing match and player 2 is his wife who wants to go to the opera; there's been a move to drop that as the situation because sexism, and Bach or Stravinksy works (and keeps the same acronym BoS).
 
 The categories of games generally refer to where the Nash equilibria end up and if they’re good or bad. The invisible hand game that you saw in the lecture with Anil and Bala always ended up in a situation where they grow the best option for themselves and for society. There’s one Nash equilibrium, and the outcomes are opposite (one will do rice, one will do cassava). The name has nothing to do with government involvement or rewards—it’s just a shorthand for “a game where both players will do the best for themselves and society naturally because the incentives and payoffs align and there’s only one Nash equilibrium”
 
