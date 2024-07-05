@@ -1,0 +1,73 @@
+---
+title: "Week 4 FAQs"
+date: "2024-07-05T17:08"
+categories: [FAQs]
+---
+
+Hi everyone! 
+
+Here are a few common questions and comments from your weekly check-ins:
+
+
+### Am I just a dummy, or is this class a little challenging?
+
+You are not a dummy! Economics is hard. It’s a completely different language for thinking about the world. The whole idea of using calculus to maximize your happiness when you’re constrained by a budget? That’s wild and not normal at all. Economists take the real world decisions made by individuals, firms, and countries and simplify them down to complex mathematical models. If you’ve never been exposed to this stuff before, it’s completely foreign and bizarre and difficult.
+
+This is hard stuff and everyone struggles. Do not worry!
+
+This is also why I grade things in this class with the ✓ system. In more official econ classes, like those offered in economics departments, you do calculus proofs in your problem sets and do all sorts of complex math where you’re graded really harshly. Some PhD programs in econ are actually designed to fail 50% of their students in the first semester (so cruel!)
+
+I’m not a fan of that at all! My philosophy with the check system is that if you try to do a good job, great: ✓ for you.
+
+My goal in this class isn’t to make you economists and it isn’t to make sure you get every part of every question right. My goal is to make it so you can (1) talk like an economist know what you’re talking about and (2) understand how economics fits in with public policy. That’s all. If you know that people maximize utility where their preferences match their budget, that’s awesome; if you can’t remember what the first derivative of $U = 0.667x^3 \sqrt{17y}$ is, after this semester, who cares.
+
+
+### What shapes indifference curves? Where do they come from?
+
+Indifference curves are specific to individuals, and they're shaped by tons of different factors, including location and experience (and marketing and advertising! This is why people get MBAs: to reshape individuals' indifference curves). They're imaginary and hypothetical and live in your head, but they also reflect reality and are shaped by larger external processes.
+
+
+### Is it still adverse selection if the knowledge is not known to anyone?
+
+Yep! A great example of this is genetic testing (with companies like 23andMe), where you can find out which genes you have that might put you at greater risk of cancer ([like BRCA](https://en.wikipedia.org/wiki/BRCA_mutation)). Life insurance companies would *love* to know if people who sign up for insurance policies have higher risks of cancer, since that's a form of information asymmetry—they don't necessarily want to provide insurance policies to people who will develop cancer later. Individuals might be interested in genetic testing, but it's expensive and not everyone does it. So it's entirely possible that someone with a genetic propensity to get cancer (1) doesn't know they have it, and (2) gets insured by an insurance company. So without either party knowing, there's adverse selection.
+
+[Technically it's illegal for health insurance companies to discriminate on the basis of genetics](https://www.npr.org/sections/health-shots/2018/08/07/636026264/genetic-tests-can-hurt-your-chances-of-getting-some-types-of-insurance), and they aren't supposed to know about your genetic tests—but it's not illegal for life insurance companies to do that.
+
+
+### WIC "forcing" people to purchase certain foods doesn't seem sustainable, has the policy shifted to better support WIC recipients and their families?
+
+You would think so, since the phenomenon of people getting less utility from WIC than from SNAP is well documented, but nope! WIC and WIC-like programs are still going strong.
+
+There's fascinating research that looks at the practical effects of WIC-like restrictions—[this article looks at dozens of users of WIC in North Carolina](https://academic.oup.com/jpart/article/31/2/295/5917011) and finds that they struggle with the administrative burdens involved in accessing and keeping WIC benefits. There's a growing body of research in public administration that finds that lots of states purposely impose these [administrative burdens](https://www.americanprogress.org/article/how-to-address-the-administrative-burdens-of-accessing-the-safety-net/) to reduce access to these programs (and [the White House has been working to stop these](https://www.whitehouse.gov/wp-content/uploads/2022/12/BurdenReductionStrategies.pdf)). Like, just last year, [Iowa started dismantling its SNAP program](https://www.washingtonpost.com/dc-md-va/2023/04/16/iowa-snap-restrictions-food-stamps/) and imposing WIC-like restrictions on which kinds of foods people can buy.
+
+
+### Why do we need to differentiate between income and substitution effects?
+
+It’s a way of thinking about behavior, and economists use them in real life to predict how people will respond to incentives or changes in income or prices. At their core, income and substitution effects help you see people’s preferences. 
+
+For instance, if someone is currently buying 1 gallon of milk a week and their income suddenly doubles, you might assume that they’ll also double their consumption and start buying 2 gallons of milk a week. That would happen in a world with no substitution effects—they’d double their consumption because their income is doubled. But that’s often not the case. This person might start buying a *little* bit more milk a week because they’re richer (income effect), but they’ll likely spend that doubled income on other things (substitution effect)
+
+This matters for policies that provide people with benefits or that cut people’s taxes (since both of those things effectively change people’s incomes). For example, if a state government removes its gas tax, people in theory become richer and can spend that money elsewhere. To make math easier, let’s pretend that a state government cuts all gas prices in half. Naively, you might assume that a change like that would make it so people drive twice as much, since their gas budget just doubled. But in reality, that’s not the case—there might be some more driving (income effect), but that new extra money is going to go to other things (food, rent, etc.)
+
+
+### My income and substitution effects were all different!
+
+Yep! That's fine. Because indifference curves are all imaginary, all that matters for this class is the mechanics of decomposing a total effect into income and substitution effects. You likely got different effects from what was in the answer key, and that’s okay.
+
+
+### Why are nonprofits treated differently from private firms?
+
+There’s a whole host of reasons for this. Nonprofits don’t have owners. Any profits a nonprofit generates have to go back into the organization itself—you can’t buy stocks in the Red Cross or Amnesty International. This is because governments and the nonprofit sector have a centuries-long arrangement where nonprofits help provide public goods and charitable work in exchange for not having to pay taxes (but also not having owners like a regular firm)
+
+
+### Question 6 in problem set 3 / Question 1 in problem set 4 was rough
+
+Yeah, sorry, utility maximization is admittedly hard stuff. There are a few core mathematical principles for microeconomics, and budget lines and indifference curves are one of them. Ultimately, a population's aggregated indifference curves, even though they're fake, generate a supply function, which is real (🤯). Plus the mechanics of optimizing your consumption to maximize your happiness under constraints is something humans do (and you might start doing it more explicitly now, thinking about budget lines and indifference curves when you're deciding which groceries to buy). Again, it's hard stuff. But you can learn it!
+
+
+### Sometimes it's unclear which thing should go on which axis
+
+Yeah, like in question 3 on problem set 4, I didn't specify if clothing or food should go on the x- or y-axis. That's because it ultimately doesn't matter. Put them wherever. 
+
+In the answer key, clothing was on the x-axis, but that's just because I put it there. It'd work just the same if food was on the x-axis (the graph would just look a little different and the notch would be along the y-axis instead of the y-axis). Though it’s often easiest to put the thing that changes on the x-axis, similar to stats graphs. In statistics we put the *dependent variable* (or the outcome, or the thing that responds to changes) on the y-axis and the *independent variable* (or the treatment, or the explanatory variable, or the thing that we change) on the x-axis.
+
