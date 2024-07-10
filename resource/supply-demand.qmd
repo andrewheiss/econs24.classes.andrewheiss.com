@@ -3,6 +3,8 @@ title: Supply, demand, surplus, DWL, and elasticity
 ---
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
 library(tidyverse)
 library(here)
 library(patchwork)
