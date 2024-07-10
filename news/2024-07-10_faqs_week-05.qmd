@@ -1,0 +1,53 @@
+
+---
+title: "Week 5 FAQs"
+date: "2024-07-10T13:52"
+categories: [FAQs]
+---
+
+Hi everyone! 
+
+You all did a fantastic job with Exam 1—great work!
+
+Here are a few common questions and comments from your weekly check-ins:
+
+
+### Question 5 in problem set 5 was so so hard.
+
+Yep, that's the trickiest, most complicated problem set question of the semester (sorry!), but it's also one of the most realistic. It’s the closest you’ll get to doing actual real-world economic analysis in this class. This is the kind of stuff that companies and nonprofits and governments actually really do. Large companies like Google, Amazon, GM, Kroger, etc. all have chief economists, which seems weird! That seems more like a government position, like an employee at the Fed. But these companies and their economics teams use the principles of microeconomics to estimate supply curves using experiments and regression equations, and then work to find the optimal price to set for their products given the competition in the market and their company’s market power. They do everything you did in that question (and more).
+
+
+### How can we remember the difference between changes in supply/demand and changes in quantity supplied/demanded?
+
+This is one of the more trickier and subtler points in microeconomics, and it trips me up all the time too. [This short little video is helpful](https://mru.org/courses/principles-economics-microeconomics/change-demand-vs-change-quantity-demanded) (they have a bunch of other really neat short videos too)
+
+
+### Why do we get different prices when using the marginal revenue and the demand curve formula?
+
+In question 5 from problem set 5, you found the ideal profit-maximizing quantity, but when you try to find the corresponding price for that quantity, you get two different numbers. This is normal and a result of a monopoly situation, so don't worry! Following the MR formula, the theater should only charge \$25ish, since they're not producing as much as the socially optimal level. But, society is willing to pay a higher price for this reduced quantity! If you keep going up from the profit maximizing price and quantity on the marginal revenue point and go up to the demand curve, you'll see that people would be willing to pay \$41 for tickets. So in an effort to maximize profits, the theater should only sell 180 tickets. They should charge \$25 for each, but people would pay up to \$41, so they'll charge the higher price because why not? It's free money for the theater! There will thus be fewer, more expensive tickets than you'd see under regular competition
+
+
+### Why are we assessing elasticity by 1%?
+
+That's because of how the math works. When you see an elasticity value like 6, it means that a 1% increase in price will lead to a 6% decrease in quantity demanded.
+
+But you can scale those numbers up however you want! Thinking about a 1% change in price is often not that helpful. Like, if you're thinking about the elasticity of the price of a Big Mac (currently $5.29), a 1% change in the price would mean moving from $5.29 to $5.24 (5.29 × 1.01 = 5.3429). So if the price increases by 5 cents, we'd see some sort of decrease in demand.
+
+A 5 cent increase is tiny and negligible, so we can instead scale it up and think about a 10% change in the price, which would mean moving from $5.29 to $5.82 (5.29 × 1.1 = 5.819), or a 53 cent increase. That's more substantial. We'd just need to scale up the corresponding change in demand as well.
+
+So when you see an elasticity value like 6, it means that a 1% increase in price will lead to a 6% decrease in quantity demanded. That also means that a 10% increase in price will lead to a 60% decrease in quantity demanded.
+
+
+### Imperfect monopolies
+
+> When we talk about monopolies, are we referring only to true monopolies where there are no alternatives? Or kind-of monopolies? For example, there are claims that some companies like Apple or Google are monopolizing the market, but they have not truly taken over 100% of the market (there are other smartphone companies, and there are other search engines). How do we determine when something has actually become a monopoly?
+
+There are varying degrees of monopoly-ness. Google dominates online search, but they're not a complete 100% monopoly—you can use Bing or Duck Duck Go. But they still have substantial market power and can overcharge and underperform like a textbook perfect monopoly.
+
+The only way to determine if something has become a monopoly is to look at the (potential) consequences of the firm's actions. Are prices higher and quality lower? It's behaving like a monopoly.
+
+This is what the FTC does when it gives approval for mergers. Like right now, [Kroger is trying to merge with Albertsons, and the FTC keeps denying them permission](https://www.ftc.gov/news-events/news/press-releases/2024/02/ftc-challenges-krogers-acquisition-albertsons). In their justification for the denial, the FTC actually [says this explicitly](https://www.ftc.gov/news-events/news/press-releases/2024/02/ftc-challenges-krogers-acquisition-albertsons):
+
+> …the proposed deal will eliminate fierce competition between Kroger and Albertsons, leading to **higher prices for groceries** and other essential household items for millions of Americans. The loss of competition will also lead to **lower quality products and services**, while also narrowing consumers’ choices for where to shop for groceries.
+
+(Despite these legal challenges, Kroger is still plowing ahead with the merger—[they just announced a list of 100+ stores that would be closed because of the merger](https://www.usatoday.com/story/money/2024/07/09/kroger-albertsons-merger-stores-sold-cs-wholesale-list/74346928007/).)
