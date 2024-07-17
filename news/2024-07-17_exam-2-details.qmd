@@ -1,0 +1,25 @@
+---
+title: "Exam 2 details"
+date: "2024-07-17T01:05"
+categories: [course details]
+---
+
+Hi everyone!
+
+It's already almost time for the second exam! We've made it to the end of the course!
+
+The study guide for the exam is [at the course website](/resource/exam2.qmd). There are also some practice supply/demand/taxes/DWL questions [here too](/resource/practice-questions.qmd#supply-demand-taxes-and-deadweight-loss).
+
+Exam 2 will be available online at iCollege from July 23–28. You can take it any time during that period. It closes at 11:59 PM on July 28, so make sure you finish it by then.
+
+It'll be a lot like Exam 1, with a mix of multiple choice and short and longer answer questions. 
+
+Importantly, **the test is open-note, open-problem set, open-book, and open-internet, but it is *not* open-any other human being or online chatbot like ChatGPT.** Do not talk about the test with your classmates after you’ve taken it. 
+
+You must complete this test in one sitting. You have a 5 hour window to take the exam, but *it will not take 5 hours, I promise*. It normally takes people 1–1.5 hours. 
+
+The reason I have the window is to give you plenty of time to search your notes, textbook, etc., and not feel rushed. I’ve had a couple students take 5+ hours on this test, but it’s because they took a break and had long lunch and went on a walk and then came back to the test. That’s 100% fine. 
+
+So you have a 5-hour window, but it **absolutely** will not take that long. And if you go over, it's okay—it'll let me know you went over, but it won't lock you out, and you won't be penalized for it. But also, really really really you shouldn't take that long! Don’t worry :) 
+
+Good luck! And as always, remember that you can (and should!) reach out to me for help!

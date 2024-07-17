@@ -1,0 +1,67 @@
+---
+title: "Week 6 FAQs"
+date: "2024-07-17T00:47"
+categories: [FAQs]
+---
+
+Hi everyone! 
+
+Here are a few common questions and comments from your weekly check-ins and problem set 6:
+
+
+### What do you do when lines are parallel?
+
+Often you'll be working with supply and demand equations that intersect beyond the basic Desmos window (i.e. between -10 and 10). In question 4 in Problem Set 7, for instance, the lines cross way out where x = 2,500, but y is only 0.75. Seeing that in Desmos is tricky—it can be done, but you have to zoom out really far. What I typically do in situations like this is draw (on paper) an oversimplified and incorrect picture. If you look at the answer key for 7.4, you'll see that the demand line is like a normal 45º angle, which is fine (since the x-axis is super condensed). If I did it on paper or on a whiteboard, I'd do the same thing—just draw a downward sloping line (for demand; draw an upward sloping line for supply). I then write the coordinates where the lines cross so that I can figure out the DWL and other rectangles and triangles. The super simple diagram won't be to scale, but it'll help show the different sections—you just have to keep track of the intersection points (which you can get with Desmos or algebra)
+
+::: {.callout-tip}
+#### More details
+
+[See this question from the FAQs for week 3](/news/2024-06-25_faqs_week-03.qmd#desmos) for more about zooming with Desmos.
+
+:::
+
+
+### Is deadweight loss always shaped like a triangle?
+
+Pretty much, yeah, it'll be a triangle, since you have lines sloping down and up at different angles. It won't ever overlap with other sections of the graph—part of DWL can't be included in consumer/producer surplus or tax revenue, since each of those areas stand alone. Look for a triangle near the intersection of supply/demand and shifted supply/demand and you'll find the DWL.
+
+
+### What does deadweight loss mean in real life?
+
+In practical terms, DWL means that some people can no longer participate in a market. If the existing market price for a thing is \$5, and a tax raises that to \$7, then everyone who'd be willing to pay \$5.50 or \$6 or \$6.99 for the thing are priced out and won't buy it, which means the company won't get their money. All that potential money from those lower-value transactions disappears.
+
+For people that can still afford the thing, they’ll feel worse about it. If someone was willing to pay \$7.50 and originally only had to pay \$5, they’d get \$2.50 in surplus, or what I like to call “good deal points”—it feels like you’re saving a bunch of money or getting a good deal. If the tax makes the price go up to \$7, they’d only get \$0.50 in surplus, which is far fewer “good deal points.” They can still afford and buy the thing, but it’s less of a good deal, and you feel worse about it.
+
+
+### If companies had perfect information about you, couldn't they just charge you your individual willingess-to-pay and then you wouldn't have any consumer surplus?
+
+YES. This is a fantastic observation. Previously I called consumer surplus "good deal points"—you feel happy knowing that you'd be willing to pay \$10 for a pizza, but you can get it for just \$4. 
+
+But what if Pizza Hut could read your mind and know that you'd be willing to pay \$10?
+
+Companies can't quite read minds, but for years they've used different techniques to try. Take airline tickets, for instance. Flights are cheaper if you buy them months in advance because airlines know that you're not willing to pay a ton for them and that you're willing to wait a while to go. Flights are way more expensive if you buy them the day ebfore you fly because airlines assume that people buying on such short notice must have a reason to do it (family emergency; wealthy business that will reimburse travellers for expensive tickets; etc.), so they guess that they have a higher willingness to pay. The time between the purchase date and the travel date is used as a signal for willingness to pay and influences the price.
+
+That's all guesswork though, and no substitute for mindreading.
+
+However, today with the advent of AI, it's possible for companies to make all sorts of predictions about every individual potential customer and offer them prices at their estimated willingness to pay. Like, they can buy data about you from Instagram and predict your *mood* and offer you different prices dependeing on how you feel. 
+
+[Check out this article to see how companies are doing this now with AI tools](https://www.businessinsider.com/ai-quietly-picking-your-pocket-with-personalized-pricing-2024-7), setting prices based on age, mood, sexual orientation, geography, and a whole host of other factors.
+
+This is great for companies. This is awful for consumer surplus and your ability to get "good deal points".
+
+
+### How do firms know if they are price takers? Do firms not want to be price takers?
+
+By default firms are price takers. They can tell based in part on elasticity—if CVS doubles the price of its Tylenol, nobody will buy it and everyone will buy it from Walgreens or Kroger or somewhere else. CVS can't set the price arbitrarily—it has to take whatever the prevailing price is (± some markup or discount). If a firm can get away with massively increasing prices and not losing revenue, then they're not a price taker.
+
+And yes, firms would love to not be price takers. They'd love to charge higher prices—that's what marketing is all about. Or AI-based individualized price discrimination.
+
+
+### Why are positive externalities considered market failures?
+
+Positive externalities are a market "failure" because of the definition of a market failure. Markets "fail" when they don't account for the full price of something. With negative externalities, they don't take into account the price of downstream consequences, like pollution. With positive externalities, markets fail because they again don't take into account the positive downstream benefits (like basic scientific research or editing a wikipedia page), so it generally leads to free riding and underprovision. Positive externalities are thus failures (even though they're good!) because the market doesn't fully account for them.
+
+
+### How do you know how to identify different market failures? There seems to be a lot of overlap…
+
+With many market failures, there are actually multiple ways to describe them, so it's fine if you struggled to settle on just one when filling out the table in problem set 6. For instance, positive externalities are a market failure (even though they're a good thing), but they inherently lead to free riding and underprovision, which also happens with public goods, which is also a market failure. There's a lot of overlap.
