@@ -1,0 +1,19 @@
+---
+title: "You made it!"
+date: "2024-07-23T10:19"
+categories: [course details]
+---
+
+Hello everyone!
+
+Congratulations on making it through such a tough class during an even tougher accelerated summer semester!
+
+The goal of this class wasn't to make you econ expert! Advanced econ stuff is hard and incredibly mathy and I don't even dabble in it. Instead, the goal of this class was to help you be able to talk about economics with policymakers and researchers. In your weekly check-ins, exams, and e-mails to me, I've seen you all talk about preferences, moral hazard, supply and demand, tax elasticity, institutions, and other economic ideas in clear, cogent, accurate ways. You did it!
+
+---
+
+A few of you have wondered about what's going to happen to the course website. It will stay up indefinitely. The whole reason I put all the course materials on a standalone website rather than on iCollege is so that you can reference the materials in the future. Two years from now, your boss asks you to calculate the elasticity of demand? Head back to the website! 
+
+If you forget the (admittedly) long and hairy URL, go to [https://www.andrewheiss.com/teaching/](https://www.andrewheiss.com/teaching/) where you can see all my past classes (if you haven't figured out the URL naming scheme yet, it's `shortname + semester + year`, so `econs24` dot classes dot andrewheiss dot com; with that, you can figure out all my other classes: `evalsp24`, `datavizf23`, and so on)
+
+The only things that aren't there are (1) the answer keys and (2) copyrighted PDFs of the readings, since (1) I don't want the answer keys publicly accessible, and (2) I don't want to break the law. So make sure you get those things off iCollege before you lose access to the course there.
